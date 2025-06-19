@@ -4,9 +4,9 @@ export const PROFILE: Profile = {
   name: 'Awake Inc.',
   title: 'ホームページ制作',
   description: '適正価格での確実なホームページ制作でビジネスを加速させます。',
-  email: 'contact@awake-inc.com',
-  phone: '03-0000-0000',
-  address: '東京都',
+  email: 'shop@awakeinc.co.jp',
+  phone: '050-7115-4948',
+  address: '〒207-0013 東京都東大和市向原5-1129-61 渡辺ビル1F',
 }
 
 export const WORKS: Project[] = [

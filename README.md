@@ -161,7 +161,7 @@ A: `npm run build` でTypeScriptの型チェックを実行してください。
 
 技術的な質問やサポートが必要な場合は、以下までお問い合わせください：
 
-- Email: tech@awake.co.jp
+- Email: shop@awakeinc.co.jp
 - 開発者: Claude (Anthropic)
 
 ## 📄 ライセンス
