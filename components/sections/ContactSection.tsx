@@ -108,11 +108,11 @@ export default function ContactSection() {
                   </div>
                   <div className="flex justify-between">
                     <span>機能付きビジネスサイト</span>
-                    <span className="font-medium">35万円〜</span>
+                    <span className="font-medium">39万8000円〜</span>
                   </div>
                   <div className="flex justify-between">
                     <span>ECサイト（簡易版）</span>
-                    <span className="font-medium">60万円〜</span>
+                    <span className="font-medium">69万8000円〜</span>
                   </div>
                   <div className="flex justify-between">
                     <span>AIチャットボット</span>

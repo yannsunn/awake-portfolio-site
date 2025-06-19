@@ -9,7 +9,7 @@ import Link from 'next/link'
 const PRICING_PLANS = [
   {
     name: "スターター",
-    price: "13.2万円",
+    price: "13万2000円",
     description: "個人事業主・フリーランス向け",
     features: [
       "5ページまで",
@@ -22,8 +22,8 @@ const PRICING_PLANS = [
     color: "border-gray-200"
   },
   {
-    name: "スタンダード",
-    price: "29.8万円",
+    name: "ベーシック",
+    price: "29万8000円",
     description: "中小企業・店舗向け",
     features: [
       "10ページまで",
@@ -32,16 +32,31 @@ const PRICING_PLANS = [
       "アクセス解析設置",
       "納期：2-3週間"
     ],
+    recommended: false,
+    color: "border-gray-200"
+  },
+  {
+    name: "スタンダード",
+    price: "39万8000円",
+    description: "機能付きビジネスサイト",
+    features: [
+      "15ページまで",
+      "予約・問い合わせ機能",
+      "CMS（更新システム）",
+      "高度なSEO対策",
+      "アクセス解析設置",
+      "納期：3-4週間"
+    ],
     recommended: true,
     color: "border-primary ring-2 ring-primary"
   },
   {
     name: "プレミアム",
-    price: "60万円〜",
-    description: "EC事業者・サービス業向け",
+    price: "69万8000円〜",
+    description: "ECサイト（簡易版）",
     features: [
       "ページ数無制限",
-      "EC機能",
+      "EC機能（決済・在庫管理）",
       "予約システム",
       "カスタム機能",
       "納期：1-2ヶ月"
@@ -64,7 +79,7 @@ export default function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
       >
         {PRICING_PLANS.map((plan, index) => (
           <motion.div

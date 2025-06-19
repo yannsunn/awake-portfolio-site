@@ -52,7 +52,7 @@ export default function SkillsSection() {
               {index === 0 && (
                 <div className="mt-6 p-4 bg-primary/10 rounded-lg">
                   <p className="text-sm text-gray-600">
-                    <strong>制作費：13万2000円〜60万円</strong><br />
+                    <strong>制作費：13万2000円〜69万8000円</strong><br />
                     必要な機能に絞り込んで確実な効果を実現
                   </p>
                 </div>
