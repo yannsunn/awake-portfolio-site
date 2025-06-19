@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import { Input } from '@/components/ui/input'
@@ -138,9 +139,11 @@ export default function ContactSection() {
                   </Button>
                 </a>
                 <div className="bg-white p-2 rounded-lg">
-                  <img 
+                  <Image 
                     src="https://qr-official.line.me/gs/M_100usiub_BW.png?oat_content=qr" 
                     alt="LINE QRコード" 
+                    width={80}
+                    height={80}
                     className="w-20 h-20"
                   />
                 </div>
