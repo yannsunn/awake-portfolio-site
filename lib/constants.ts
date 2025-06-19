@@ -1,13 +1,10 @@
 export const PROFILE = {
-  name: 'Awake',
-  title: 'ホームページ制作専門',
-  description: '高額でない、確実で効果的なホームページを制作',
-  email: 'contact@awake-portfolio.com',
+  name: 'Awake Inc.',
+  title: 'ホームページ制作',
+  description: '適正価格での確実なホームページ制作でビジネスを加速させます。',
+  email: 'contact@awake-inc.com',
   phone: '03-0000-0000',
   address: '東京都',
-  github: 'https://github.com/awake',
-  twitter: 'https://twitter.com/awake',
-  linkedin: 'https://linkedin.com/in/awake',
 }
 
 export const WORKS = [
@@ -73,18 +70,6 @@ export const WORKS = [
   },
   {
     id: 6,
-    title: "AIチャットボット",
-    category: "AI開発",
-    description: "カスタマーサポート向けの効率的なAIチャットボット。実用的なシステム。",
-    longDescription: "実用性重視のチャットボットを開発。高額なAIプラットフォームは使わず、オープンソースのツールを組み合わせることで大幅なコスト削減を実現。お客様は浮いた予算で人材育成や他のIT投資に回すことができ、総合的な業務効率化を達成しました。",
-    imageUrl: "/images/work5.jpg",
-    price: "39万8000円",
-    duration: "1ヶ月",
-    features: ["自然言語処理", "FAQ対応", "24時間対応"],
-    result: "サポート業務効率化で人件費50%削減"
-  },
-  {
-    id: 7,
     title: "ECサイト（簡易版）",
     category: "ホームページ制作",
     description: "小規模事業者向けの必要最小限のECサイト。過度な機能を省いてコスト効率を重視。",
@@ -101,10 +86,6 @@ export const SKILLS = [
   {
     category: 'ホームページ制作',
     items: ['HTML/CSS', 'JavaScript', 'WordPress', 'レスポンシブデザイン', 'SEO対策', 'UI/UXデザイン']
-  },
-  {
-    category: 'AI開発',
-    items: ['チャットボット開発', '自然言語処理', 'Python', 'オープンソースAI', 'データ分析']
   }
 ]
 

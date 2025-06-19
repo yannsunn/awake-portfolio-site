@@ -54,20 +54,6 @@ export default function ContactPage() {
       description: 'プロジェクトについてお気軽にご相談ください',
       contact: PROFILE.email,
       action: `mailto:${PROFILE.email}`
-    },
-    {
-      icon: '💼',
-      title: 'LinkedIn',
-      description: 'プロフェッショナルなネットワーキング',
-      contact: 'LinkedIn Profile',
-      action: PROFILE.linkedin
-    },
-    {
-      icon: '🐙',
-      title: 'GitHub',
-      description: 'コードとプロジェクトをご覧ください',
-      contact: 'GitHub Profile',
-      action: PROFILE.github
     }
   ]
 
@@ -79,13 +65,13 @@ export default function ContactPage() {
             <Card variant="elevated" padding="lg">
               <div className="text-6xl mb-4">✅</div>
               <h2 className="text-2xl font-bold mb-4 text-gray-900">
-                Message Sent!
+                送信完了
               </h2>
               <p className="text-gray-600 mb-6">
-                Thank you for your message. I&apos;ll get back to you within 24 hours.
+                お問い合わせありがとうございます。24時間以内にご返信いたします。
               </p>
               <Button onClick={() => setSubmitSuccess(false)}>
-                Send Another Message
+                別のお問い合わせをする
               </Button>
             </Card>
           </div>
@@ -99,8 +85,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Section background="light" padding="xl">
         <SectionHeader
-          title="Get In Touch"
-          description="新しいプロジェクトについて相談したい、質問がある、または単に挨拶したい場合は、お気軽にご連絡ください。"
+          title="お問い合わせ"
+          description="ホームページ制作についてご相談やご質問がございましたら、お気軽にお問い合わせください。"
         />
       </Section>
 
@@ -109,19 +95,19 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <Card variant="elevated" padding="lg">
-              <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
+              <h2 className="text-2xl font-bold mb-6">お問い合わせフォーム</h2>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Name <span className="text-red-500">*</span>
+                    お名前 <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     {...register('name')}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Your name"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
+                    placeholder="山田 太郎"
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -131,13 +117,13 @@ export default function ContactPage() {
                 {/* Email */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email <span className="text-red-500">*</span>
+                    メールアドレス <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     {...register('email')}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="your@email.com"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
+                    placeholder="example@email.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -147,13 +133,13 @@ export default function ContactPage() {
                 {/* Subject */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject <span className="text-red-500">*</span>
+                    件名 <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     {...register('subject')}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Project inquiry"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
+                    placeholder="ホームページ制作のお見積りについて"
                   />
                   {errors.subject && (
                     <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>
@@ -163,13 +149,13 @@ export default function ContactPage() {
                 {/* Message */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message <span className="text-red-500">*</span>
+                    メッセージ <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     {...register('message')}
                     rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-vertical"
-                    placeholder="Tell me about your project or say hello..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent resize-vertical"
+                    placeholder="ご希望やご質問をお聞かせください。予算感や納期などもお知らせいただけると、より具体的なご提案ができます。"
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
@@ -183,7 +169,7 @@ export default function ContactPage() {
                   className="w-full"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? '送信中...' : '送信する'}
                 </Button>
               </form>
 
@@ -195,7 +181,7 @@ export default function ContactPage() {
 
           {/* Contact Methods */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold mb-6">Other Ways to Connect</h2>
+            <h2 className="text-2xl font-bold mb-6">その他の連絡方法</h2>
             
             {contactMethods.map((method, index) => (
               <Card key={index} variant="elevated" className="p-6">
@@ -222,23 +208,23 @@ export default function ContactPage() {
             ))}
 
             {/* Available for Work */}
-            <Card variant="bordered" className="p-6 text-center bg-gradient-to-br from-primary/5 to-secondary/5">
+            <Card variant="bordered" className="p-6 text-center bg-gray-50">
               <div className="text-4xl mb-3">🚀</div>
               <h3 className="font-semibold text-gray-900 mb-2">
-                Available for New Projects
+                新規プロジェクト受付中
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                現在新しいプロジェクトをお受けしています。
+                現在新しいホームページ制作のご依頼をお受けしています。
                 お気軽にご相談ください。
               </p>
               <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
                 <div className="flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  Available
+                  受付中
                 </div>
                 <div className="flex items-center">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                  Remote OK
+                  全国対応
                 </div>
               </div>
             </Card>

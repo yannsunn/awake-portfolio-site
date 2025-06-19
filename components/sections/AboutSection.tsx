@@ -81,7 +81,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="mt-12 p-8 bg-gradient-to-r from-primary to-secondary rounded-lg text-white"
+            className="mt-12 p-8 bg-gray-800 rounded-lg text-white"
           >
             <h3 className="text-2xl font-bold mb-4">スマートな選択で、ビジネスを成長させる</h3>
             <p className="text-lg leading-relaxed">

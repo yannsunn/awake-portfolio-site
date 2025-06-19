@@ -83,7 +83,7 @@ export default function ProcessSection() {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="text-4xl mb-4">{step.icon}</div>
-                  <div className="inline-block bg-primary text-white text-sm font-bold px-3 py-1 rounded-full mb-4">
+                  <div className="inline-block bg-gray-800 text-white text-sm font-bold px-3 py-1 rounded-full mb-4">
                     STEP {step.step}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-800">{step.title}</h3>
@@ -105,7 +105,7 @@ export default function ProcessSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-lg p-8 text-white">
+          <div className="bg-gray-800 rounded-lg p-8 text-white">
             <h3 className="text-2xl font-bold mb-6">制作期間の目安</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="bg-white/10 p-4 rounded-lg">

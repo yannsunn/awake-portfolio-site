@@ -48,7 +48,7 @@ const PRICING_PLANS = [
       "納期：3-4週間"
     ],
     recommended: true,
-    color: "border-primary ring-2 ring-primary"
+    color: "border-gray-800 ring-2 ring-gray-800"
   },
   {
     name: "プレミアム",
@@ -92,7 +92,7 @@ export default function PricingSection() {
           >
             {plan.recommended && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-white px-4 py-1 text-sm font-medium rounded-full">
+                <span className="bg-gray-800 text-white px-4 py-1 text-sm font-medium rounded-full">
                   おすすめ
                 </span>
               </div>
@@ -104,7 +104,7 @@ export default function PricingSection() {
               <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.name}</h3>
               <p className="text-gray-600 mb-4">{plan.description}</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-primary">{plan.price}</span>
+                <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
               </div>
               
               <ul className="space-y-3 mb-8 text-left">
@@ -120,7 +120,7 @@ export default function PricingSection() {
                 <Button 
                   className={`w-full py-3 ${
                     plan.recommended 
-                      ? 'bg-primary hover:bg-primary/90 text-white' 
+                      ? 'bg-gray-800 hover:bg-gray-700 text-white' 
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
                   }`}
                 >
@@ -144,11 +144,11 @@ export default function PricingSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
               <span className="font-medium">AIチャットボット</span>
-              <span className="text-primary font-bold">39.8万円〜</span>
+              <span className="text-gray-800 font-bold">39.8万円〜</span>
             </div>
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
               <span className="font-medium">その他受託開発</span>
-              <span className="text-primary font-bold">要相談</span>
+              <span className="text-gray-800 font-bold">要相談</span>
             </div>
           </div>
         </div>

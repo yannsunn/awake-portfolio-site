@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import Card, { CardContent } from '@/components/common/Card'
 import Button from '@/components/common/Button'
@@ -96,59 +95,24 @@ export default function WorksSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Portfolio</h2>
+          <h2 className="text-3xl font-bold mb-4">制作実績</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            これまでに制作したホームページとAIプロジェクトの実績をご紹介します。
-            すべて「高額でない、確実な効果」にこだわった案件です。
+            これまでに制作したホームページの実績をご紹介します。
+            すべて「適正価格で確実な効果」にこだわった案件です。
           </p>
         </motion.div>
 
-        <Tabs defaultValue="all" className="mb-12">
-          <TabsList className="mx-auto flex justify-center mb-8">
-            <TabsTrigger value="all" className="rounded-md px-4">すべて</TabsTrigger>
-            <TabsTrigger value="homepage" className="rounded-md px-4">ホームページ制作</TabsTrigger>
-            <TabsTrigger value="ai" className="rounded-md px-4">AI開発</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="all" className="mt-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {WORKS.map(project => (
-                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
-              ))}
-            </motion.div>
-          </TabsContent>
-          
-          <TabsContent value="homepage" className="mt-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {WORKS.filter(p => p.category === "ホームページ制作").map(project => (
-                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
-              ))}
-            </motion.div>
-          </TabsContent>
-          
-          <TabsContent value="ai" className="mt-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {WORKS.filter(p => p.category === "AI開発").map(project => (
-                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
-              ))}
-            </motion.div>
-          </TabsContent>
-        </Tabs>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {WORKS.map(project => (
+            <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
+          ))}
+        </motion.div>
 
         {/* プロジェクト詳細モーダル */}
         <Dialog open={!!activeProject} onOpenChange={(open) => !open && setActiveProject(null)}>

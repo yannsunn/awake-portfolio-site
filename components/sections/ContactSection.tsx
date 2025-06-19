@@ -16,7 +16,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-6">
         <SectionHeader
           title="お問い合わせ"
-          description="プロジェクトのご相談やお問い合わせは、以下のフォームまたは直接ご連絡ください。高額でない確実なホームページ制作について、お気軽にご相談ください。"
+          description="プロジェクトのご相談やお問い合わせは、以下のフォームまたは直接ご連絡ください。適正価格での確実なホームページ制作について、お気軽にご相談ください。"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -125,36 +125,6 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">SNS</h3>
-              <div className="flex space-x-4">
-                <a 
-                  href={PROFILE.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl hover:bg-gray-200 transition-colors"
-                >
-                  🐙
-                </a>
-                <a 
-                  href={PROFILE.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl hover:bg-gray-200 transition-colors"
-                >
-                  🐦
-                </a>
-                <a 
-                  href={PROFILE.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl hover:bg-gray-200 transition-colors"
-                >
-                  💼
-                </a>
-              </div>
-            </div>
           </motion.div>
         </div>
 
@@ -166,15 +136,15 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-lg p-8 text-white max-w-4xl mx-auto">
+          <div className="bg-gray-800 rounded-lg p-8 text-white max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">まずは無料相談から</h3>
             <p className="text-lg mb-6 leading-relaxed">
-              「数百万円のホームページは必要ない、でも効果的なサイトは欲しい」<br />
-              そんなご要望にお応えします。お気軽にご相談ください。
+              「適正価格で効果的なホームページが欲しい」<br />
+              そんなご要望にAwake Inc.がお応えします。お気軽にご相談ください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3">
+                <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">
                   詳細なお問い合わせフォーム
                 </Button>
               </Link>

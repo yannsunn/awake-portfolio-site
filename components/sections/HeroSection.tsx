@@ -22,8 +22,8 @@ export default function HeroSection() {
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
               必要十分な機能で、確実な成果を。
             </p>
-            <p className="text-2xl font-bold text-primary mb-10">
-              132,000円から始めるプロフェッショナルなWeb制作
+            <p className="text-2xl font-bold text-gray-800 mb-10">
+              13万2000円から始めるプロフェッショナルなWeb制作
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ export default function HeroSection() {
               <Link href="#works">
                 <Button 
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-lg"
+                  className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg rounded-lg"
                 >
                   実績を見る
                 </Button>
@@ -43,7 +43,7 @@ export default function HeroSection() {
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg rounded-lg"
+                  className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg rounded-lg"
                 >
                   無料相談する
                 </Button>
