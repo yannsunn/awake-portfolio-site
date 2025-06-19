@@ -14,23 +14,38 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-6xl font-bold mb-6 text-gray-800">{PROFILE.name}</h1>
-          <h2 className="text-2xl text-gray-600 mb-8">{PROFILE.title}</h2>
-          <div className="max-w-2xl mx-auto">
-            <p className="text-lg text-gray-700 mb-10 leading-relaxed">
-              {PROFILE.description}
+          <h1 className="text-6xl font-bold mb-4 text-gray-800">{PROFILE.name}</h1>
+          <h2 className="text-3xl font-semibold text-gray-700 mb-8">
+            Webとテクノロジーで、ビジネスを加速する
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+              必要十分な機能で、確実な成果を。
+            </p>
+            <p className="text-2xl font-bold text-primary mb-10">
+              132,000円から始めるプロフェッショナルなWeb制作
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link href="#portfolio">
+              <Link href="#works">
                 <Button 
                   size="lg"
-                  className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg rounded-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-lg"
                 >
-                  ポートフォリオを見る
+                  実績を見る
+                </Button>
+              </Link>
+              <Link href="#contact">
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg rounded-lg"
+                >
+                  無料相談する
                 </Button>
               </Link>
             </motion.div>

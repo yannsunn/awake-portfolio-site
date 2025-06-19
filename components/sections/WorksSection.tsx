@@ -17,6 +17,8 @@ interface Project {
   imageUrl: string
   price: string
   duration: string
+  features?: string[]
+  result?: string
 }
 
 interface ProjectCardProps {
@@ -52,8 +54,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       </div>
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm text-gray-500 mb-2">{project.category}</p>
-        <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
+        <p className="text-sm text-gray-500 mb-2">{project.category} | {project.duration}</p>
+        <p className="text-sm text-gray-600 leading-relaxed mb-3">{project.description}</p>
+        
+        {project.features && (
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-1">
+              {project.features.slice(0, 3).map((feature, index) => (
+                <span 
+                  key={index}
+                  className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {project.result && (
+          <div className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
+            📈 {project.result}
+          </div>
+        )}
       </CardContent>
       </Card>
     </div>
