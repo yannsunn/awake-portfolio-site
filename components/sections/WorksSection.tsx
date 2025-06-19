@@ -26,7 +26,8 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
-    <Card className="overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300" onClick={onClick}>
+    <div className="cursor-pointer" onClick={onClick}>
+      <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
       <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-6xl text-gray-400">
@@ -54,7 +55,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         <p className="text-sm text-gray-500 mb-2">{project.category}</p>
         <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
       </CardContent>
-    </Card>
+      </Card>
+    </div>
   )
 }
 
