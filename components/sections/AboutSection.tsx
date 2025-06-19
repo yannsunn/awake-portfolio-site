@@ -60,7 +60,7 @@ export default function AboutSection() {
             >
               <div className="text-4xl mb-4">⚡</div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">スピード納品</h3>
-              <p className="text-gray-600">シンプルな構成により、最短2週間で公開可能</p>
+              <p className="text-gray-600">シンプルな構成により、最短1週間で公開可能</p>
             </motion.div>
 
             <motion.div

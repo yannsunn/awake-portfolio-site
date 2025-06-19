@@ -15,19 +15,19 @@ const notoSansJP = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: 'Awake - Web Developer & Designer Portfolio',
-  description: 'クリエイティブなウェブソリューションを創造するAwakeのポートフォリオサイト。Next.js、React、TypeScriptを使用したモダンなウェブ開発とデザインサービスを提供します。',
-  keywords: 'Web Developer,Web Designer,Portfolio,Next.js,React,TypeScript,Frontend,UI/UX',
+  title: 'Awake Inc. - 適正価格でのホームページ制作',
+  description: '13万2000円からの確実なホームページ制作。必要な機能に絞り込んだ適正価格で、ビジネスを加速させます。1週間〜1ヶ月でスピード納品。',
+  keywords: 'ホームページ制作,ウェブサイト制作,適正価格,格安,東京,Awake Inc.,HP制作,Web制作',
   openGraph: {
-    title: 'Awake - Web Developer & Designer Portfolio',
-    description: 'クリエイティブなウェブソリューションを創造するAwakeのポートフォリオサイト',
+    title: 'Awake Inc. - 適正価格でのホームページ制作',
+    description: '13万2000円からの確実なホームページ制作。必要な機能に絞り込んだ適正価格で、ビジネスを加速させます。',
     type: 'website',
     locale: 'ja_JP',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Awake - Web Developer & Designer Portfolio',
-    description: 'クリエイティブなウェブソリューションを創造するAwakeのポートフォリオサイト',
+    title: 'Awake Inc. - 適正価格でのホームページ制作',
+    description: '13万2000円からの確実なホームページ制作。必要な機能に絞り込んだ適正価格で、ビジネスを加速させます。',
   },
 }
 
