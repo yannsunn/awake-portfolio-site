@@ -52,11 +52,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             {project.category === 'ホームページ制作' ? '🌐' : '🤖'}
           </div>
         </div>
-        <div className="absolute top-4 left-4">
-          <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">
-            {project.category}
-          </span>
-        </div>
         <div className="absolute bottom-4 right-4">
           <span className="bg-black text-white text-xs px-2 py-1 rounded">
             {project.price}
