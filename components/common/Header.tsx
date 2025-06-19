@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { NAVIGATION_ITEMS, COMPANY_INFO } from '@/lib/constants'
+import { NAVIGATION_ITEMS, PROFILE } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="text-2xl font-bold text-primary">
-              {COMPANY_INFO.nameEn}
+              {PROFILE.name}
             </div>
           </Link>
 

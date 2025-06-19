@@ -1,44 +1,94 @@
-export const COMPANY_INFO = {
-  name: '株式会社Awake',
-  nameEn: 'Awake Inc.',
-  description: '革新的なソリューションで企業の成長を支援します',
-  address: '東京都渋谷区',
-  phone: '03-0000-0000',
-  email: 'info@awake.co.jp',
-  founded: '2023年',
-  capital: '1,000万円',
-  employees: '10名',
+export const PROFILE = {
+  name: 'Awake',
+  title: 'Web Developer & Designer',
+  description: 'クリエイティブなウェブソリューションを創造します',
+  email: 'contact@awake-portfolio.com',
+  github: 'https://github.com/awake',
+  twitter: 'https://twitter.com/awake',
+  linkedin: 'https://linkedin.com/in/awake',
 }
 
-export const SERVICES = [
+export const WORKS = [
   {
-    id: 'web-development',
-    title: 'ホームページ制作',
-    description: '最新技術を駆使したモダンなWebサイト制作',
-    icon: '🌐',
-    features: ['レスポンシブデザイン', 'SEO対策', 'CMS導入', 'パフォーマンス最適化'],
+    id: 1,
+    title: 'E-commerce Platform',
+    description: 'モダンなECサイトのデザインと開発',
+    image: '/images/work1.jpg',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
+    demoUrl: 'https://demo1.example.com',
+    githubUrl: 'https://github.com/example/project1',
+    category: 'Web Development'
   },
   {
-    id: 'ai-consulting',
-    title: 'AIコンサルティング',
-    description: 'AI技術の導入・活用をトータルサポート',
-    icon: '🤖',
-    features: ['AI戦略策定', 'システム設計', '導入支援', '運用サポート'],
+    id: 2,
+    title: 'Portfolio Website',
+    description: 'クリエイティブなポートフォリオサイト',
+    image: '/images/work2.jpg',
+    tags: ['React', 'Framer Motion', 'SCSS', 'Node.js'],
+    demoUrl: 'https://demo2.example.com',
+    githubUrl: 'https://github.com/example/project2',
+    category: 'Design'
   },
   {
-    id: 'amazon-agency',
-    title: 'Amazon代理店',
-    description: 'Amazon販売の最適化と売上向上を支援',
-    icon: '📦',
-    features: ['商品登録', '広告運用', '売上分析', 'ブランド構築'],
+    id: 3,
+    title: 'Task Management App',
+    description: 'チーム向けタスク管理アプリケーション',
+    image: '/images/work3.jpg',
+    tags: ['Vue.js', 'Firebase', 'Vuetify', 'PWA'],
+    demoUrl: 'https://demo3.example.com',
+    githubUrl: 'https://github.com/example/project3',
+    category: 'Web App'
   },
+  {
+    id: 4,
+    title: 'Landing Page',
+    description: 'コンバージョン重視のランディングページ',
+    image: '/images/work4.jpg',
+    tags: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
+    demoUrl: 'https://demo4.example.com',
+    githubUrl: 'https://github.com/example/project4',
+    category: 'Web Development'
+  },
+  {
+    id: 5,
+    title: 'Mobile App Design',
+    description: 'iOS/Android向けモバイルアプリのUI/UX',
+    image: '/images/work5.jpg',
+    tags: ['Figma', 'Prototyping', 'UI/UX', 'React Native'],
+    demoUrl: 'https://demo5.example.com',
+    githubUrl: 'https://github.com/example/project5',
+    category: 'Design'
+  },
+  {
+    id: 6,
+    title: 'Dashboard Application',
+    description: 'データ可視化ダッシュボード',
+    image: '/images/work6.jpg',
+    tags: ['React', 'D3.js', 'Chart.js', 'Material-UI'],
+    demoUrl: 'https://demo6.example.com',
+    githubUrl: 'https://github.com/example/project6',
+    category: 'Web App'
+  }
+]
+
+export const SKILLS = [
+  {
+    category: 'Frontend',
+    items: ['HTML/CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS']
+  },
+  {
+    category: 'Backend',
+    items: ['Node.js', 'Python', 'PHP', 'MySQL', 'PostgreSQL', 'Firebase', 'MongoDB']
+  },
+  {
+    category: 'Tools & Others',
+    items: ['Git', 'Docker', 'AWS', 'Figma', 'Photoshop', 'Illustrator', 'Vercel']
+  }
 ]
 
 export const NAVIGATION_ITEMS = [
-  { href: '/', label: 'ホーム' },
-  { href: '/about', label: '会社情報' },
-  { href: '/services', label: 'サービス' },
-  { href: '/works', label: '実績' },
-  { href: '/news', label: 'お知らせ' },
-  { href: '/contact', label: 'お問い合わせ' },
+  { href: '/', label: 'Home' },
+  { href: '/#works', label: 'Works' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/contact', label: 'Contact' },
 ]

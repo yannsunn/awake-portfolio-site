@@ -5,39 +5,39 @@ import Link from 'next/link'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import Section, { SectionHeader } from '@/components/ui/Section'
-import { COMPANY_INFO } from '@/lib/constants'
+import { PROFILE } from '@/lib/constants'
 
 export default function ContactSection() {
   const contactMethods = [
     {
-      icon: '📞',
-      title: 'お電話でのお問い合わせ',
-      description: '平日 9:00-18:00',
-      contact: COMPANY_INFO.phone,
-      action: `tel:${COMPANY_INFO.phone.replace(/-/g, '')}`
-    },
-    {
       icon: '✉️',
-      title: 'メールでのお問い合わせ',
-      description: '24時間受付',
-      contact: COMPANY_INFO.email,
-      action: `mailto:${COMPANY_INFO.email}`
+      title: 'Email',
+      description: 'プロジェクトについてお気軽にご相談ください',
+      contact: PROFILE.email,
+      action: `mailto:${PROFILE.email}`
     },
     {
-      icon: '📍',
-      title: 'オフィス所在地',
-      description: '東京都渋谷区',
-      contact: COMPANY_INFO.address,
-      action: '#'
+      icon: '💼',
+      title: 'LinkedIn',
+      description: 'プロフェッショナルなネットワーキング',
+      contact: 'LinkedIn Profile',
+      action: PROFILE.linkedin
+    },
+    {
+      icon: '🐙',
+      title: 'GitHub',
+      description: 'コードとプロジェクトをご覧ください',
+      contact: 'GitHub Profile',
+      action: PROFILE.github
     }
   ]
 
   return (
     <Section id="contact" background="light" padding="xl">
       <SectionHeader
-        subtitle="Contact Us"
-        title="お問い合わせ"
-        description="ご質問やご相談がございましたら、お気軽にお問い合わせください。お客様のビジネス課題の解決に向けて、最適なソリューションをご提案いたします。"
+        subtitle="Get In Touch"
+        title="Let's Work Together"
+        description="新しいプロジェクトについて話し合いたい、質問がある、または単に挨拶したい場合は、お気軽にご連絡ください。"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -64,11 +64,13 @@ export default function ContactSection() {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       {method.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-2">
+                    <p className="text-gray-600 text-sm mb-3">
                       {method.description}
                     </p>
                     <a 
                       href={method.action}
+                      target={method.action.startsWith('mailto:') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
                       className="text-primary font-medium hover:text-primary/80 transition-colors"
                     >
                       {method.contact}
@@ -91,12 +93,13 @@ export default function ContactSection() {
           <Card variant="elevated" className="p-8 text-center bg-gradient-to-br from-primary to-secondary text-white">
             <div className="mb-6">
               <h3 className="text-2xl font-bold mb-4">
-                無料相談を受付中
+                Ready to Start?
               </h3>
               <p className="text-blue-100 leading-relaxed">
-                プロジェクトに関するご質問やお見積りなど、
-                どんな小さなことでもお気軽にご相談ください。
-                専門スタッフが丁寧にお答えいたします。
+                アイデアを現実に変えませんか？
+                ご質問やプロジェクトのご相談など、
+                どんなことでもお気軽にお聞かせください。
+                一緒に素晴らしいものを作りましょう！
               </p>
             </div>
 
@@ -107,7 +110,7 @@ export default function ContactSection() {
                   size="lg" 
                   className="w-full bg-white text-primary border-white hover:bg-gray-100 shadow-lg"
                 >
-                  お問い合わせフォーム
+                  Send Message
                 </Button>
               </Link>
               
@@ -115,27 +118,27 @@ export default function ContactSection() {
                 または
               </div>
               
-              <a href={`tel:${COMPANY_INFO.phone.replace(/-/g, '')}`}>
+              <a href={`mailto:${PROFILE.email}`}>
                 <Button 
                   variant="ghost" 
                   size="lg" 
                   className="w-full text-white border border-white/30 hover:bg-white/10"
                 >
-                  📞 {COMPANY_INFO.phone}
+                  ✉️ {PROFILE.email}
                 </Button>
               </a>
             </div>
 
-            {/* Response Time */}
+            {/* Response Info */}
             <div className="mt-6 pt-6 border-t border-white/20">
               <div className="flex items-center justify-center space-x-4 text-sm text-blue-100">
                 <div className="flex items-center">
                   <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                  平均24時間以内に回答
+                  通常24時間以内に返信
                 </div>
                 <div className="flex items-center">
                   <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                  無料相談実施中
+                  無料相談可能
                 </div>
               </div>
             </div>

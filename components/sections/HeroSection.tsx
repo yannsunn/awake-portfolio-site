@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Button from '@/components/common/Button'
-import { COMPANY_INFO } from '@/lib/constants'
+import { PROFILE } from '@/lib/constants'
 
 export default function HeroSection() {
   return (
@@ -21,22 +21,26 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Company Logo/Name */}
+          {/* Profile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
+            {/* Avatar placeholder */}
+            <div className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl backdrop-blur-sm">
+              👨‍💻
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              {COMPANY_INFO.nameEn}
+              {PROFILE.name}
             </h1>
             <p className="text-xl md:text-2xl font-medium text-blue-100">
-              {COMPANY_INFO.name}
+              {PROFILE.title}
             </p>
           </motion.div>
 
-          {/* Main Message */}
+          {/* Description */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,12 +48,11 @@ export default function HeroSection() {
             className="mb-12"
           >
             <h2 className="text-2xl md:text-4xl font-semibold mb-6 leading-tight">
-              革新的なソリューションで<br />
-              <span className="text-accent">企業の成長を支援</span>します
+              {PROFILE.description}
             </h2>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
-              ホームページ制作からAIコンサルティング、Amazon代理店まで<br />
-              幅広いサービスでビジネスの未来を創造します
+              情熱を持って美しいウェブ体験を創造し、<br />
+              アイデアを現実に変えるお手伝いをします
             </p>
           </motion.div>
 
@@ -60,37 +63,52 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link href="/services">
+            <Link href="/#works">
               <Button size="lg" className="bg-accent text-white hover:bg-accent/90 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                サービスを見る
+                View My Work
               </Button>
             </Link>
             <Link href="/contact">
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                お問い合わせ
+                Get In Touch
               </Button>
             </Link>
           </motion.div>
 
-          {/* Stats */}
+          {/* Social Links */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-16 flex justify-center space-x-6"
           >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100+</div>
-              <div className="text-blue-100">プロジェクト実績</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">98%</div>
-              <div className="text-blue-100">顧客満足度</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24h</div>
-              <div className="text-blue-100">平均対応時間</div>
-            </div>
+            <a
+              href={PROFILE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-100 hover:text-white transition-colors"
+            >
+              <span className="sr-only">GitHub</span>
+              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">G</div>
+            </a>
+            <a
+              href={PROFILE.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-100 hover:text-white transition-colors"
+            >
+              <span className="sr-only">Twitter</span>
+              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">T</div>
+            </a>
+            <a
+              href={PROFILE.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-100 hover:text-white transition-colors"
+            >
+              <span className="sr-only">LinkedIn</span>
+              <div className="w-6 h-6 bg-white/20 rounded flex items-center justify-center">L</div>
+            </a>
           </motion.div>
         </motion.div>
 
