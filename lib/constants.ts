@@ -1,4 +1,6 @@
-export const PROFILE = {
+import type { Profile, Project, SkillCategory, NavigationItem, ValueProposition } from './types'
+
+export const PROFILE: Profile = {
   name: 'Awake Inc.',
   title: 'ホームページ制作',
   description: '適正価格での確実なホームページ制作でビジネスを加速させます。',
@@ -7,7 +9,7 @@ export const PROFILE = {
   address: '東京都',
 }
 
-export const WORKS = [
+export const WORKS: Project[] = [
   {
     id: 1,
     title: "コーポレートサイト",
@@ -90,21 +92,21 @@ export const WORKS = [
   }
 ]
 
-export const SKILLS = [
+export const SKILLS: SkillCategory[] = [
   {
     category: 'ホームページ制作',
     items: ['HTML/CSS', 'JavaScript', 'WordPress', 'レスポンシブデザイン', 'SEO対策', 'UI/UXデザイン']
   }
 ]
 
-export const NAVIGATION_ITEMS = [
+export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '/', label: 'ホーム' },
   { href: '#portfolio', label: 'ポートフォリオ' },
   { href: '#about', label: 'について' },
   { href: '/contact', label: 'お問い合わせ' },
 ]
 
-export const VALUE_PROPOSITION = {
+export const VALUE_PROPOSITION: ValueProposition = {
   title: "高額でない、確実なホームページ制作",
   subtitle: "余った予算で事業投資を",
   description: "数百万円の高額なホームページを作っても使わなくなってしまっては意味がありません。弊社は必要な機能に絞り込んだ13万2000円からのホームページで、会社の顔としての役割を確実に果たします。浮いた予算は他の事業投資に回して、総合的な成長を実現しませんか？",

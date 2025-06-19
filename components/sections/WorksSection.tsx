@@ -1,56 +1,38 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import Card, { CardContent } from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import { WORKS } from '@/lib/constants'
+import type { Project } from '@/lib/types'
+import { animationVariants } from '@/lib/utils'
 
-interface Project {
-  id: number
-  title: string
-  category: string
-  description: string
-  longDescription: string
-  imageUrl: string
-  url?: string
-  pages?: string
-  marketPrice?: string
-  price: string
-  duration: string
-  features?: string[]
-  result?: string
-  breakdown?: string
-}
 
 interface ProjectCardProps {
   project: Project
   onClick: () => void
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
   return (
     <div className="cursor-pointer" onClick={onClick}>
       <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
       <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
-        {/* 実際のサイト画像を表示（将来的に追加） */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <img 
+        <div className="absolute inset-0">
+          <Image
             src={project.imageUrl} 
             alt={project.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              // 画像が見つからない場合のフォールバック
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const fallback = target.nextElementSibling as HTMLElement;
-              if (fallback) fallback.style.display = 'flex';
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            onError={() => {
+              console.warn(`Failed to load image: ${project.imageUrl}`)
             }}
           />
-          <div className="text-6xl text-gray-400" style={{ display: 'none' }}>
-            {project.category === 'ホームページ制作' ? '🌐' : '🤖'}
-          </div>
         </div>
         <div className="absolute bottom-4 right-4">
           <span className="bg-black text-white text-xs px-2 py-1 rounded">
@@ -130,7 +112,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       </Card>
     </div>
   )
-}
+})
+
+ProjectCard.displayName = 'ProjectCard'
 
 export default function WorksSection() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
@@ -139,9 +123,7 @@ export default function WorksSection() {
     <section id="portfolio" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          {...animationVariants.fadeInUp}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -219,21 +201,20 @@ export default function WorksSection() {
                 </DialogHeader>
                 <div className="mt-4">
                   <div 
-                    className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 flex items-center justify-center cursor-pointer relative overflow-hidden group"
+                    className="relative w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 cursor-pointer overflow-hidden group"
                     onClick={() => activeProject.url && window.open(activeProject.url, '_blank')}
                   >
-                    <img 
+                    <Image
                       src={activeProject.imageUrl} 
                       alt={activeProject.title}
-                      className="w-full h-full object-cover rounded-lg"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = 'flex';
+                      fill
+                      className="object-cover rounded-lg"
+                      sizes="(max-width: 768px) 100vw, 80vw"
+                      loading="lazy"
+                      onError={() => {
+                        console.warn(`Failed to load modal image: ${activeProject.imageUrl}`)
                       }}
                     />
-                    <div className="text-8xl text-gray-400 absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>🌐</div>
                     {activeProject.url && (
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
