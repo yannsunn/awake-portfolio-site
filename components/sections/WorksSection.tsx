@@ -73,8 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         </div>
       </div>
       <CardContent className="p-6">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-semibold">{project.title}</h3>
+        <div className="flex justify-end items-start mb-2">
           {project.url && (
             <a 
               href={project.url} 
