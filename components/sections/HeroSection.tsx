@@ -10,18 +10,18 @@ export default function HeroSection() {
   return (
     <section className="relative h-[500px] flex items-center justify-center bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       {/* 背景画像 */}
-      <div className="absolute inset-0 opacity-15">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt="ビジネスミーティングの様子"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-      </div>
+      <div 
+        className="absolute inset-0 opacity-50"
+        style={{ 
+          backgroundImage: 'url(/images/hero-bg-small.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
       
       {/* オーバーレイ */}
-      <div className="absolute inset-0 bg-white/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/30 to-white/50"></div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
