@@ -82,7 +82,7 @@ export default function ContactPage() {
                 Message Sent!
               </h2>
               <p className="text-gray-600 mb-6">
-                Thank you for your message. I'll get back to you within 24 hours.
+                Thank you for your message. I&apos;ll get back to you within 24 hours.
               </p>
               <Button onClick={() => setSubmitSuccess(false)}>
                 Send Another Message
