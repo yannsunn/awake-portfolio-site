@@ -99,8 +99,12 @@ export default function ContactSection() {
                 <h4 className="text-lg font-semibold mb-4">お見積りについて</h4>
                 <div className="bg-gray-50 p-6 rounded-lg space-y-3">
                   <div className="flex justify-between">
+                    <span>簡易的な自己紹介ホームページ</span>
+                    <span className="font-medium">13万2000円〜</span>
+                  </div>
+                  <div className="flex justify-between">
                     <span>シンプルなコーポレートサイト</span>
-                    <span className="font-medium">25万円〜</span>
+                    <span className="font-medium">29万8000円〜</span>
                   </div>
                   <div className="flex justify-between">
                     <span>機能付きビジネスサイト</span>
@@ -112,7 +116,11 @@ export default function ContactSection() {
                   </div>
                   <div className="flex justify-between">
                     <span>AIチャットボット</span>
-                    <span className="font-medium">50万円〜</span>
+                    <span className="font-medium">39万8000円〜</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>その他受託開発</span>
+                    <span className="font-medium">要相談</span>
                   </div>
                 </div>
               </div>

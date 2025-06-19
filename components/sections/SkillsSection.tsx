@@ -52,7 +52,7 @@ export default function SkillsSection() {
               {index === 0 && (
                 <div className="mt-6 p-4 bg-primary/10 rounded-lg">
                   <p className="text-sm text-gray-600">
-                    <strong>制作費：25万円〜60万円</strong><br />
+                    <strong>制作費：13万2000円〜60万円</strong><br />
                     必要な機能に絞り込んで確実な効果を実現
                   </p>
                 </div>
@@ -61,7 +61,7 @@ export default function SkillsSection() {
               {index === 1 && (
                 <div className="mt-6 p-4 bg-secondary/10 rounded-lg">
                   <p className="text-sm text-gray-600">
-                    <strong>2年の経験</strong><br />
+                    <strong>39万8000円〜</strong><br />
                     高額なプラットフォームを使わず実用的なAIシステムを構築
                   </p>
                 </div>
@@ -82,7 +82,7 @@ export default function SkillsSection() {
           <h3 className="text-xl font-bold mb-4">なぜこの2つに特化？</h3>
           <p className="text-gray-600 leading-relaxed">
             ホームページ制作は確実にお客様の成果につながる分野です。
-            AI開発も2年間しっかりと経験を積み、実用的なシステムを構築できます。
+            AI開発も実用的なシステムを構築できます。
             それ以外の受託開発は信頼できる別の法人様にお任せすることで、
             お客様により良いサービスを提供できると考えています。
           </p>
