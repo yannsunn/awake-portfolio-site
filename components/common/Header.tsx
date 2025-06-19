@@ -28,109 +28,93 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'sticky top-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-sm border-b border-gray-100 shadow-sm'
+          : 'bg-white/90 backdrop-blur-sm'
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">
-              {PROFILE.name}
-            </div>
-          </Link>
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2">
+          <h1 className="text-xl font-bold text-gray-800">{PROFILE.name}</h1>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex">
+          <ul className="flex space-x-6">
             {NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  pathname === item.href
-                    ? 'text-primary'
-                    : isScrolled
-                    ? 'text-gray-700'
-                    : 'text-white'
-                )}
-              >
-                {item.label}
-              </Link>
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    'text-gray-600 hover:text-black transition-colors cursor-pointer',
+                    pathname === item.href && 'text-black font-medium'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
             ))}
-          </nav>
+          </ul>
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1"
-            aria-label="メニューを開く"
-          >
-            <motion.span
-              className={cn(
-                'block w-6 h-0.5 transition-colors',
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              )}
-              animate={{
-                rotate: isMenuOpen ? 45 : 0,
-                y: isMenuOpen ? 4 : 0,
-              }}
-            />
-            <motion.span
-              className={cn(
-                'block w-6 h-0.5 transition-colors',
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              )}
-              animate={{
-                opacity: isMenuOpen ? 0 : 1,
-              }}
-            />
-            <motion.span
-              className={cn(
-                'block w-6 h-0.5 transition-colors',
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              )}
-              animate={{
-                rotate: isMenuOpen ? -45 : 0,
-                y: isMenuOpen ? -4 : 0,
-              }}
-            />
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-200"
-            >
-              <div className="py-4 space-y-2">
-                {NAVIGATION_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={cn(
-                      'block px-4 py-2 text-sm font-medium transition-colors hover:text-primary hover:bg-gray-50',
-                      pathname === item.href
-                        ? 'text-primary bg-gray-50'
-                        : 'text-gray-700'
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1"
+          aria-label="メニューを開く"
+        >
+          <motion.span
+            className="block w-6 h-0.5 bg-gray-700"
+            animate={{
+              rotate: isMenuOpen ? 45 : 0,
+              y: isMenuOpen ? 4 : 0,
+            }}
+          />
+          <motion.span
+            className="block w-6 h-0.5 bg-gray-700"
+            animate={{
+              opacity: isMenuOpen ? 0 : 1,
+            }}
+          />
+          <motion.span
+            className="block w-6 h-0.5 bg-gray-700"
+            animate={{
+              rotate: isMenuOpen ? -45 : 0,
+              y: isMenuOpen ? -4 : 0,
+            }}
+          />
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-200"
+          >
+            <div className="py-4 space-y-2">
+              {NAVIGATION_ITEMS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={cn(
+                    'block px-6 py-2 text-gray-600 hover:text-black transition-colors',
+                    pathname === item.href && 'text-black font-medium'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

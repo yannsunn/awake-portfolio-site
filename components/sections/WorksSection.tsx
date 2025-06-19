@@ -1,162 +1,162 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import Card, { CardContent, CardHeader, CardTitle } from '@/components/common/Card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import Card, { CardContent } from '@/components/common/Card'
 import Button from '@/components/common/Button'
-import Section, { SectionHeader } from '@/components/ui/Section'
 import { WORKS } from '@/lib/constants'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
+interface Project {
+  id: number
+  title: string
+  category: string
+  description: string
+  longDescription: string
+  imageUrl: string
+  price: string
+  duration: string
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 }
+interface ProjectCardProps {
+  project: Project
+  onClick: () => void
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+  return (
+    <Card className="overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300" onClick={onClick}>
+      <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-6xl text-gray-400">
+            {project.category === 'ホームページ制作' ? '🌐' : '🤖'}
+          </div>
+        </div>
+        <div className="absolute top-4 left-4">
+          <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">
+            {project.category}
+          </span>
+        </div>
+        <div className="absolute bottom-4 right-4">
+          <span className="bg-black text-white text-xs px-2 py-1 rounded">
+            {project.price}
+          </span>
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
+            詳細を見る
+          </span>
+        </div>
+      </div>
+      <CardContent className="p-6">
+        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <p className="text-sm text-gray-500 mb-2">{project.category}</p>
+        <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
+      </CardContent>
+    </Card>
+  )
 }
 
 export default function WorksSection() {
-  return (
-    <Section id="works" background="white" padding="xl">
-      <SectionHeader
-        subtitle="Portfolio"
-        title="My Work"
-        description="過去に手がけたプロジェクトの一部をご紹介します。各プロジェクトでは、クライアントの要求を満たすために最新の技術とクリエイティブなアプローチを組み合わせています。"
-      />
+  const [activeProject, setActiveProject] = useState<Project | null>(null)
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {WORKS.map((work, index) => (
-          <motion.div key={work.id} variants={cardVariants}>
-            <Card variant="elevated" className="h-full group overflow-hidden">
-              {/* Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">
-                    {work.category}
-                  </span>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl text-gray-400">
-                    {work.category === 'Web Development' ? '🌐' : 
-                     work.category === 'Design' ? '🎨' : '📱'}
-                  </div>
-                </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="flex space-x-4">
-                      <a
-                        href={work.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white/20 px-3 py-2 rounded text-sm hover:bg-white/30 transition-colors"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={work.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white/20 px-3 py-2 rounded text-sm hover:bg-white/30 transition-colors"
-                      >
-                        GitHub
-                      </a>
+  return (
+    <section id="portfolio" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-4">Portfolio</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            これまでに制作したホームページとAIプロジェクトの実績をご紹介します。
+            すべて「高額でない、確実な効果」にこだわった案件です。
+          </p>
+        </motion.div>
+
+        <Tabs defaultValue="all" className="mb-12">
+          <TabsList className="mx-auto flex justify-center mb-8">
+            <TabsTrigger value="all" className="rounded-md px-4">すべて</TabsTrigger>
+            <TabsTrigger value="homepage" className="rounded-md px-4">ホームページ制作</TabsTrigger>
+            <TabsTrigger value="ai" className="rounded-md px-4">AI開発</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="all" className="mt-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {WORKS.map(project => (
+                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
+              ))}
+            </motion.div>
+          </TabsContent>
+          
+          <TabsContent value="homepage" className="mt-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {WORKS.filter(p => p.category === "ホームページ制作").map(project => (
+                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
+              ))}
+            </motion.div>
+          </TabsContent>
+          
+          <TabsContent value="ai" className="mt-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {WORKS.filter(p => p.category === "AI開発").map(project => (
+                <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />
+              ))}
+            </motion.div>
+          </TabsContent>
+        </Tabs>
+
+        {/* プロジェクト詳細モーダル */}
+        <Dialog open={!!activeProject} onOpenChange={(open) => !open && setActiveProject(null)}>
+          <DialogContent className="max-w-4xl">
+            {activeProject && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl">{activeProject.title}</DialogTitle>
+                  <DialogDescription className="text-base text-gray-600">
+                    {activeProject.category} • {activeProject.price} • 制作期間: {activeProject.duration}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                  <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 flex items-center justify-center">
+                    <div className="text-8xl text-gray-400">
+                      {activeProject.category === 'ホームページ制作' ? '🌐' : '🤖'}
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <CardHeader>
-                <CardTitle className="group-hover:text-primary transition-colors duration-300">
-                  {work.title}
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent className="flex-1 flex flex-col">
-                <p className="text-gray-600 mb-4 leading-relaxed flex-1 text-sm">
-                  {work.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {work.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-2">
-                  <a
-                    href={work.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button 
-                      variant="outline" 
-                      className="w-full text-xs group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
-                    >
-                      Demo
+                  <p className="text-lg mb-6 leading-relaxed">{activeProject.longDescription}</p>
+                  <div className="flex justify-end space-x-4">
+                    <Button variant="outline" onClick={() => setActiveProject(null)}>
+                      閉じる
                     </Button>
-                  </a>
-                  <a
-                    href={work.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button 
-                      variant="ghost" 
-                      className="w-full text-xs"
-                    >
-                      Code
+                    <Button className="bg-black hover:bg-gray-800 text-white">
+                      お問い合わせ
                     </Button>
-                  </a>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mt-12"
-      >
-        <p className="text-gray-600 mb-6">
-          もっと多くのプロジェクトをご覧になりたい方は、GitHubプロフィールをチェックしてください。
-        </p>
-        <a
-          href="https://github.com/awake"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button size="lg" className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-            View All Projects on GitHub
-          </Button>
-        </a>
-      </motion.div>
-    </Section>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+    </section>
   )
 }

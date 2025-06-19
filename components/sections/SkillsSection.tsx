@@ -5,85 +5,88 @@ import Section, { SectionHeader } from '@/components/ui/Section'
 import Card from '@/components/common/Card'
 import { SKILLS } from '@/lib/constants'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 }
-}
-
 export default function SkillsSection() {
   return (
-    <Section id="skills" background="light" padding="xl">
+    <Section id="skills" background="white" padding="xl">
       <SectionHeader
-        subtitle="Skills"
-        title="What I Do"
-        description="長年の経験を通じて習得した技術スタックです。常に新しい技術を学び、プロジェクトに最適なツールを選択しています。"
+        title="サービス内容"
+        description="弊社が提供できるサービスは以下の2つに特化しています。どちらも「高額でない、確実な効果」を重視したアプローチです。"
       />
 
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto"
       >
         {SKILLS.map((skillCategory, index) => (
-          <motion.div key={index} variants={cardVariants}>
-            <Card variant="elevated" className="h-full text-center">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Card variant="elevated" className="h-full text-center p-8">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white">
-                  {index === 0 ? '🎨' : index === 1 ? '⚙️' : '🛠️'}
+                  {index === 0 ? '🌐' : '🤖'}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {skillCategory.category}
                 </h3>
               </div>
               
               <div className="space-y-3">
                 {skillCategory.items.map((skill, skillIndex) => (
-                  <motion.div
+                  <div
                     key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: index * 0.1 + skillIndex * 0.05 
-                    }}
-                    viewport={{ once: true }}
-                    className="bg-gray-50 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200"
+                    className="bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium text-gray-700"
                   >
                     {skill}
-                  </motion.div>
+                  </div>
                 ))}
               </div>
+
+              {index === 0 && (
+                <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    <strong>制作費：25万円〜60万円</strong><br />
+                    必要な機能に絞り込んで確実な効果を実現
+                  </p>
+                </div>
+              )}
+
+              {index === 1 && (
+                <div className="mt-6 p-4 bg-secondary/10 rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    <strong>2年の経験</strong><br />
+                    高額なプラットフォームを使わず実用的なAIシステムを構築
+                  </p>
+                </div>
+              )}
             </Card>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* Additional Info */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
         className="text-center mt-12"
       >
-        <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          これらの技術を活用して、パフォーマンスが高く、ユーザビリティに優れた
-          ウェブアプリケーションの開発を行っています。
-          プロジェクトの要件に応じて、最適な技術スタックを選択し、
-          品質の高いソリューションを提供します。
-        </p>
+        <div className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg">
+          <h3 className="text-xl font-bold mb-4">なぜこの2つに特化？</h3>
+          <p className="text-gray-600 leading-relaxed">
+            ホームページ制作は確実にお客様の成果につながる分野です。
+            AI開発も2年間しっかりと経験を積み、実用的なシステムを構築できます。
+            それ以外の受託開発は信頼できる別の法人様にお任せすることで、
+            お客様により良いサービスを提供できると考えています。
+          </p>
+        </div>
       </motion.div>
     </Section>
   )
