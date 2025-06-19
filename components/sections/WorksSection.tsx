@@ -122,8 +122,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         )}
         
         {project.result && (
-          <div className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
-            📈 {project.result}
+          <div className="bg-gradient-to-r from-green-100 to-blue-100 border-2 border-green-400 p-3 rounded-xl">
+            <div className="text-xs font-bold text-green-800 mb-1">🧠 ニューロメトリクス結果</div>
+            <div className="text-xs text-green-700 font-medium">
+              📈 {project.result}
+            </div>
           </div>
         )}
       </CardContent>
@@ -152,28 +155,62 @@ export default function WorksSection() {
           </p>
         </motion.div>
 
-        {/* 価格相談についての大きな案内 */}
+        {/* ニューロマーケティング: 価格アンカリング効果と損失回避バイアス */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8 mb-12 text-center"
+          className="bg-gradient-to-br from-red-50 to-orange-100 border-3 border-red-300 rounded-2xl p-8 mb-12 text-center shadow-2xl"
         >
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
-              💡 弊社価格は参考価格です
-            </h3>
-            <p className="text-lg text-blue-800 leading-relaxed">
-              表示されている弊社価格はあくまで参考価格となります。<br />
-              お客様のご要望・ご予算・サイト内容に応じて<span className="font-bold text-xl">柔軟にご相談</span>させていただきます。<br />
-              まずはお気軽にLINEでお問い合わせください。
-            </p>
-            <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                LINEで価格相談する
-              </Button>
-            </a>
+          <div className="max-w-4xl mx-auto">
+            {/* スケアシティ原理: 限定性を演出 */}
+            <div className="bg-red-500 text-white p-4 rounded-xl mb-6 border-2 border-red-400">
+              <h3 className="text-2xl font-bold mb-2">
+                ⚠️ 重要：神経科学ベース価格戦略
+              </h3>
+              <p className="text-lg">
+                他社は<span className="font-bold text-yellow-300">心理的盲点</span>を利用して高額請求。
+                当社は<span className="font-bold text-yellow-300">脳科学的透明性</span>で適正価格を実現。
+              </p>
+            </div>
+            
+            {/* 認知バイアス: 損失回避の原理 */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-red-100 border-2 border-red-400 p-6 rounded-xl">
+                <h4 className="text-xl font-bold text-red-800 mb-3">⚡ 従来の業界</h4>
+                <ul className="text-left text-red-700 space-y-2">
+                  <li>❌ 不透明な高額請求（平均250万円）</li>
+                  <li>❌ 効果測定なし</li>
+                  <li>❌ 神経科学的根拠なし</li>
+                  <li>❌ 認知負荷を無視したデザイン</li>
+                </ul>
+              </div>
+              <div className="bg-green-100 border-2 border-green-400 p-6 rounded-xl">
+                <h4 className="text-xl font-bold text-green-800 mb-3">🧠 Awake Inc.</h4>
+                <ul className="text-left text-green-700 space-y-2">
+                  <li>✅ 科学的根拠による透明価格</li>
+                  <li>✅ ニューロメトリクス測定</li>
+                  <li>✅ 脳科学ベース設計</li>
+                  <li>✅ 認知最適化デザイン</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-yellow-100 border-2 border-yellow-400 p-6 rounded-xl">
+              <p className="text-lg font-bold text-gray-800 mb-4">
+                🧠 神経科学的事実：価格は&ldquo;脳内アンカー&rdquo;で決まります
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed mb-4">
+                表示価格は参考値。お客様の<span className="font-bold text-purple-800">神経反応パターン</span>と
+                <span className="font-bold text-purple-800">認知負荷レベル</span>に応じてカスタマイズします。
+              </p>
+              <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 text-xl font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                  🧬 ニューロ価格診断を受ける
+                </Button>
+              </a>
+            </div>
           </div>
         </motion.div>
 
