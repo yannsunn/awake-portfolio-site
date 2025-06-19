@@ -25,6 +25,16 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const handleNavClick = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.getElementById(href.slice(1))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setIsMenuOpen(false)
+  }
+
   return (
     <header
       className={cn(
@@ -45,15 +55,27 @@ export default function Header() {
           <ul className="flex space-x-6">
             {NAVIGATION_ITEMS.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'text-gray-600 hover:text-black transition-colors cursor-pointer',
-                    pathname === item.href && 'text-black font-medium'
-                  )}
-                >
-                  {item.label}
-                </Link>
+                {item.href.startsWith('#') ? (
+                  <button
+                    onClick={() => handleNavClick(item.href)}
+                    className={cn(
+                      'text-gray-600 hover:text-black transition-colors cursor-pointer',
+                      pathname === item.href && 'text-black font-medium'
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'text-gray-600 hover:text-black transition-colors cursor-pointer',
+                      pathname === item.href && 'text-black font-medium'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -99,17 +121,30 @@ export default function Header() {
           >
             <div className="py-4 space-y-2">
               {NAVIGATION_ITEMS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={cn(
-                    'block px-6 py-2 text-gray-600 hover:text-black transition-colors',
-                    pathname === item.href && 'text-black font-medium'
-                  )}
-                >
-                  {item.label}
-                </Link>
+                item.href.startsWith('#') ? (
+                  <button
+                    key={item.href}
+                    onClick={() => handleNavClick(item.href)}
+                    className={cn(
+                      'block px-6 py-2 text-gray-600 hover:text-black transition-colors text-left w-full',
+                      pathname === item.href && 'text-black font-medium'
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={cn(
+                      'block px-6 py-2 text-gray-600 hover:text-black transition-colors',
+                      pathname === item.href && 'text-black font-medium'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
             </div>
           </motion.nav>

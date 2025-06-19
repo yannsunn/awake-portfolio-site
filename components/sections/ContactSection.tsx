@@ -130,7 +130,7 @@ export default function ContactSection() {
               「適正価格で効果的なホームページが欲しい」<br />
               そんなご要望にAwake Inc.がお応えします。お気軽にご相談ください。
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col gap-6 justify-center items-center">
               <div className="flex flex-col items-center gap-2">
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">

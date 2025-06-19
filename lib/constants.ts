@@ -102,8 +102,8 @@ export const SKILLS: SkillCategory[] = [
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '/', label: 'ホーム' },
   { href: '#portfolio', label: 'ポートフォリオ' },
-  { href: '#about', label: 'について' },
-  { href: '/contact', label: 'お問い合わせ' },
+  { href: '#pricing', label: '料金' },
+  { href: '#contact', label: 'お問い合わせ' },
 ]
 
 export const VALUE_PROPOSITION: ValueProposition = {
