@@ -130,12 +130,21 @@ export default function ContactSection() {
               「適正価格で効果的なホームページが欲しい」<br />
               そんなご要望にAwake Inc.がお応えします。お気軽にご相談ください。
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">
-                  LINEで相談する
-                </Button>
-              </a>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col items-center gap-2">
+                <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">
+                    LINEで相談する
+                  </Button>
+                </a>
+                <div className="bg-white p-2 rounded-lg">
+                  <img 
+                    src="https://qr-official.line.me/gs/M_100usiub_BW.png?oat_content=qr" 
+                    alt="LINE QRコード" 
+                    className="w-20 h-20"
+                  />
+                </div>
+              </div>
               <a href={`mailto:${PROFILE.email}`}>
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-3">
                   メールで直接相談

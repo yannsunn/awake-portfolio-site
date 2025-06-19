@@ -101,7 +101,7 @@ export default function PricingSection() {
                 ))}
               </ul>
               
-              <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer">
+              <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
                 <Button 
                   className={`w-full py-3 ${
                     plan.recommended 
