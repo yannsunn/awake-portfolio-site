@@ -131,7 +131,7 @@ export default function ContactSection() {
               そんなご要望にAwake Inc.がお応えします。お気軽にご相談ください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
+              <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">
                   LINEで相談する
                 </Button>

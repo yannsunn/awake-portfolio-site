@@ -54,7 +54,7 @@ export default function HeroSection() {
                   実績を見る
                 </Button>
               </Link>
-              <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
+              <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
                   variant="outline"

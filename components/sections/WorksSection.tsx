@@ -153,7 +153,7 @@ export default function WorksSection() {
               お客様のご要望・ご予算・サイト内容に応じて<span className="font-bold text-xl">柔軟にご相談</span>させていただきます。<br />
               まずはお気軽にLINEでお問い合わせください。
             </p>
-            <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
+            <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
                 LINEで価格相談する
               </Button>
@@ -259,7 +259,7 @@ export default function WorksSection() {
                     <Button variant="outline" onClick={() => setActiveProject(null)}>
                       閉じる
                     </Button>
-                    <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
+                    <a href="https://lin.ee/1bcTOVj" target="_blank" rel="noopener noreferrer">
                       <Button className="bg-gray-800 hover:bg-gray-700 text-white">
                         LINEで相談する
                       </Button>
