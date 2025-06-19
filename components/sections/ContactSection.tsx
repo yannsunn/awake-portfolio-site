@@ -99,19 +99,15 @@ export default function ContactSection() {
                 <h4 className="text-lg font-semibold mb-4">お見積りについて</h4>
                 <div className="bg-gray-50 p-6 rounded-lg space-y-3">
                   <div className="flex justify-between">
-                    <span>簡易的な自己紹介ホームページ</span>
+                    <span>スターター（1ページ）</span>
                     <span className="font-medium">13万2000円〜</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>シンプルなコーポレートサイト</span>
+                    <span>ベーシック（10ページまで）</span>
                     <span className="font-medium">29万8000円〜</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>機能付きビジネスサイト</span>
-                    <span className="font-medium">39万8000円〜</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>ECサイト（簡易版）</span>
+                    <span>プレミアム（ECサイト）</span>
                     <span className="font-medium">69万8000円〜</span>
                   </div>
                   <div className="flex justify-between">
@@ -143,13 +139,13 @@ export default function ContactSection() {
               そんなご要望にAwake Inc.がお応えします。お気軽にご相談ください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3">
-                  詳細なお問い合わせフォーム
+                  LINEで相談する
                 </Button>
-              </Link>
+              </a>
               <a href={`mailto:${PROFILE.email}`}>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-3">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-3">
                   メールで直接相談
                 </Button>
               </a>

@@ -12,7 +12,7 @@ const PRICING_PLANS = [
     price: "13万2000円",
     description: "個人事業主・フリーランス向け",
     features: [
-      "5ページまで",
+      "1ページ",
       "レスポンシブ対応",
       "基本的なSEO対策",
       "お問い合わせフォーム",
@@ -31,21 +31,6 @@ const PRICING_PLANS = [
       "高度なSEO対策",
       "アクセス解析設置",
       "納期：2-3週間"
-    ],
-    recommended: false,
-    color: "border-gray-200"
-  },
-  {
-    name: "スタンダード",
-    price: "39万8000円",
-    description: "機能付きビジネスサイト",
-    features: [
-      "15ページまで",
-      "予約・問い合わせ機能",
-      "CMS（更新システム）",
-      "高度なSEO対策",
-      "アクセス解析設置",
-      "納期：3-4週間"
     ],
     recommended: true,
     color: "border-gray-800 ring-2 ring-gray-800"
@@ -79,7 +64,7 @@ export default function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
       >
         {PRICING_PLANS.map((plan, index) => (
           <motion.div
@@ -93,7 +78,7 @@ export default function PricingSection() {
             {plan.recommended && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-gray-800 text-white px-4 py-1 text-sm font-medium rounded-full">
-                  おすすめ
+                  一番人気
                 </span>
               </div>
             )}
@@ -116,7 +101,7 @@ export default function PricingSection() {
                 ))}
               </ul>
               
-              <Link href="#contact">
+              <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
                 <Button 
                   className={`w-full py-3 ${
                     plan.recommended 
@@ -124,9 +109,9 @@ export default function PricingSection() {
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
                   }`}
                 >
-                  相談する
+                  LINEで相談する
                 </Button>
-              </Link>
+              </a>
             </Card>
           </motion.div>
         ))}

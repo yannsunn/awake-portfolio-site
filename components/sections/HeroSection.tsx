@@ -39,15 +39,15 @@ export default function HeroSection() {
                   実績を見る
                 </Button>
               </Link>
-              <Link href="#contact">
+              <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
                   variant="outline"
                   className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg rounded-lg"
                 >
-                  無料相談する
+                  LINEで無料相談
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           </div>
         </motion.div>

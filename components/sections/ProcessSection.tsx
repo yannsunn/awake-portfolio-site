@@ -107,7 +107,7 @@ export default function ProcessSection() {
         >
           <div className="bg-gray-800 rounded-lg p-8 text-white">
             <h3 className="text-2xl font-bold mb-6">制作期間の目安</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/10 p-4 rounded-lg">
                 <div className="text-lg font-bold mb-2">スターター</div>
                 <div className="text-2xl font-bold">1-2週間</div>
@@ -117,11 +117,6 @@ export default function ProcessSection() {
                 <div className="text-lg font-bold mb-2">ベーシック</div>
                 <div className="text-2xl font-bold">2-3週間</div>
                 <div className="text-sm opacity-90">29万8000円</div>
-              </div>
-              <div className="bg-white/10 p-4 rounded-lg">
-                <div className="text-lg font-bold mb-2">スタンダード</div>
-                <div className="text-2xl font-bold">3-4週間</div>
-                <div className="text-sm opacity-90">39万8000円</div>
               </div>
               <div className="bg-white/10 p-4 rounded-lg">
                 <div className="text-lg font-bold mb-2">プレミアム</div>
