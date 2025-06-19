@@ -2,13 +2,28 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import Button from '@/components/common/Button'
 import { PROFILE, VALUE_PROPOSITION } from '@/lib/constants'
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[500px] flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-6 text-center">
+    <section className="relative h-[500px] flex items-center justify-center bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      {/* 背景画像 */}
+      <div className="absolute inset-0 opacity-15">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="ビジネスミーティングの様子"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+      
+      {/* オーバーレイ */}
+      <div className="absolute inset-0 bg-white/50"></div>
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

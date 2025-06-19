@@ -84,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               <span className="text-red-600 line-through">{project.marketPrice}</span>
             </div>
             <div className="flex justify-between text-sm font-bold">
-              <span className="text-green-600">弊社価格:</span>
+              <span className="text-green-600">弊社参考価格:</span>
               <span className="text-green-600">{project.price}</span>
             </div>
           </div>
@@ -134,6 +134,31 @@ export default function WorksSection() {
             これまでに制作したホームページの実績をご紹介します。
             すべて「適正価格で確実な効果」にこだわった案件です。
           </p>
+        </motion.div>
+
+        {/* 価格相談についての大きな案内 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8 mb-12 text-center"
+        >
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-blue-900 mb-4">
+              💡 弊社価格は参考価格です
+            </h3>
+            <p className="text-lg text-blue-800 leading-relaxed">
+              表示されている弊社価格はあくまで参考価格となります。<br />
+              お客様のご要望・ご予算・サイト内容に応じて<span className="font-bold text-xl">柔軟にご相談</span>させていただきます。<br />
+              まずはお気軽にLINEでお問い合わせください。
+            </p>
+            <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                LINEで価格相談する
+              </Button>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
@@ -189,8 +214,11 @@ export default function WorksSection() {
                         <span className="text-red-600 line-through text-lg">{activeProject.marketPrice}</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-green-600 font-semibold">弊社価格:</span>
+                        <span className="text-green-600 font-semibold">弊社参考価格:</span>
                         <span className="text-green-600 font-bold text-xl">{activeProject.price}</span>
+                      </div>
+                      <div className="text-sm text-gray-600 mt-2 text-center">
+                        ※内容によってご相談可能です
                       </div>
                     </div>
                   )}
