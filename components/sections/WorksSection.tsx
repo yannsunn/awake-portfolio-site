@@ -34,8 +34,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     <div className="cursor-pointer" onClick={onClick}>
       <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
       <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+        {/* 実際のサイト画像を表示（将来的に追加） */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-6xl text-gray-400">
+          <img 
+            src={project.imageUrl} 
+            alt={project.title}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // 画像が見つからない場合のフォールバック
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div className="text-6xl text-gray-400" style={{ display: 'none' }}>
             {project.category === 'ホームページ制作' ? '🌐' : '🤖'}
           </div>
         </div>
@@ -49,10 +62,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             {project.price}
           </span>
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-          <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
-            詳細を見る
-          </span>
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+          <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-center">
+            <div className="mb-3 text-lg">詳細を見る</div>
+            {project.url && (
+              <div className="text-sm border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-200 cursor-pointer"
+                   onClick={(e) => {
+                     e.stopPropagation();
+                     window.open(project.url, '_blank');
+                   }}>
+                🔗 サイトを見る
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <CardContent className="p-6">
@@ -202,8 +224,29 @@ export default function WorksSection() {
                   </div>
                 </DialogHeader>
                 <div className="mt-4">
-                  <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 flex items-center justify-center">
-                    <div className="text-8xl text-gray-400">🌐</div>
+                  <div 
+                    className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 flex items-center justify-center cursor-pointer relative overflow-hidden group"
+                    onClick={() => activeProject.url && window.open(activeProject.url, '_blank')}
+                  >
+                    <img 
+                      src={activeProject.imageUrl} 
+                      alt={activeProject.title}
+                      className="w-full h-full object-cover rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="text-8xl text-gray-400 absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>🌐</div>
+                    {activeProject.url && (
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
+                          🔗 サイトを見る
+                        </span>
+                      </div>
+                    )}
                   </div>
                   
                   {activeProject.marketPrice && (
