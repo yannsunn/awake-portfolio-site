@@ -110,17 +110,17 @@ export default function ProcessSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/10 p-4 rounded-lg">
                 <div className="text-lg font-bold mb-2">スターター</div>
-                <div className="text-2xl font-bold">1-2週間</div>
+                <div className="text-2xl font-bold">1週間</div>
                 <div className="text-sm opacity-90">13万2000円</div>
               </div>
               <div className="bg-white/10 p-4 rounded-lg">
                 <div className="text-lg font-bold mb-2">ベーシック</div>
-                <div className="text-2xl font-bold">2-3週間</div>
+                <div className="text-2xl font-bold">2週間</div>
                 <div className="text-sm opacity-90">29万8000円</div>
               </div>
               <div className="bg-white/10 p-4 rounded-lg">
                 <div className="text-lg font-bold mb-2">プレミアム</div>
-                <div className="text-2xl font-bold">1-2ヶ月</div>
+                <div className="text-2xl font-bold">1ヶ月</div>
                 <div className="text-sm opacity-90">69万8000円〜</div>
               </div>
             </div>

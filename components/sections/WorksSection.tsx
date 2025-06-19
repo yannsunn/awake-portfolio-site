@@ -14,10 +14,14 @@ interface Project {
   description: string
   longDescription: string
   imageUrl: string
+  url?: string
+  pages?: string
+  marketPrice?: string
   price: string
   duration: string
   features?: string[]
   result?: string
+  breakdown?: string
 }
 
 interface ProjectCardProps {
@@ -52,9 +56,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         </div>
       </div>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl font-semibold">{project.title}</h3>
+          {project.url && (
+            <a 
+              href={project.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-700 text-sm"
+              onClick={(e) => e.stopPropagation()}
+            >
+              🔗
+            </a>
+          )}
+        </div>
+        
         <p className="text-sm text-gray-500 mb-2">{project.category} | {project.duration}</p>
+        {project.pages && (
+          <p className="text-xs text-gray-400 mb-2">{project.pages}</p>
+        )}
         <p className="text-sm text-gray-600 leading-relaxed mb-3">{project.description}</p>
+        
+        {project.marketPrice && (
+          <div className="mb-3 p-2 bg-red-50 border border-red-200 rounded">
+            <div className="flex justify-between text-xs">
+              <span className="text-red-600">他社相場:</span>
+              <span className="text-red-600 line-through">{project.marketPrice}</span>
+            </div>
+            <div className="flex justify-between text-sm font-bold">
+              <span className="text-green-600">弊社価格:</span>
+              <span className="text-green-600">{project.price}</span>
+            </div>
+          </div>
+        )}
         
         {project.features && (
           <div className="mb-3">
@@ -120,25 +154,88 @@ export default function WorksSection() {
             {activeProject && (
               <>
                 <DialogHeader>
-                  <DialogTitle className="text-2xl">{activeProject.title}</DialogTitle>
-                  <DialogDescription className="text-base text-gray-600">
-                    {activeProject.category} • {activeProject.price} • 制作期間: {activeProject.duration}
-                  </DialogDescription>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <DialogTitle className="text-2xl">{activeProject.title}</DialogTitle>
+                      <DialogDescription className="text-base text-gray-600">
+                        {activeProject.category} • 制作期間: {activeProject.duration}
+                      </DialogDescription>
+                      {activeProject.pages && (
+                        <p className="text-sm text-gray-500 mt-1">{activeProject.pages}</p>
+                      )}
+                    </div>
+                    {activeProject.url && (
+                      <a 
+                        href={activeProject.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-700 flex items-center gap-1"
+                      >
+                        🔗 サイトを見る
+                      </a>
+                    )}
+                  </div>
                 </DialogHeader>
                 <div className="mt-4">
                   <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 flex items-center justify-center">
-                    <div className="text-8xl text-gray-400">
-                      {activeProject.category === 'ホームページ制作' ? '🌐' : '🤖'}
-                    </div>
+                    <div className="text-8xl text-gray-400">🌐</div>
                   </div>
+                  
+                  {activeProject.marketPrice && (
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-2">価格比較</h3>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-red-600">他社相場:</span>
+                        <span className="text-red-600 line-through text-lg">{activeProject.marketPrice}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-green-600 font-semibold">弊社価格:</span>
+                        <span className="text-green-600 font-bold text-xl">{activeProject.price}</span>
+                      </div>
+                    </div>
+                  )}
+                  
                   <p className="text-lg mb-6 leading-relaxed">{activeProject.longDescription}</p>
+                  
+                  {activeProject.features && (
+                    <div className="mb-6">
+                      <h3 className="font-semibold mb-2">主要機能</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {activeProject.features.map((feature, index) => (
+                          <span 
+                            key={index}
+                            className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {activeProject.breakdown && (
+                    <div className="mb-6">
+                      <h3 className="font-semibold mb-2">制作内訳</h3>
+                      <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">{activeProject.breakdown}</p>
+                    </div>
+                  )}
+                  
+                  {activeProject.result && (
+                    <div className="mb-6">
+                      <h3 className="font-semibold mb-2">実績・効果</h3>
+                      <p className="text-green-600 font-medium">📈 {activeProject.result}</p>
+                    </div>
+                  )}
+                  
                   <div className="flex justify-end space-x-4">
                     <Button variant="outline" onClick={() => setActiveProject(null)}>
                       閉じる
                     </Button>
-                    <Button className="bg-black hover:bg-gray-800 text-white">
-                      お問い合わせ
-                    </Button>
+                    <a href="https://manager.line.biz/account/@100usiub/setting?target=account-name" target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-gray-800 hover:bg-gray-700 text-white">
+                        LINEで相談する
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </>

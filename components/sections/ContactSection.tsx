@@ -110,14 +110,6 @@ export default function ContactSection() {
                     <span>プレミアム（ECサイト）</span>
                     <span className="font-medium">69万8000円〜</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>AIチャットボット</span>
-                    <span className="font-medium">39万8000円〜</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>その他受託開発</span>
-                    <span className="font-medium">要相談</span>
-                  </div>
                 </div>
               </div>
             </div>
