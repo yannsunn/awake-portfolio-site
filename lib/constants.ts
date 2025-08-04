@@ -96,7 +96,7 @@ export const WORKS: Project[] = [
     category: "ホームページ制作",
     description: "シンプルで効果的なランディングページ。コンバージョン重視の設計。",
     longDescription: "商品・サービスの魅力を的確に伝えるランディングページ。ヒーローセクション、特徴紹介、お客様の声、CTAボタンを戦略的に配置し、訪問者を確実にコンバージョンへ導きます。A/Bテスト対応で継続的な改善が可能。",
-    imageUrl: "/images/screenshots/landing-page-hero.svg",
+    imageUrl: "/images/screenshots/landing-page-screenshot.png",
     url: "https://fanciful-kringle-cce8bb.netlify.app/",
     pages: "1ページ",
     marketPrice: "25〜40万円",
