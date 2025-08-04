@@ -19,12 +19,12 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
   return (
     <motion.div 
-      className="cursor-pointer" 
+      className="cursor-pointer group" 
       onClick={onClick}
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -12, scale: 1.02 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 h-full border-0 bg-white">
+      <div className="card-premium overflow-hidden h-full group-hover:premium-shadow-lg">
       <div className="relative overflow-hidden aspect-[16/10]">
         <div className="absolute inset-0">
           <Image
@@ -40,24 +40,33 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           />
         </div>
         <div className="absolute top-4 right-4">
-          <span className="bg-black/90 backdrop-blur text-white text-sm px-4 py-2 rounded-full font-medium tabular-nums">
+          <motion.span 
+            className="premium-gradient text-white text-sm px-4 py-2 rounded-full font-bold tabular-nums shadow-lg"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             {project.price}
-          </span>
+          </motion.span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-between p-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-between p-6">
           <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             <h3 className="text-xl font-bold mb-1">{project.title}</h3>
             <p className="text-sm opacity-90">詳細を見る →</p>
           </div>
           {project.url && (
-            <button
-              className="bg-white/20 backdrop-blur border border-white/30 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-200 transform translate-y-4 group-hover:translate-y-0"
+            <motion.button
+              className="glass-effect text-white px-6 py-3 rounded-xl font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(project.url, '_blank');
-              }}>
-              <span className="text-sm font-medium">サイトを見る</span>
-            </button>
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="mr-2">🚀</span>
+              サイトを見る
+            </motion.button>
           )}
         </div>
       </div>
@@ -97,12 +106,16 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           <div className="mb-4">
             <div className="flex flex-wrap gap-2">
               {project.features.slice(0, 3).map((feature, index) => (
-                <span 
+                <motion.span 
                   key={index}
-                  className="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded-lg font-bold"
+                  className="premium-gradient text-white text-sm px-4 py-2 rounded-full font-bold shadow-lg"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
                 >
                   {feature}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>
@@ -118,8 +131,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </div>
         )}
-      </CardContent>
-      </Card>
+      </div>
+      </div>
     </motion.div>
   )
 })
