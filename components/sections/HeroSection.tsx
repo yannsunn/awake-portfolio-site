@@ -9,19 +9,19 @@ import { PROFILE, VALUE_PROPOSITION } from '@/lib/constants'
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* メッシュグラデーション背景 */}
-      <div className="absolute inset-0 mesh-gradient opacity-60" />
+      {/* 背景画像 */}
+      <div 
+        className="absolute inset-0 opacity-50"
+        style={{ 
+          backgroundImage: 'url(/images/hero-bg-small.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
       
-      {/* 動的パーティクル */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-white rounded-full floating-animation opacity-60" style={{animationDelay: '0s'}} />
-        <div className="absolute top-40 right-32 w-1 h-1 bg-purple-300 rounded-full floating-animation opacity-80" style={{animationDelay: '1s'}} />
-        <div className="absolute bottom-32 left-40 w-3 h-3 bg-blue-300 rounded-full floating-animation opacity-50" style={{animationDelay: '2s'}} />
-        <div className="absolute top-60 right-20 w-1.5 h-1.5 bg-indigo-300 rounded-full floating-animation opacity-70" style={{animationDelay: '3s'}} />
-      </div>
-      
-      {/* グラスモルフィズムオーバーレイ */}
-      <div className="absolute inset-0 glass-effect" />
+      {/* オーバーレイ */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/30 to-white/50" />
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
