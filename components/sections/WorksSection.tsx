@@ -79,15 +79,15 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         </div>
         
         {project.marketPrice && (
-          <div className="mb-4 p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+          <div className="mb-4 p-4 bg-white border-2 border-gray-200 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-xs text-gray-500 mb-1">他社相場</p>
-                <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
+                <p className="text-xs text-gray-600 mb-1 font-medium">他社相場</p>
+                <p className="text-sm text-gray-500 line-through tabular-nums font-medium">{project.marketPrice}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-gray-700 mb-1 font-medium">弊社参考価格</p>
-                <p className="text-lg font-bold text-gray-900 tabular-nums">{project.price}</p>
+                <p className="text-xs text-gray-900 mb-1 font-bold">弊社参考価格</p>
+                <p className="text-xl font-black text-gray-900 tabular-nums">{project.price}</p>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
               {project.features.slice(0, 3).map((feature, index) => (
                 <span 
                   key={index}
-                  className="inline-block bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full font-medium"
+                  className="inline-block bg-gray-900 text-white text-xs px-3 py-2 rounded-lg font-bold"
                 >
                   {feature}
                 </span>
@@ -109,8 +109,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         )}
         
         {project.result && (
-          <div className="text-sm text-gray-700 font-medium border-t pt-4">
-            <span className="text-green-600">→</span> {project.result}
+          <div className="text-sm font-medium border-t border-gray-200 pt-4">
+            <span className="text-green-600 font-bold">✓</span> <span className="text-gray-900">{project.result}</span>
           </div>
         )}
       </CardContent>

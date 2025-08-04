@@ -106,39 +106,39 @@ export default function ContactSection() {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">連絡先情報</h3>
               <div className="space-y-6">
                 <motion.div 
-                  className="flex items-center p-4 bg-gray-50 rounded-xl"
+                  className="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-200"
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
                     <span className="text-lg">✉️</span>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">メール</p>
-                    <p className="font-medium text-gray-900">{PROFILE.email}</p>
+                    <p className="text-sm text-gray-600 mb-1 font-semibold">メール</p>
+                    <p className="font-bold text-gray-900">{PROFILE.email}</p>
                   </div>
                 </motion.div>
                 <motion.div 
-                  className="flex items-center p-4 bg-gray-50 rounded-xl"
+                  className="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-200"
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
                     <span className="text-lg">📞</span>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">電話</p>
-                    <p className="font-medium text-gray-900">{PROFILE.phone}</p>
+                    <p className="text-sm text-gray-600 mb-1 font-semibold">電話</p>
+                    <p className="font-bold text-gray-900">{PROFILE.phone}</p>
                   </div>
                 </motion.div>
                 <motion.div 
-                  className="flex items-center p-4 bg-gray-50 rounded-xl"
+                  className="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-200"
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
                     <span className="text-lg">📍</span>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">所在地</p>
-                    <p className="font-medium text-gray-900 text-sm leading-relaxed">{PROFILE.address}</p>
+                    <p className="text-sm text-gray-600 mb-1 font-semibold">所在地</p>
+                    <p className="font-bold text-gray-900 text-sm leading-relaxed">{PROFILE.address}</p>
                   </div>
                 </motion.div>
               </div>

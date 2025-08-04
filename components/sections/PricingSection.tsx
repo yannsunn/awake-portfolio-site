@@ -104,17 +104,14 @@ export default function PricingSection() {
                 </span>
               </motion.div>
             )}
-            <div className={`relative h-full overflow-hidden rounded-2xl ${plan.recommended ? 'transform scale-105' : ''}`}>
-              {/* 背景グラデーション */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} ${plan.recommended ? 'opacity-100' : 'opacity-50'}`} />
-              
+            <div className={`relative h-full overflow-hidden rounded-2xl border-2 ${plan.recommended ? 'border-gray-900 bg-gray-900 transform scale-105' : 'border-gray-200 bg-white'} shadow-lg`}>
               {/* コンテンツ */}
               <div className="relative p-8 text-center h-full flex flex-col">
                 <div className="mb-6">
                   <h3 className={`text-2xl font-bold mb-3 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm ${plan.recommended ? 'text-gray-200' : 'text-gray-600'}`}>
+                  <p className={`text-sm ${plan.recommended ? 'text-gray-300' : 'text-gray-600'}`}>
                     {plan.description}
                   </p>
                 </div>
@@ -123,7 +120,7 @@ export default function PricingSection() {
                   <div className={`text-5xl font-black mb-2 tabular-nums ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                     ¥{plan.price.toLocaleString()}
                   </div>
-                  <p className={`text-sm ${plan.recommended ? 'text-gray-300' : 'text-gray-500'}`}>
+                  <p className={`text-sm ${plan.recommended ? 'text-gray-400' : 'text-gray-500'}`}>
                     {plan.originalPrice}
                   </p>
                 </div>
@@ -137,12 +134,10 @@ export default function PricingSection() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 * featureIndex }}
                     >
-                      <div className={`w-5 h-5 rounded-full mr-4 flex items-center justify-center ${
-                        plan.recommended ? 'bg-white/20' : 'bg-gray-200'
+                      <div className={`w-6 h-6 rounded-full mr-4 flex items-center justify-center ${
+                        plan.recommended ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'
                       }`}>
-                        <span className={`text-xs font-bold ${
-                          plan.recommended ? 'text-white' : 'text-gray-700'
-                        }`}>✓</span>
+                        <span className="text-xs font-bold">✓</span>
                       </div>
                       <span className={`text-sm font-medium ${
                         plan.recommended ? 'text-white' : 'text-gray-700'
@@ -157,8 +152,8 @@ export default function PricingSection() {
                   <Button 
                     className={`w-full py-4 font-bold text-lg transition-all duration-300 ${
                       plan.recommended 
-                        ? 'bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl' 
-                        : 'btn-primary'
+                        ? 'bg-white text-gray-900 hover:bg-gray-200 border-0' 
+                        : 'bg-gray-900 text-white hover:bg-gray-800 border-0'
                     }`}
                   >
                     <span className="mr-2">💬</span>
