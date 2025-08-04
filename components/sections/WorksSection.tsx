@@ -64,7 +64,6 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="mr-2">🚀</span>
               サイトを見る
             </motion.button>
           )}
@@ -157,50 +156,6 @@ export default function WorksSection() {
           </p>
         </motion.div>
 
-        {/* 価格相談についての大きな案内 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 mb-16 text-center"
-        >
-          {/* 背景パターン */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" 
-              style={{
-                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
-                backgroundSize: '30px 30px'
-              }}
-            />
-          </div>
-          
-          <div className="relative max-w-3xl mx-auto">
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block mb-4"
-            >
-              <span className="text-4xl">💡</span>
-            </motion.div>
-            
-            <h3 className="text-3xl font-bold text-white mb-6">
-              弊社価格は参考価格です
-            </h3>
-            <p className="text-lg text-gray-200 leading-relaxed mb-8">
-              表示されている価格はあくまで参考価格となります。<br />
-              お客様のご要望・ご予算・サイト内容に応じて<br />
-              <span className="text-2xl font-bold text-white">柔軟にご相談</span>させていただきます。
-            </p>
-            <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="inline-block">
-              <Button className="btn-primary bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 text-lg font-bold">
-                <span className="mr-2">💬</span>
-                LINEで価格相談する
-              </Button>
-            </a>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -314,7 +269,7 @@ export default function WorksSection() {
                   {activeProject.result && (
                     <div className="mb-6">
                       <h3 className="font-semibold mb-2">実績・効果</h3>
-                      <p className="text-green-600 font-medium">📈 {activeProject.result}</p>
+                      <p className="text-green-600 font-medium">{activeProject.result}</p>
                     </div>
                   )}
                   
@@ -324,7 +279,6 @@ export default function WorksSection() {
                     </Button>
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
                       <Button className="btn-primary">
-                        <span className="mr-2">💬</span>
                         LINEで相談する
                       </Button>
                     </a>

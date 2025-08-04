@@ -34,7 +34,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="bg-gray-50 p-8 rounded-lg"
             >
-              <div className="text-4xl mb-4">📊</div>
+              
               <h3 className="text-xl font-bold mb-3 text-gray-800">費用対効果の最大化</h3>
               <p className="text-gray-600">必要な機能に絞り込み、13.2万円〜の適正価格を実現</p>
             </motion.div>
@@ -46,7 +46,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="bg-gray-50 p-8 rounded-lg"
             >
-              <div className="text-4xl mb-4">🎯</div>
+              
               <h3 className="text-xl font-bold mb-3 text-gray-800">確実な成果</h3>
               <p className="text-gray-600">SEO対策・レスポンシブ対応を標準装備し、集客に直結</p>
             </motion.div>
@@ -58,7 +58,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="bg-gray-50 p-8 rounded-lg"
             >
-              <div className="text-4xl mb-4">⚡</div>
+              
               <h3 className="text-xl font-bold mb-3 text-gray-800">スピード納品</h3>
               <p className="text-gray-600">シンプルな構成により、最短1週間で公開可能</p>
             </motion.div>
@@ -70,7 +70,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="bg-gray-50 p-8 rounded-lg"
             >
-              <div className="text-4xl mb-4">🔧</div>
+              
               <h3 className="text-xl font-bold mb-3 text-gray-800">継続的なサポート</h3>
               <p className="text-gray-600">公開後の更新・改善も柔軟に対応</p>
             </motion.div>

@@ -86,7 +86,6 @@ export default function ContactSection() {
                   />
                 </div>
                 <Button className="btn-primary w-full py-4 text-lg font-bold">
-                  <span className="mr-2">✉️</span>
                   送信する
                 </Button>
               </form>
@@ -110,7 +109,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
-                    <span className="text-lg">✉️</span>
+                    
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1 font-semibold">メール</p>
@@ -122,7 +121,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
-                    <span className="text-lg">📞</span>
+                    
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1 font-semibold">電話</p>
@@ -134,7 +133,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white mr-4">
-                    <span className="text-lg">📍</span>
+                    
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1 font-semibold">所在地</p>
@@ -144,36 +143,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* 料金情報 */}
-            <div className="card-primary">
-              <h4 className="text-2xl font-black mb-6 text-primary">お見積り参考価格</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-4 card-secondary">
-                  <div>
-                    <p className="text-primary text-lg">スターター</p>
-                    <p className="text-muted">１ページ</p>
-                  </div>
-                  <p className="price-display">¥132,000〜</p>
-                </div>
-                <div className="flex justify-between items-center p-4 card-secondary">
-                  <div>
-                    <p className="text-primary text-lg">ベーシック</p>
-                    <p className="text-muted">１０ページまで</p>
-                  </div>
-                  <p className="price-display">¥298,000〜</p>
-                </div>
-                <div className="flex justify-between items-center p-4 card-secondary">
-                  <div>
-                    <p className="text-primary text-lg">プレミアム</p>
-                    <p className="text-muted">ECサイト</p>
-                  </div>
-                  <p className="price-display">¥698,000〜</p>
-                </div>
-              </div>
-              <p className="text-muted mt-6 text-center font-semibold">
-                ※ あくまで参考価格です。詳細はお気軽にご相談ください。
-              </p>
-            </div>
           </motion.div>
         </div>
 
@@ -203,7 +172,7 @@ export default function ContactSection() {
                 transition={{ duration: 0.5 }}
                 className="inline-block mb-6"
               >
-                <span className="text-6xl">🚀</span>
+                
               </motion.div>
               
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">まずは無料相談から</h3>
@@ -220,13 +189,13 @@ export default function ContactSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button className="w-full sm:w-auto btn-primary bg-white text-gray-900 hover:bg-gray-100 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px]">
-                    <span className="mr-2">💬</span>
+                    
                     LINEで相談する
                   </Button>
                 </a>
                 <a href={`mailto:${PROFILE.email}`} className="w-full sm:w-auto">
                   <Button className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px] transition-all duration-300">
-                    <span className="mr-2">✉️</span>
+                    
                     メールで相談
                   </Button>
                 </a>

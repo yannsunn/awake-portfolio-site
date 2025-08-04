@@ -10,42 +10,42 @@ const PROCESS_STEPS = [
     title: "ヒアリング",
     description: "お客様のご要望やご予算を詳しくお聞かせください。",
     details: "無料相談で事業内容、目標、ご予算を丁寧にヒアリング",
-    icon: "💬"
+    icon: ""
   },
   {
     step: "02", 
     title: "提案・見積もり",
     description: "最適なプランをご提案し、明確な見積もりをお出しします。",
     details: "3営業日以内に詳細な提案書と正式見積もりを提出",
-    icon: "📋"
+    icon: ""
   },
   {
     step: "03",
     title: "デザイン制作",
     description: "お客様のブランドに合わせたデザインを制作します。",
     details: "デザイン案を2-3パターン作成し、お客様と詳細を調整",
-    icon: "🎨"
+    icon: ""
   },
   {
     step: "04",
     title: "開発・実装",
     description: "レスポンシブ対応とSEO対策を施して実装します。",
     details: "コーディング・機能実装・テスト・最適化を並行実施",
-    icon: "⚙️"
+    icon: ""
   },
   {
     step: "05",
     title: "公開・納品",
     description: "本番環境での動作確認後、正式に公開します。",
     details: "最終チェック・お客様確認・本番公開・操作説明",
-    icon: "🚀"
+    icon: ""
   },
   {
     step: "06",
     title: "アフターサポート",
     description: "公開後の更新や改善もしっかりサポートします。",
     details: "運用サポート・更新作業・改善提案を継続的に提供",
-    icon: "🔧"
+    icon: ""
   }
 ]
 
@@ -82,7 +82,7 @@ export default function ProcessSection() {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">{step.icon}</div>
+                  {step.icon && <div className="text-4xl mb-4">{step.icon}</div>}
                   <div className="inline-block bg-gray-800 text-white text-sm font-bold px-3 py-1 rounded-full mb-4">
                     STEP {step.step}
                   </div>

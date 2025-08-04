@@ -80,7 +80,7 @@ export default function PricingSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block mb-6"
             >
-              <span className="text-5xl">💎</span>
+              
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-gradient-premium">料金プラン</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -201,7 +201,6 @@ export default function PricingSection() {
                         }`}
                       >
                         <span className="relative z-10 flex items-center justify-center">
-                          <span className="mr-3 text-xl">💬</span>
                           LINEで相談する
                         </span>
                         {!plan.recommended && (
@@ -249,7 +248,7 @@ export default function PricingSection() {
                 transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
                 className="inline-block mb-8"
               >
-                <span className="text-6xl filter drop-shadow-lg">⚡</span>
+                
               </motion.div>
               
               <h3 className="text-3xl md:text-4xl font-bold mb-12 text-white">その他のサービス</h3>
@@ -263,7 +262,7 @@ export default function PricingSection() {
                   <div className="flex justify-between items-center">
                     <div className="text-left">
                       <h4 className="font-bold text-white text-xl mb-2 group-hover:text-purple-200 transition-colors">
-                        <span className="mr-3">🤖</span>AIチャットボット
+                        AIチャットボット
                       </h4>
                       <p className="text-gray-300 text-base">自動対応システム</p>
                     </div>
@@ -282,7 +281,7 @@ export default function PricingSection() {
                   <div className="flex justify-between items-center">
                     <div className="text-left">
                       <h4 className="font-bold text-white text-xl mb-2 group-hover:text-blue-200 transition-colors">
-                        <span className="mr-3">⚙️</span>受託開発
+                        受託開発
                       </h4>
                       <p className="text-gray-300 text-base">カスタムシステム</p>
                     </div>
@@ -300,7 +299,6 @@ export default function PricingSection() {
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
                   <button className="bg-white text-gray-900 hover:bg-gray-100 px-12 py-5 text-xl font-bold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group">
                     <span className="relative z-10 flex items-center justify-center">
-                      <span className="mr-3 text-2xl">💬</span>
                       詳しく相談する
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

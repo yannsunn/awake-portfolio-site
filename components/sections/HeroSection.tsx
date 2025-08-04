@@ -75,7 +75,6 @@ export default function HeroSection() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="mr-3">🎆</span>
                   実績を見る
                 </motion.button>
               </Link>
@@ -86,7 +85,6 @@ export default function HeroSection() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="mr-3">💬</span>
                   LINEで無料相談
                 </motion.button>
               </a>
