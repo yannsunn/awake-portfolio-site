@@ -206,12 +206,12 @@ export default function ContactSection() {
                 <span className="text-6xl">🚀</span>
               </motion.div>
               
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">まずは無料相談から</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">まずは無料相談から</h3>
               <div className="max-w-3xl mx-auto mb-10">
-                <p className="text-xl mb-4 leading-relaxed">
+                <p className="text-xl mb-4 leading-relaxed text-white">
                   「適正価格で効果的なホームページが欲しい」
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   そんなご要望にAwake Inc.がお応えします。<br />
                   お気軽にご相談ください。
                 </p>
