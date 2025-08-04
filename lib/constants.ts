@@ -48,7 +48,7 @@ export const WORKS: Project[] = [
     category: "ホームページ制作",
     description: "金属加工業向け。製品ギャラリー・実績訴求に特化したデザイン。",
     longDescription: "Vintage Iron Works様向けの製造業特化LP。ヒーロー・実績・CTA構成のランディングページ、Lightbox+モーダル付き製品ギャラリー、会社概要、簡易お問い合わせフォームを4ページ構成で実装。画像最適化とLazy-loadで高速表示を実現。",
-    imageUrl: "/images/screenshots/manufacturing-hero.svg",
+    imageUrl: "/images/screenshots/manufacturing-lp-screenshot.png",
     url: "https://vintage-iron-works-example.awakeinc.co.jp/",
     pages: "約4ページ（LP+ギャラリー）",
     marketPrice: "38〜55万円",
