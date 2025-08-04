@@ -9,19 +9,19 @@ import { PROFILE, VALUE_PROPOSITION } from '@/lib/constants'
 export default function HeroSection() {
   return (
     <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center bg-white overflow-hidden">
-      {/* 背景パターン */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" 
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #000 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
-      </div>
+      {/* 背景画像 */}
+      <div 
+        className="absolute inset-0 opacity-50"
+        style={{ 
+          backgroundImage: 'url(/images/hero-bg-small.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
       
-      {/* アクセントライン */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      {/* オーバーレイ */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/30 to-white/50"></div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
