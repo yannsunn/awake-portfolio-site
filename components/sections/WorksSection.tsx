@@ -18,9 +18,14 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
   return (
-    <div className="cursor-pointer" onClick={onClick}>
-      <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
-      <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+    <motion.div 
+      className="cursor-pointer" 
+      onClick={onClick}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Card className="overflow-hidden group hover:shadow-2xl transition-all duration-300 h-full border-0 bg-white">
+      <div className="relative overflow-hidden aspect-[16/10]">
         <div className="absolute inset-0">
           <Image
             src={project.imageUrl} 
@@ -34,67 +39,67 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             }}
           />
         </div>
-        <div className="absolute bottom-4 right-4">
-          <span className="bg-black text-white text-xs px-2 py-1 rounded">
+        <div className="absolute top-4 right-4">
+          <span className="bg-black/90 backdrop-blur text-white text-sm px-4 py-2 rounded-full font-medium tabular-nums">
             {project.price}
           </span>
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium text-center">
-            <div className="mb-3 text-lg">詳細を見る</div>
-            {project.url && (
-              <div className="text-sm border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-200 cursor-pointer"
-                   onClick={(e) => {
-                     e.stopPropagation();
-                     window.open(project.url, '_blank');
-                   }}>
-                🔗 サイトを見る
-              </div>
-            )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-between p-6">
+          <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+            <p className="text-sm opacity-90">詳細を見る →</p>
           </div>
+          {project.url && (
+            <button
+              className="bg-white/20 backdrop-blur border border-white/30 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-200 transform translate-y-4 group-hover:translate-y-0"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(project.url, '_blank');
+              }}>
+              <span className="text-sm font-medium">サイトを見る</span>
+            </button>
+          )}
         </div>
       </div>
       <CardContent className="p-6">
-        <div className="flex justify-end items-start mb-2">
-          {project.url && (
-            <a 
-              href={project.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-700 text-sm"
-              onClick={(e) => e.stopPropagation()}
-            >
-              🔗
-            </a>
-          )}
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+          <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
+            <span>{project.category}</span>
+            <span className="text-gray-300">•</span>
+            <span>{project.duration}</span>
+            {project.pages && (
+              <>
+                <span className="text-gray-300">•</span>
+                <span>{project.pages}</span>
+              </>
+            )}
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
         </div>
         
-        <p className="text-sm text-gray-500 mb-2">{project.category} | {project.duration}</p>
-        {project.pages && (
-          <p className="text-xs text-gray-400 mb-2">{project.pages}</p>
-        )}
-        <p className="text-sm text-gray-600 leading-relaxed mb-3">{project.description}</p>
-        
         {project.marketPrice && (
-          <div className="mb-3 p-2 bg-red-50 border border-red-200 rounded">
-            <div className="flex justify-between text-xs">
-              <span className="text-red-600">他社相場:</span>
-              <span className="text-red-600 line-through">{project.marketPrice}</span>
-            </div>
-            <div className="flex justify-between text-sm font-bold">
-              <span className="text-green-600">弊社参考価格:</span>
-              <span className="text-green-600">{project.price}</span>
+          <div className="mb-4 p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 mb-1">他社相場</p>
+                <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-gray-700 mb-1 font-medium">弊社参考価格</p>
+                <p className="text-lg font-bold text-gray-900 tabular-nums">{project.price}</p>
+              </div>
             </div>
           </div>
         )}
         
         {project.features && (
-          <div className="mb-3">
-            <div className="flex flex-wrap gap-1">
+          <div className="mb-4">
+            <div className="flex flex-wrap gap-2">
               {project.features.slice(0, 3).map((feature, index) => (
                 <span 
                   key={index}
-                  className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  className="inline-block bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full font-medium"
                 >
                   {feature}
                 </span>
@@ -104,13 +109,13 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         )}
         
         {project.result && (
-          <div className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
-            📈 {project.result}
+          <div className="text-sm text-gray-700 font-medium border-t pt-4">
+            <span className="text-green-600">→</span> {project.result}
           </div>
         )}
       </CardContent>
       </Card>
-    </div>
+    </motion.div>
   )
 })
 
@@ -120,16 +125,16 @@ export default function WorksSection() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           {...animationVariants.fadeInUp}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">制作実績</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            これまでに制作したホームページの実績をご紹介します。
+          <h2 className="text-4xl md:text-5xl font-black mb-6">制作実績</h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            これまでに制作したホームページの実績をご紹介します。<br />
             すべて「適正価格で確実な効果」にこだわった案件です。
           </p>
         </motion.div>
@@ -140,19 +145,39 @@ export default function WorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8 mb-12 text-center"
+          className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 mb-16 text-center"
         >
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
-              💡 弊社価格は参考価格です
+          {/* 背景パターン */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" 
+              style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
+                backgroundSize: '30px 30px'
+              }}
+            />
+          </div>
+          
+          <div className="relative max-w-3xl mx-auto">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block mb-4"
+            >
+              <span className="text-4xl">💡</span>
+            </motion.div>
+            
+            <h3 className="text-3xl font-bold text-white mb-6">
+              弊社価格は参考価格です
             </h3>
-            <p className="text-lg text-blue-800 leading-relaxed">
-              表示されている弊社価格はあくまで参考価格となります。<br />
-              お客様のご要望・ご予算・サイト内容に応じて<span className="font-bold text-xl">柔軟にご相談</span>させていただきます。<br />
-              まずはお気軽にLINEでお問い合わせください。
+            <p className="text-lg text-gray-200 leading-relaxed mb-8">
+              表示されている価格はあくまで参考価格となります。<br />
+              お客様のご要望・ご予算・サイト内容に応じて<br />
+              <span className="text-2xl font-bold text-white">柔軟にご相談</span>させていただきます。
             </p>
-            <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+            <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="inline-block">
+              <Button className="btn-primary bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 text-lg font-bold">
+                <span className="mr-2">💬</span>
                 LINEで価格相談する
               </Button>
             </a>
@@ -160,9 +185,9 @@ export default function WorksSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
@@ -173,7 +198,7 @@ export default function WorksSection() {
 
         {/* プロジェクト詳細モーダル */}
         <Dialog open={!!activeProject} onOpenChange={(open) => !open && setActiveProject(null)}>
-          <DialogContent className="max-w-4xl">
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             {activeProject && (
               <>
                 <DialogHeader>
@@ -201,14 +226,14 @@ export default function WorksSection() {
                 </DialogHeader>
                 <div className="mt-4">
                   <div 
-                    className="relative w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 cursor-pointer overflow-hidden group"
+                    className="relative w-full h-[400px] rounded-xl mb-8 cursor-pointer overflow-hidden group shadow-lg"
                     onClick={() => activeProject.url && window.open(activeProject.url, '_blank')}
                   >
                     <Image
                       src={activeProject.imageUrl} 
                       alt={activeProject.title}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, 80vw"
                       loading="lazy"
                       onError={() => {
@@ -216,28 +241,30 @@ export default function WorksSection() {
                       }}
                     />
                     {activeProject.url && (
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                        <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
-                          🔗 サイトを見る
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-8">
+                        <span className="text-white font-medium text-lg">
+                          クリックしてサイトを見る →
                         </span>
                       </div>
                     )}
                   </div>
                   
                   {activeProject.marketPrice && (
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                      <h3 className="font-semibold mb-2">価格比較</h3>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-red-600">他社相場:</span>
-                        <span className="text-red-600 line-through text-lg">{activeProject.marketPrice}</span>
+                    <div className="mb-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200">
+                      <h3 className="text-lg font-bold mb-4">価格比較</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center">
+                          <p className="text-sm text-gray-500 mb-2">他社相場</p>
+                          <p className="text-2xl text-gray-400 line-through tabular-nums">{activeProject.marketPrice}</p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-sm text-gray-700 mb-2 font-medium">弊社参考価格</p>
+                          <p className="text-3xl font-bold text-gray-900 tabular-nums">{activeProject.price}</p>
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-green-600 font-semibold">弊社参考価格:</span>
-                        <span className="text-green-600 font-bold text-xl">{activeProject.price}</span>
-                      </div>
-                      <div className="text-sm text-gray-600 mt-2 text-center">
+                      <p className="text-sm text-gray-600 mt-4 text-center">
                         ※内容によってご相談可能です
-                      </div>
+                      </p>
                     </div>
                   )}
                   
@@ -273,12 +300,13 @@ export default function WorksSection() {
                     </div>
                   )}
                   
-                  <div className="flex justify-end space-x-4">
-                    <Button variant="outline" onClick={() => setActiveProject(null)}>
+                  <div className="flex justify-end space-x-4 pt-6 border-t">
+                    <Button variant="outline" onClick={() => setActiveProject(null)} className="btn-outline">
                       閉じる
                     </Button>
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                      <Button className="bg-gray-800 hover:bg-gray-700 text-white">
+                      <Button className="btn-primary">
+                        <span className="mr-2">💬</span>
                         LINEで相談する
                       </Button>
                     </a>
