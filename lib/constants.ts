@@ -32,7 +32,7 @@ export const WORKS: Project[] = [
     category: "ホームページ制作",
     description: "OEM・ODM対応。商品管理・決済・在庫管理を統合したフルスペックサイト。",
     longDescription: "アパレル業界向けの本格的ECサイト。商品一覧（カードレイアウト+フィルタ）、動的商品詳細、OEM・ODM案内、小ロット対応、カート・決済機能、在庫管理API連携を実装。B2B・B2C両対応で、複雑な商品管理要件にも対応可能。",
-    imageUrl: "/images/screenshots/apparel-ec-hero.svg",
+    imageUrl: "/images/screenshots/apparel-ec-screenshot.png",
     url: "https://apparel.awakeinc.co.jp/",
     pages: "約8ページ+動的機能",
     marketPrice: "120〜180万円",
