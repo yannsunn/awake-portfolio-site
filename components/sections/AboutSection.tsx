@@ -83,8 +83,8 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="mt-12 p-8 bg-gray-800 rounded-lg text-white"
           >
-            <h3 className="text-2xl font-bold mb-4">スマートな選択で、ビジネスを成長させる</h3>
-            <p className="text-lg leading-relaxed">
+            <h3 className="text-2xl font-bold mb-4 text-white">スマートな選択で、ビジネスを成長させる</h3>
+            <p className="text-lg leading-relaxed text-white">
               本当に必要な機能に絞り込んだ効率的なWeb制作により、適正価格での高品質なサイトを実現。
               コストを抑えることで、お客様は浮いた予算を設備投資、人材育成、マーケティングなど、
               事業の本質的な成長に投資していただけます。これこそが真の費用対効果です。

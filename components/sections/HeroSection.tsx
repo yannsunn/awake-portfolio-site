@@ -29,15 +29,6 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* ブランドマーク */}
-          <motion.div 
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="w-24 h-24 mx-auto mb-8 premium-gradient rounded-3xl flex items-center justify-center pulse-glow"
-          >
-            <span className="text-white text-3xl font-black">A</span>
-          </motion.div>
           
           <motion.h1 
             className="text-5xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tighter"
@@ -45,11 +36,11 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <span className="text-gradient-premium">{PROFILE.name}</span>
+            <span className="text-gray-900">{PROFILE.name}</span>
           </motion.h1>
           
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-4xl font-light text-white mb-12 tracking-wide"
+            className="text-xl sm:text-2xl md:text-4xl font-light text-gray-800 mb-12 tracking-wide"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
