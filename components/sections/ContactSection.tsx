@@ -145,32 +145,32 @@ export default function ContactSection() {
             </div>
 
             {/* 料金情報 */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-lg text-white">
-              <h4 className="text-xl font-bold mb-6">お見積り参考価格</h4>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border-2 border-gray-900">
+              <h4 className="text-xl font-bold mb-6 text-gray-900">お見積り参考価格</h4>
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-white/10 backdrop-blur rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-gray-50 border border-gray-200 rounded-xl">
                   <div>
-                    <p className="font-medium">スターター</p>
-                    <p className="text-sm text-gray-300">１ページ</p>
+                    <p className="font-bold text-gray-900">スターター</p>
+                    <p className="text-sm text-gray-600">１ページ</p>
                   </div>
-                  <p className="text-lg font-bold tabular-nums">¥132,000〜</p>
+                  <p className="text-xl font-black tabular-nums text-gray-900">¥132,000〜</p>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white/10 backdrop-blur rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-gray-50 border border-gray-200 rounded-xl">
                   <div>
-                    <p className="font-medium">ベーシック</p>
-                    <p className="text-sm text-gray-300">１０ページまで</p>
+                    <p className="font-bold text-gray-900">ベーシック</p>
+                    <p className="text-sm text-gray-600">１０ページまで</p>
                   </div>
-                  <p className="text-lg font-bold tabular-nums">¥298,000〜</p>
+                  <p className="text-xl font-black tabular-nums text-gray-900">¥298,000〜</p>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white/10 backdrop-blur rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-gray-50 border border-gray-200 rounded-xl">
                   <div>
-                    <p className="font-medium">プレミアム</p>
-                    <p className="text-sm text-gray-300">ECサイト</p>
+                    <p className="font-bold text-gray-900">プレミアム</p>
+                    <p className="text-sm text-gray-600">ECサイト</p>
                   </div>
-                  <p className="text-lg font-bold tabular-nums">¥698,000〜</p>
+                  <p className="text-xl font-black tabular-nums text-gray-900">¥698,000〜</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-300 mt-4 text-center">
+              <p className="text-sm text-gray-600 mt-4 text-center font-medium">
                 ※ あくまで参考価格です。詳細はお気軽にご相談ください。
               </p>
             </div>
