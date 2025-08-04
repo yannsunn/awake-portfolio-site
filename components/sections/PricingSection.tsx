@@ -116,7 +116,7 @@ export default function PricingSection() {
                 </div>
                 
                 <div className="mb-8">
-                  <div className={`text-6xl font-black mb-2 tabular-nums ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`text-4xl sm:text-5xl md:text-6xl font-black mb-2 tabular-nums ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                     ¥{plan.price.toLocaleString()}
                   </div>
                   <p className={`price-label ${plan.recommended ? 'text-gray-300' : ''}`}>

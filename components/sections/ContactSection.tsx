@@ -217,15 +217,15 @@ export default function ContactSection() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                  <Button className="btn-primary bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 text-lg font-bold min-w-[220px]">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto btn-primary bg-white text-gray-900 hover:bg-gray-100 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px]">
                     <span className="mr-2">💬</span>
                     LINEで相談する
                   </Button>
                 </a>
-                <a href={`mailto:${PROFILE.email}`}>
-                  <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-10 py-4 text-lg font-bold min-w-[220px] transition-all duration-300">
+                <a href={`mailto:${PROFILE.email}`} className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px] transition-all duration-300">
                     <span className="mr-2">✉️</span>
                     メールで相談
                   </Button>

@@ -29,8 +29,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-6xl font-bold mb-4 text-gray-800">{PROFILE.name}</h1>
-          <h2 className="text-3xl font-semibold text-gray-700 mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-gray-800">{PROFILE.name}</h1>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
             Webとテクノロジーで、ビジネスを加速する
           </h2>
           <div className="max-w-3xl mx-auto">
@@ -44,21 +44,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Link href="#portfolio">
+              <Link href="#portfolio" className="w-full sm:w-auto">
                 <Button 
                   size="lg"
-                  className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg rounded-lg"
+                  className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-base sm:text-lg rounded-lg min-h-[48px]"
                 >
                   実績を見る
                 </Button>
               </Link>
-              <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
+              <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg rounded-lg"
+                  className="w-full sm:w-auto border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-base sm:text-lg rounded-lg min-h-[48px]"
                 >
                   LINEで無料相談
                 </Button>
