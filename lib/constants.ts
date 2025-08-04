@@ -16,7 +16,7 @@ export const WORKS: Project[] = [
     category: "ホームページ制作",
     description: "会社概要・サービス詳細・FAQ・お問い合わせを統合。",
     longDescription: "Awake Inc.のメインコーポレートサイト。トップページ、会社概要、3つのサービス詳細（HP制作/AIコンサル/Amazon代理店）、FAQ、LINE連携お問い合わせフォームを含む約7ページ構成。オリジナルUIデザインとSEO最適化により、企業ブランディングと集客を両立。",
-    imageUrl: "/images/screenshots/awake-corp-hero.svg",
+    imageUrl: "/images/screenshots/awake-corp-screenshot.png",
     url: "https://www.awakeinc.co.jp/",
     pages: "約7ページ",
     marketPrice: "45〜65万円",
