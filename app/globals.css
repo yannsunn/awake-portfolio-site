@@ -133,6 +133,41 @@ p {
     @apply bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent;
   }
   
+  /* 統一カードスタイル */
+  .card-primary {
+    @apply bg-white border-2 border-gray-900 p-6 rounded-2xl shadow-lg;
+  }
+  
+  .card-secondary {
+    @apply bg-gray-50 border border-gray-300 p-6 rounded-xl;
+  }
+  
+  .card-accent {
+    @apply bg-gray-900 text-white p-6 rounded-2xl shadow-lg;
+  }
+  
+  /* 価格表示用 */
+  .price-display {
+    @apply text-2xl font-black text-gray-900 tabular-nums;
+  }
+  
+  .price-label {
+    @apply text-sm font-semibold text-gray-600 uppercase tracking-wide;
+  }
+  
+  /* テキスト階層 */
+  .text-primary {
+    @apply text-gray-900 font-bold;
+  }
+  
+  .text-secondary {
+    @apply text-gray-700 font-medium;
+  }
+  
+  .text-muted {
+    @apply text-gray-600;
+  }
+  
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }

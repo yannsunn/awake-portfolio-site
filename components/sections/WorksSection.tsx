@@ -79,15 +79,15 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         </div>
         
         {project.marketPrice && (
-          <div className="mb-4 p-4 bg-white border-2 border-gray-200 rounded-lg">
+          <div className="mb-4 card-secondary">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-xs text-gray-600 mb-1 font-medium">他社相場</p>
-                <p className="text-sm text-gray-500 line-through tabular-nums font-medium">{project.marketPrice}</p>
+                <p className="price-label mb-1">他社相場</p>
+                <p className="text-secondary line-through tabular-nums">{project.marketPrice}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-gray-900 mb-1 font-bold">弊社参考価格</p>
-                <p className="text-xl font-black text-gray-900 tabular-nums">{project.price}</p>
+                <p className="price-label mb-1">弊社参考価格</p>
+                <p className="price-display">{project.price}</p>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
               {project.features.slice(0, 3).map((feature, index) => (
                 <span 
                   key={index}
-                  className="inline-block bg-gray-900 text-white text-xs px-3 py-2 rounded-lg font-bold"
+                  className="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded-lg font-bold"
                 >
                   {feature}
                 </span>
@@ -109,8 +109,13 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         )}
         
         {project.result && (
-          <div className="text-sm font-medium border-t border-gray-200 pt-4">
-            <span className="text-green-600 font-bold">✓</span> <span className="text-gray-900">{project.result}</span>
+          <div className="border-t-2 border-gray-200 pt-4">
+            <div className="flex items-center">
+              <div className="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">
+                <span className="text-sm font-bold">✓</span>
+              </div>
+              <span className="text-primary text-base">{project.result}</span>
+            </div>
           </div>
         )}
       </CardContent>

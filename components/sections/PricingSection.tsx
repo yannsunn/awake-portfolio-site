@@ -104,61 +104,57 @@ export default function PricingSection() {
                 </span>
               </motion.div>
             )}
-            <div className={`relative h-full overflow-hidden rounded-2xl border-2 ${plan.recommended ? 'border-gray-900 bg-gray-900 transform scale-105' : 'border-gray-200 bg-white'} shadow-lg`}>
-              {/* コンテンツ */}
-              <div className="relative p-8 text-center h-full flex flex-col">
+            <div className={`card-primary h-full ${plan.recommended ? 'card-accent transform scale-105' : ''}`}>
+              <div className="text-center h-full flex flex-col">
                 <div className="mb-6">
-                  <h3 className={`text-2xl font-bold mb-3 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-3xl font-black mb-3 ${plan.recommended ? 'text-white' : 'text-primary'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm ${plan.recommended ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <p className={`${plan.recommended ? 'text-gray-200' : 'text-muted'}`}>
                     {plan.description}
                   </p>
                 </div>
                 
                 <div className="mb-8">
-                  <div className={`text-5xl font-black mb-2 tabular-nums ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`text-6xl font-black mb-2 tabular-nums ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                     ¥{plan.price.toLocaleString()}
                   </div>
-                  <p className={`text-sm ${plan.recommended ? 'text-gray-400' : 'text-gray-500'}`}>
+                  <p className={`price-label ${plan.recommended ? 'text-gray-300' : ''}`}>
                     {plan.originalPrice}
                   </p>
                 </div>
               
                 <ul className="space-y-4 mb-8 text-left flex-grow">
                   {plan.features.map((feature, featureIndex) => (
-                    <motion.li 
+                    <li 
                       key={featureIndex} 
                       className="flex items-center"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 * featureIndex }}
                     >
-                      <div className={`w-6 h-6 rounded-full mr-4 flex items-center justify-center ${
+                      <div className={`w-8 h-8 rounded-full mr-4 flex items-center justify-center ${
                         plan.recommended ? 'bg-white text-gray-900' : 'bg-gray-900 text-white'
                       }`}>
-                        <span className="text-xs font-bold">✓</span>
+                        <span className="text-sm font-bold">✓</span>
                       </div>
-                      <span className={`text-sm font-medium ${
-                        plan.recommended ? 'text-white' : 'text-gray-700'
+                      <span className={`text-base font-semibold ${
+                        plan.recommended ? 'text-white' : 'text-primary'
                       }`}>
                         {feature}
                       </span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="block">
-                  <Button 
-                    className={`w-full py-4 font-bold text-lg transition-all duration-300 ${
+                  <button 
+                    className={`w-full py-4 px-6 font-bold text-lg rounded-xl transition-all duration-300 ${
                       plan.recommended 
-                        ? 'bg-white text-gray-900 hover:bg-gray-200 border-0' 
-                        : 'bg-gray-900 text-white hover:bg-gray-800 border-0'
+                        ? 'bg-white text-gray-900 hover:bg-gray-100 border-2 border-white' 
+                        : 'bg-gray-900 text-white hover:bg-gray-800 border-2 border-gray-900'
                     }`}
                   >
                     <span className="mr-2">💬</span>
                     LINEで相談する
-                  </Button>
+                  </button>
                 </a>
               </div>
             </div>
