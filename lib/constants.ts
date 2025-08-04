@@ -89,6 +89,22 @@ export const WORKS: Project[] = [
     features: ["SNS埋め込み", "スクロールアニメ", "レスポンシブ"],
     result: "プロフィール閲覧時間300%向上、問い合わせ増加",
     breakdown: "シングルページデザイン、画像ギャラリー/SNS埋め込み、レスポンシブ最適化&スクロールアニメ"
+  },
+  {
+    id: 6,
+    title: "ランディングページ",
+    category: "ホームページ制作",
+    description: "シンプルで効果的なランディングページ。コンバージョン重視の設計。",
+    longDescription: "商品・サービスの魅力を的確に伝えるランディングページ。ヒーローセクション、特徴紹介、お客様の声、CTAボタンを戦略的に配置し、訪問者を確実にコンバージョンへ導きます。A/Bテスト対応で継続的な改善が可能。",
+    imageUrl: "/images/screenshots/landing-page-hero.svg",
+    url: "https://fanciful-kringle-cce8bb.netlify.app/",
+    pages: "1ページ",
+    marketPrice: "25〜40万円",
+    price: "15万8000円",
+    duration: "1週間",
+    features: ["高速表示", "CTA最適化", "A/Bテスト対応"],
+    result: "コンバージョン率150%向上",
+    breakdown: "LP設計・コピーライティング、レスポンシブ対応、高速化最適化"
   }
 ]
 
