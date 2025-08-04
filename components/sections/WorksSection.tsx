@@ -131,7 +131,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </div>
         )}
-      </div>
+      </CardContent>
       </div>
     </motion.div>
   )
