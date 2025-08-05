@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { VALUE_PROPOSITION } from '@/lib/constants'
+import { VALUE_PROPOSITION, SKILLS } from '@/lib/constants'
 
 export default function AboutSection() {
   return (
@@ -14,9 +14,9 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">スマートな投資で、最大の効果を</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">サービス内容</h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-              なぜAwakeが選ばれるのか
+              適正価格で確実な効果を重視したホームページ制作
             </p>
           </motion.div>
 
@@ -76,20 +76,33 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-12 p-8 bg-gray-800 rounded-lg text-white"
-          >
-            <h3 className="text-2xl font-bold mb-4 text-white">スマートな選択で、ビジネスを成長させる</h3>
-            <p className="text-lg leading-relaxed text-white">
-              本当に必要な機能に絞り込んだ効率的なWeb制作により、適正価格での高品質なサイトを実現。
-              コストを抑えることで、お客様は浮いた予算を設備投資、人材育成、マーケティングなど、
-              事業の本質的な成長に投資していただけます。これこそが真の費用対効果です。
-            </p>
-          </motion.div>
+          {/* サービス詳細 */}
+          {SKILLS.map((skillCategory, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+              viewport={{ once: true }}
+              className="mt-12"
+            >
+              <div className="bg-white border border-gray-200 rounded-[var(--border-radius)] p-8 shadow-[var(--shadow-md)]">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                  {skillCategory.category}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {skillCategory.items.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className="bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium text-gray-700"
+                    >
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

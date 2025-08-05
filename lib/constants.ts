@@ -19,11 +19,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/awake-corp-screenshot.png",
     url: "https://www.awakeinc.co.jp/",
     pages: "約7ページ",
-    marketPrice: "45〜65万円",
+    marketPrice: null,
     price: "39万8000円",
     duration: "2-3週間",
     features: ["LINE連携フォーム", "オリジナルUI", "SEO最適化"],
-    result: "企業認知度向上、月間問い合わせ数50%増加",
+    result: "問い合わせ数が増加",
     breakdown: "静的ページ×6、問い合わせフォーム実装、オリジナルUIデザイン+20%、SEO初期設定+10%"
   },
   {
@@ -35,11 +35,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/apparel-ec-screenshot.png",
     url: "https://apparel.awakeinc.co.jp/",
     pages: "約8ページ+動的機能",
-    marketPrice: "120〜180万円",
+    marketPrice: null,
     price: "98万円",
     duration: "3-4週間",
     features: ["商品DB連携", "決済システム", "在庫管理API"],
-    result: "オンライン売上300%向上、業務効率化50%改善",
+    result: "オンライン売上と業務効率が改善",
     breakdown: "商品DB&決済連携、静的説明ページ×4、UI/UX設計+25%、在庫管理API連携・管理画面"
   },
   {
@@ -51,11 +51,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/manufacturing-lp-screenshot.png",
     url: "https://vintage-iron-works-example.awakeinc.co.jp/",
     pages: "約4ページ（LP+ギャラリー）",
-    marketPrice: "38〜55万円",
+    marketPrice: null,
     price: "24万9800円",
     duration: "1-2週間",
     features: ["Lightboxギャラリー", "画像最適化", "LP設計"],
-    result: "製品問い合わせ数80%増加、CVR向上",
+    result: "製品問い合わせが増加",
     breakdown: "LPデザイン/コピー、ギャラリー実装、画像最適化/Lazy-load、フォーム&SMTP設定"
   },
   {
@@ -67,11 +67,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/fp-site-screenshot.png",
     url: "https://yuikosuke-website.vercel.app/",
     pages: "約4ページ",
-    marketPrice: "30〜45万円",
+    marketPrice: null,
     price: "19万8000円",
     duration: "1-2週間",
     features: ["LINE公式連携", "CTA最適化", "SEO対策"],
-    result: "LINE相談申込み200%増加、成約率向上",
+    result: "LINE相談からの成約が増加",
     breakdown: "静的ページ×3、LINE公式アカウント呼び出し、SEO最適化・OGP設定"
   },
   {
@@ -83,11 +83,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/profile-site-screenshot.png",
     url: "https://kota-maruyama-profile.vercel.app/",
     pages: "1スクロールページ",
-    marketPrice: "28〜35万円",
+    marketPrice: null,
     price: "13万2000円",
     duration: "1週間",
     features: ["SNS埋め込み", "スクロールアニメ", "レスポンシブ"],
-    result: "プロフィール閲覧時間300%向上、問い合わせ増加",
+    result: "プロフィール経由での問い合わせが増加",
     breakdown: "シングルページデザイン、画像ギャラリー/SNS埋め込み、レスポンシブ最適化&スクロールアニメ"
   },
   {
@@ -99,11 +99,11 @@ export const WORKS: Project[] = [
     imageUrl: "/images/screenshots/landing-page-screenshot.png",
     url: "https://fanciful-kringle-cce8bb.netlify.app/",
     pages: "1ページ",
-    marketPrice: "25〜40万円",
+    marketPrice: null,
     price: "15万8000円",
     duration: "1週間",
     features: ["高速表示", "CTA最適化", "A/Bテスト対応"],
-    result: "コンバージョン率150%向上",
+    result: "コンバージョンが改善",
     breakdown: "LP設計・コピーライティング、レスポンシブ対応、高速化最適化"
   }
 ]
