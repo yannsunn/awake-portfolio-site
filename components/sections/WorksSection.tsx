@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       whileHover={{ y: -12, scale: 1.02 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <div className="card-premium overflow-hidden h-full group-hover:shadow-2xl">
+      <div className="card-premium overflow-hidden h-full group-hover:shadow-[var(--shadow-xl)]">
       <div className="relative overflow-hidden aspect-[16/10]">
         <div className="absolute inset-0">
           <Image
@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         </div>
         <div className="absolute top-4 right-4">
           <motion.span 
-            className="premium-gradient text-white text-sm px-4 py-2 rounded-full font-bold tabular-nums shadow-lg"
+            className="premium-gradient text-white text-sm px-4 py-2 rounded-[var(--border-radius)] font-semibold tabular-nums shadow-[var(--shadow-md)]"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -112,7 +112,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
               {project.features.slice(0, 3).map((feature, index) => (
                 <motion.span 
                   key={index}
-                  className="premium-gradient text-white text-sm px-4 py-2 rounded-full font-bold shadow-lg"
+                  className="premium-gradient text-white text-sm px-4 py-2 rounded-[var(--border-radius)] font-semibold shadow-[var(--shadow-md)]"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
@@ -152,10 +152,10 @@ export default function WorksSection() {
         <motion.div
           {...animationVariants.fadeInUp}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6">制作実績</h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="font-black mb-6">制作実績</h2>
+          <p className="text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
             これまでに制作したホームページの実績をご紹介します。<br />
             すべて「適正価格で確実な効果」にこだわった案件です。
           </p>

@@ -14,8 +14,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">サービス内容</h2>
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+            <h2 className="font-bold mb-6">サービス内容</h2>
+            <p className="text-lg text-[var(--gray-600)] mb-12 leading-relaxed">
               適正価格で確実な効果を重視したホームページ制作
             </p>
           </motion.div>
@@ -32,11 +32,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-lg"
+              className="bg-[var(--gray-50)] p-8 rounded-[var(--border-radius)] min-h-[140px]"
             >
               
-              <h3 className="text-xl font-bold mb-3 text-gray-800">費用対効果の最大化</h3>
-              <p className="text-gray-600">必要な機能に絞り込み、13.2万円〜の適正価格を実現</p>
+              <h3 className="text-xl font-semibold mb-3 text-[var(--gray-800)]">費用対効果の最大化</h3>
+              <p className="text-[var(--gray-600)]">必要な機能に絞り込み、13.2万円〜の適正価格を実現</p>
             </motion.div>
 
             <motion.div
@@ -44,11 +44,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-lg"
+              className="bg-[var(--gray-50)] p-8 rounded-[var(--border-radius)] min-h-[140px]"
             >
               
-              <h3 className="text-xl font-bold mb-3 text-gray-800">確実な成果</h3>
-              <p className="text-gray-600">SEO対策・レスポンシブ対応を標準装備し、集客に直結</p>
+              <h3 className="text-xl font-semibold mb-3 text-[var(--gray-800)]">確実な成果</h3>
+              <p className="text-[var(--gray-600)]">SEO対策・レスポンシブ対応を標準装備し、集客に直結</p>
             </motion.div>
 
             <motion.div
@@ -56,11 +56,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-lg"
+              className="bg-[var(--gray-50)] p-8 rounded-[var(--border-radius)] min-h-[140px]"
             >
               
-              <h3 className="text-xl font-bold mb-3 text-gray-800">スピード納品</h3>
-              <p className="text-gray-600">シンプルな構成により、最短1週間で公開可能</p>
+              <h3 className="text-xl font-semibold mb-3 text-[var(--gray-800)]">スピード納品</h3>
+              <p className="text-[var(--gray-600)]">シンプルな構成により、最短1週間で公開可能</p>
             </motion.div>
 
             <motion.div
@@ -68,11 +68,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-lg"
+              className="bg-[var(--gray-50)] p-8 rounded-[var(--border-radius)] min-h-[140px]"
             >
               
-              <h3 className="text-xl font-bold mb-3 text-gray-800">継続的なサポート</h3>
-              <p className="text-gray-600">公開後の更新・改善も柔軟に対応</p>
+              <h3 className="text-xl font-semibold mb-3 text-[var(--gray-800)]">継続的なサポート</h3>
+              <p className="text-[var(--gray-600)]">公開後の更新・改善も柔軟に対応</p>
             </motion.div>
           </motion.div>
 

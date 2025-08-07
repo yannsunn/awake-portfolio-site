@@ -82,8 +82,8 @@ export default function PricingSection() {
             >
               
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-gradient-premium">料金プラン</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="font-black mb-6">料金プラン</h2>
+            <p className="text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
               お客様のニーズに合わせた明確な料金体系。<br />
               追加費用なしの安心価格です。
             </p>
@@ -194,7 +194,7 @@ export default function PricingSection() {
                   >
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="block">
                       <button 
-                        className="w-full py-5 px-8 font-bold text-lg rounded-2xl transition-all duration-500 transform relative overflow-hidden bg-[#00B900] text-white hover:bg-[#00A000] border-2 border-[#00B900] shadow-xl hover:shadow-2xl"
+                        className="btn-primary w-full bg-[#06c755] hover:bg-[#04a948]"
                       >
                         <span className="relative z-10 flex items-center justify-center">
                           LINEで相談する
@@ -293,7 +293,7 @@ export default function PricingSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-[#00B900] text-white hover:bg-[#00A000] px-12 py-5 text-xl font-bold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group border-2 border-[#00B900]">
+                  <button className="btn-primary px-12 bg-[#06c755] hover:bg-[#04a948]">
                     <span className="relative z-10 flex items-center justify-center">
                       LINEで詳しく相談
                     </span>
