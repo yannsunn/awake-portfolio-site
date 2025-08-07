@@ -194,11 +194,7 @@ export default function PricingSection() {
                   >
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="block">
                       <button 
-                        className={`w-full py-5 px-8 font-bold text-lg rounded-2xl transition-all duration-500 transform relative overflow-hidden ${
-                          plan.recommended 
-                            ? 'bg-white text-gray-900 hover:bg-gray-100 border-2 border-white shadow-xl hover:shadow-2xl' 
-                            : 'bg-gray-900 text-white hover:bg-gray-800 border-2 border-gray-900 hover:border-purple-600'
-                        }`}
+                        className="w-full py-5 px-8 font-bold text-lg rounded-2xl transition-all duration-500 transform relative overflow-hidden bg-[#00B900] text-white hover:bg-[#00A000] border-2 border-[#00B900] shadow-xl hover:shadow-2xl"
                       >
                         <span className="relative z-10 flex items-center justify-center">
                           LINEで相談する
@@ -297,11 +293,10 @@ export default function PricingSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white text-gray-900 hover:bg-gray-100 px-12 py-5 text-xl font-bold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group">
+                  <button className="bg-[#00B900] text-white hover:bg-[#00A000] px-12 py-5 text-xl font-bold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden group border-2 border-[#00B900]">
                     <span className="relative z-10 flex items-center justify-center">
-                      詳しく相談する
+                      LINEで詳しく相談
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </button>
                 </a>
               </motion.div>

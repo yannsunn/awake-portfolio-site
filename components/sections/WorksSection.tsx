@@ -278,7 +278,7 @@ export default function WorksSection() {
                       閉じる
                     </Button>
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                      <Button className="btn-primary">
+                      <Button className="bg-[#00B900] text-white hover:bg-[#00A000] px-8 py-4 rounded-[var(--border-radius)] font-medium transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[var(--shadow-lg)] border-2 border-[#00B900]">
                         LINEで相談する
                       </Button>
                     </a>

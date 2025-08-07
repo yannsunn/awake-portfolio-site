@@ -21,7 +21,7 @@ export default function HeroSection() {
       />
       
       {/* オーバーレイ */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-white/30 to-white/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/70 to-white/80" />
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
@@ -52,7 +52,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="glass-dark rounded-3xl p-8 mb-12"
+              className="bg-gray-900/90 backdrop-blur-md rounded-3xl p-8 mb-12 border border-gray-800"
             >
               <p className="text-xl md:text-2xl text-white mb-6 leading-relaxed font-light">
                 必要十分な機能で、確実な成果を。
@@ -81,7 +81,7 @@ export default function HeroSection() {
               
               <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto group">
                 <motion.button 
-                  className="glass-effect w-full sm:w-auto px-10 py-5 text-lg font-bold text-white rounded-2xl transition-all duration-300 border border-white/30 group-hover:bg-white/20"
+                  className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white rounded-2xl transition-all duration-300 border-2 border-[#00B900] bg-[#00B900] group-hover:bg-[#00A000]"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >

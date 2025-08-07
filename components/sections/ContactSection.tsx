@@ -188,7 +188,7 @@ export default function ContactSection() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button className="w-full sm:w-auto btn-primary bg-white text-gray-900 hover:bg-gray-100 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px]">
+                  <Button className="w-full sm:w-auto bg-[#00B900] text-white hover:bg-[#00A000] px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px] border-2 border-[#00B900]">
                     
                     LINEで相談する
                   </Button>
