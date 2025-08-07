@@ -76,7 +76,7 @@ export default function ProcessSection() {
             >
               <Card variant="elevated" className="h-full p-8 text-center relative overflow-hidden">
                 {/* Background Number */}
-                <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 leading-none">
+                <div className="absolute top-4 right-4 text-6xl font-bold text-gray-200 leading-none">
                   {step.step}
                 </div>
                 
@@ -89,7 +89,7 @@ export default function ProcessSection() {
                   <h3 className="text-xl font-bold mb-3 text-gray-800">{step.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">{step.description}</p>
                   <div className="bg-gray-50 p-3 rounded-lg">
-                    <p className="text-xs text-gray-500">{step.details}</p>
+                    <p className="text-xs text-gray-700 font-medium">{step.details}</p>
                   </div>
                 </div>
               </Card>

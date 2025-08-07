@@ -153,7 +153,7 @@ export default function PricingSection() {
                       ¥{plan.price.toLocaleString()}
                     </div>
                     <p className={`text-sm uppercase tracking-wide font-bold ${
-                      plan.recommended ? 'text-gray-300' : 'text-gray-500'
+                      plan.recommended ? 'text-gray-300' : 'text-gray-700'
                     }`}>
                       {plan.originalPrice}
                     </p>
@@ -260,11 +260,11 @@ export default function PricingSection() {
                       <h4 className="font-bold text-white text-xl mb-2 group-hover:text-purple-200 transition-colors">
                         AIチャットボット
                       </h4>
-                      <p className="text-gray-300 text-base">自動対応システム</p>
+                      <p className="text-gray-400 text-base">自動対応システム</p>
                     </div>
                     <div className="text-right">
                       <p className="text-3xl font-black text-white tabular-nums group-hover:scale-110 transition-transform">¥398,000</p>
-                      <p className="text-gray-300 text-sm">〜</p>
+                      <p className="text-gray-400 text-sm">〜</p>
                     </div>
                   </div>
                 </motion.div>
@@ -279,7 +279,7 @@ export default function PricingSection() {
                       <h4 className="font-bold text-white text-xl mb-2 group-hover:text-blue-200 transition-colors">
                         受託開発
                       </h4>
-                      <p className="text-gray-300 text-base">カスタムシステム</p>
+                      <p className="text-gray-400 text-base">カスタムシステム</p>
                     </div>
                     <div className="text-right">
                       <p className="text-3xl font-black text-white group-hover:scale-110 transition-transform">要相談</p>

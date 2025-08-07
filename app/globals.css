@@ -70,7 +70,7 @@ h3 {
 }
 
 p {
-  color: var(--gray-700);
+  color: var(--gray-800);
   line-height: 1.8;
 }
 
@@ -157,7 +157,7 @@ p {
   }
   
   .price-label {
-    @apply text-sm font-semibold text-gray-600 uppercase tracking-wide;
+    @apply text-sm font-semibold text-gray-700 uppercase tracking-wide;
   }
   
   /* テキスト階層 */
@@ -166,11 +166,11 @@ p {
   }
   
   .text-secondary {
-    @apply text-gray-700 font-medium;
+    @apply text-gray-800 font-medium;
   }
   
   .text-muted {
-    @apply text-gray-600;
+    @apply text-gray-700;
   }
   
   /* モバイル対応 */

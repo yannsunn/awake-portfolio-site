@@ -77,18 +77,18 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       <CardContent className="p-6">
         <div className="mb-4">
           <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-          <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
+          <div className="flex items-center gap-3 text-sm text-gray-700 mb-3">
             <span>{project.category}</span>
-            <span className="text-gray-300">•</span>
+            <span className="text-gray-500">•</span>
             <span>{project.duration}</span>
             {project.pages && (
               <>
-                <span className="text-gray-300">•</span>
+                <span className="text-gray-500">•</span>
                 <span>{project.pages}</span>
               </>
             )}
           </div>
-          <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
+          <p className="text-sm text-gray-700 leading-relaxed">{project.description}</p>
         </div>
         
         {project.marketPrice && (
@@ -96,7 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             <div className="flex justify-between items-center">
               <div>
                 <p className="price-label mb-1">他社相場</p>
-                <p className="text-secondary line-through tabular-nums">{project.marketPrice}</p>
+                <p className="text-gray-500 line-through tabular-nums">{project.marketPrice}</p>
               </div>
               <div className="text-right">
                 <p className="price-label mb-1">弊社参考価格</p>
@@ -233,8 +233,8 @@ export default function WorksSection() {
                       <h3 className="text-lg font-bold mb-4">価格比較</h3>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="text-center">
-                          <p className="text-sm text-gray-500 mb-2">他社相場</p>
-                          <p className="text-2xl text-gray-400 line-through tabular-nums">{activeProject.marketPrice}</p>
+                          <p className="text-sm text-gray-700 mb-2">他社相場</p>
+                          <p className="text-2xl text-gray-500 line-through tabular-nums">{activeProject.marketPrice}</p>
                         </div>
                         <div className="text-center">
                           <p className="text-sm text-gray-700 mb-2 font-medium">弊社参考価格</p>

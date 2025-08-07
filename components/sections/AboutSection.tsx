@@ -94,7 +94,7 @@ export default function AboutSection() {
                   {skillCategory.items.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium text-gray-700"
+                      className="bg-gray-100 px-4 py-3 rounded-lg text-sm font-medium text-gray-800 border border-gray-200"
                     >
                       {skill}
                     </div>
