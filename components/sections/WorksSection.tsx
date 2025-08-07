@@ -1,14 +1,19 @@
 'use client'
 
-import { useState, memo } from 'react'
+import { useState, memo, lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import Card, { CardContent } from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import { WORKS } from '@/lib/constants'
 import type { Project } from '@/lib/types'
 import { animationVariants } from '@/lib/utils'
+
+const Dialog = lazy(() => import('@/components/ui/dialog').then(mod => ({ default: mod.Dialog })))
+const DialogContent = lazy(() => import('@/components/ui/dialog').then(mod => ({ default: mod.DialogContent })))
+const DialogDescription = lazy(() => import('@/components/ui/dialog').then(mod => ({ default: mod.DialogDescription })))
+const DialogHeader = lazy(() => import('@/components/ui/dialog').then(mod => ({ default: mod.DialogHeader })))
+const DialogTitle = lazy(() => import('@/components/ui/dialog').then(mod => ({ default: mod.DialogTitle })))
 
 
 interface ProjectCardProps {
@@ -24,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       whileHover={{ y: -12, scale: 1.02 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <div className="card-premium overflow-hidden h-full group-hover:premium-shadow-lg">
+      <div className="card-premium overflow-hidden h-full group-hover:shadow-2xl">
       <div className="relative overflow-hidden aspect-[16/10]">
         <div className="absolute inset-0">
           <Image
@@ -170,6 +175,7 @@ export default function WorksSection() {
         </motion.div>
 
         {/* プロジェクト詳細モーダル */}
+        <Suspense fallback={<div className="fixed inset-0 bg-black/50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div></div>}>
         <Dialog open={!!activeProject} onOpenChange={(open) => !open && setActiveProject(null)}>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             {activeProject && (
@@ -288,6 +294,7 @@ export default function WorksSection() {
             )}
           </DialogContent>
         </Dialog>
+        </Suspense>
       </div>
     </section>
   )

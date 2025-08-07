@@ -3,7 +3,9 @@ import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import JsonLd from '@/components/common/JsonLd'
 import { generateMetadata as generateMeta } from '@/lib/utils'
+import { PROFILE } from '@/lib/constants'
 
 const notoSansJP = Noto_Sans_JP({ 
   subsets: ['latin'],
@@ -25,9 +27,35 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": PROFILE.name,
+    "description": PROFILE.description,
+    "url": "https://portfolio.awakeinc.co.jp",
+    "logo": "https://portfolio.awakeinc.co.jp/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": PROFILE.phone,
+      "contactType": "Customer Service",
+      "areaServed": "JP",
+      "availableLanguage": "Japanese"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "JP",
+      "addressLocality": "東京都",
+      "streetAddress": PROFILE.address
+    },
+    "sameAs": [
+      "https://lin.ee/hHdqEXB"
+    ]
+  }
+
   return (
     <html lang="ja" className={notoSansJP.variable}>
       <body className="min-h-screen flex flex-col">
+        <JsonLd data={jsonLdData} />
         <Header />
         <main className="flex-grow">
           {children}

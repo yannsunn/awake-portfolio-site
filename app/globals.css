@@ -212,12 +212,12 @@ p {
   
   
   .card-premium {
-    @apply bg-white rounded-3xl premium-shadow transition-all duration-500;
+    @apply bg-white rounded-3xl shadow-lg transition-all duration-500;
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
   .card-premium:hover {
-    @apply transform -translate-y-2 premium-shadow-lg;
+    @apply transform -translate-y-2 shadow-2xl;
   }
   
   .text-gradient-premium {
