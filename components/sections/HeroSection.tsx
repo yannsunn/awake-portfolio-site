@@ -91,22 +91,6 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </motion.div>
-        
-        {/* フローティングアイコン */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="text-3xl font-bold text-gray-800 drop-shadow-lg"
-          >
-            ↓
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
