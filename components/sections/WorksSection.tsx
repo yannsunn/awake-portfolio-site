@@ -22,14 +22,26 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <motion.div 
       className="cursor-pointer group" 
       onClick={onClick}
-      whileHover={{ y: -12, scale: 1.02 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      <div className="card-premium overflow-hidden h-full group-hover:shadow-[var(--shadow-xl)]">
+      <motion.div 
+        className="card-premium overflow-hidden h-full"
+        animate={{ 
+          boxShadow: isHovered 
+            ? "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
+            : "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+        }}
+        transition={{ duration: 0.3 }}
+      >
       <div className="relative overflow-hidden aspect-[16/10]">
         <div className="absolute inset-0">
           <Image
@@ -54,14 +66,27 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             {project.price}
           </motion.span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-between p-6">
-          <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-600/50 to-transparent flex items-end justify-between p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <motion.div 
+            className="text-white"
+            initial={{ y: 20 }}
+            animate={{ y: isHovered ? 0 : 20 }}
+            transition={{ duration: 0.3 }}
+          >
             <h3 className="text-xl font-bold mb-1">{project.title}</h3>
             <p className="text-sm opacity-90">詳細を見る →</p>
-          </div>
+          </motion.div>
           {project.url && (
             <motion.button
-              className="glass-effect text-white px-6 py-3 rounded-xl font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+              className="glass-effect text-white px-6 py-3 rounded-xl font-bold text-sm"
+              initial={{ y: 20 }}
+              animate={{ y: isHovered ? 0 : 20 }}
+              transition={{ duration: 0.3 }}
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(project.url, '_blank');
@@ -72,8 +97,9 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
               サイトを見る
             </motion.button>
           )}
-        </div>
+        </motion.div>
       </div>
+      </motion.div>
       <CardContent className="p-6">
         <div className="mb-4">
           <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
@@ -136,7 +162,6 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           </div>
         )}
       </CardContent>
-      </div>
     </motion.div>
   )
 })

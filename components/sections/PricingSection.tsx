@@ -122,7 +122,7 @@ export default function PricingSection() {
               <div className={`card-premium h-full relative overflow-hidden ${
                 plan.recommended 
                   ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-700 transform scale-105' 
-                  : 'group-hover:premium-shadow-lg'
+                  : 'bg-white'
               }`}>
                 {/* ホバー時のグラデーションオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -133,7 +133,7 @@ export default function PricingSection() {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <h3 className={`text-3xl font-black mb-4 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-2xl font-bold mb-4 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                       {plan.name}
                     </h3>
                     <p className={`text-lg ${plan.recommended ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -147,7 +147,7 @@ export default function PricingSection() {
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.15, type: "spring", bounce: 0.3 }}
                   >
-                    <div className={`text-5xl sm:text-6xl font-black mb-3 tabular-nums ${
+                    <div className={`text-4xl sm:text-5xl font-black mb-3 tabular-nums ${
                       plan.recommended ? 'text-white' : 'text-gray-900'
                     }`}>
                       ¥{plan.price.toLocaleString()}
@@ -199,9 +199,6 @@ export default function PricingSection() {
                         <span className="relative z-10 flex items-center justify-center">
                           LINEで相談する
                         </span>
-                        {!plan.recommended && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                        )}
                       </button>
                     </a>
                   </motion.div>

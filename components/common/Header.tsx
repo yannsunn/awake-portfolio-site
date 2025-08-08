@@ -36,13 +36,14 @@ export default function Header() {
   }
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-sm border-b border-gray-100 shadow-sm'
-          : 'bg-white/90 backdrop-blur-sm'
-      )}
+    <motion.header
+      className="sticky top-0 z-50 border-b border-gray-100"
+      animate={{
+        backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.98)" : "rgba(255, 255, 255, 0.95)",
+        backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
+        boxShadow: isScrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "0 1px 3px 0 rgba(0, 0, 0, 0.1)"
+      }}
+      transition={{ duration: 0.3 }}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
@@ -150,6 +151,6 @@ export default function Header() {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }

@@ -31,16 +31,16 @@ export default function HeroSection() {
         >
           
           <motion.h1 
-            className="font-black mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5, type: "spring", bounce: 0.3 }}
           >
-            <span className="text-[var(--primary)]">{PROFILE.name}</span>
+            <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">{PROFILE.name}</span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl font-normal text-[var(--gray-700)] mb-12"
+            className="text-xl sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 tracking-wide"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -52,7 +52,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="bg-[var(--primary)] backdrop-blur-md rounded-[var(--border-radius)] p-8 mb-12 border border-[var(--gray-800)]"
+              className="bg-gradient-to-br from-gray-900 to-gray-800 backdrop-blur-md rounded-2xl p-8 mb-12 shadow-2xl"
             >
               <p className="text-xl md:text-2xl text-white mb-6 leading-relaxed font-light">
                 必要十分な機能で、確実な成果を。
@@ -69,10 +69,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
-              <Link href="#portfolio" className="w-full sm:w-auto">
+              <Link href="#portfolio" className="w-full sm:w-auto group">
                 <motion.button 
-                  className="btn-primary w-full sm:w-auto min-w-[160px]"
-                  whileHover={{ scale: 1.02 }}
+                  className="w-full sm:w-auto px-10 py-4 text-lg font-bold bg-white text-gray-900 rounded-xl transition-all duration-300 hover:shadow-xl"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   実績を見る
@@ -81,8 +81,8 @@ export default function HeroSection() {
               
               <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <motion.button 
-                  className="btn-primary w-full sm:w-auto min-w-[160px] bg-[#06c755] hover:bg-[#04a948]"
-                  whileHover={{ scale: 1.02 }}
+                  className="w-full sm:w-auto px-10 py-4 text-lg font-bold bg-[#06c755] text-white rounded-xl transition-all duration-300 hover:bg-[#04a948] hover:shadow-xl"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   LINEで無料相談
