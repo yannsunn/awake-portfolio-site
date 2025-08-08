@@ -30,8 +30,11 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <motion.div 
         className="card-premium overflow-hidden h-full"
@@ -172,12 +175,12 @@ export default function WorksSection() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
 
   return (
-    <section id="portfolio" className="section-padding bg-gradient-to-b from-white to-gray-50">
+    <section id="portfolio" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="container mx-auto px-6">
         <motion.div
           {...animationVariants.fadeInUp}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <h2 className="font-black mb-6">制作実績</h2>
           <p className="text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
@@ -192,7 +195,7 @@ export default function WorksSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
         >
           {WORKS.map(project => (
             <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />

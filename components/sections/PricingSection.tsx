@@ -59,7 +59,7 @@ const PRICING_PLANS = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative section-padding bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="pricing" className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       {/* 背景エフェクト */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 right-20 w-72 h-72 bg-purple-200 rounded-full blur-3xl" />
@@ -67,7 +67,7 @@ export default function PricingSection() {
       </div>
       
       <div className="container mx-auto px-6 relative">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,8 +82,8 @@ export default function PricingSection() {
             >
               
             </motion.div>
-            <h2 className="font-black mb-6">料金プラン</h2>
-            <p className="text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-black mb-4">料金プラン</h2>
+            <p className="text-base md:text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
               お客様のニーズに合わせた明確な料金体系。<br />
               追加費用なしの安心価格です。
             </p>
@@ -95,17 +95,17 @@ export default function PricingSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto"
         >
           {PRICING_PLANS.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
               className="relative group"
-              whileHover={{ y: -12, scale: 1.02 }}
+              whileHover={{ y: -8, scale: 1.01 }}
             >
               {plan.recommended && (
                 <motion.div 
@@ -214,7 +214,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-24 text-center"
+          className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
           <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 max-w-6xl mx-auto">
             {/* 動的背景エフェクト */}

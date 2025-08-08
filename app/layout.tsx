@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import JsonLd from '@/components/common/JsonLd'
+import ScrollProgress from '@/components/common/ScrollProgress'
 import { generateMetadata as generateMeta } from '@/lib/utils'
 import { PROFILE } from '@/lib/constants'
 
@@ -56,6 +57,7 @@ export default function RootLayout({
     <html lang="ja" className={notoSansJP.variable}>
       <body className="min-h-screen flex flex-col">
         <JsonLd data={jsonLdData} />
+        <ScrollProgress />
         <Header />
         <main className="flex-grow">
           {children}

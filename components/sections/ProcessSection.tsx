@@ -51,7 +51,7 @@ const PROCESS_STEPS = [
 
 export default function ProcessSection() {
   return (
-    <Section id="process" background="white" padding="xl">
+    <Section id="process" background="white" padding="lg">
       <SectionHeader
         title="制作プロセス"
         description="お客様に安心してご依頼いただけるよう、明確で透明性の高い制作フローをご用意しています。"
@@ -64,17 +64,18 @@ export default function ProcessSection() {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {PROCESS_STEPS.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              viewport={{ once: true, margin: "-80px" }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="relative"
             >
-              <Card variant="elevated" className="h-full p-8 text-center relative overflow-hidden">
+              <Card variant="elevated" className="h-full p-6 text-center relative overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 {/* Background Number */}
                 <div className="absolute top-4 right-4 text-6xl font-bold text-gray-200 leading-none">
                   {step.step}
@@ -103,7 +104,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 md:mt-12 text-center"
         >
           <div className="bg-gray-800 rounded-lg p-8 text-white">
             <h3 className="text-2xl font-bold mb-6">制作期間の目安</h3>
