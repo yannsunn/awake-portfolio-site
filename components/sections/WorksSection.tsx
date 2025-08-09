@@ -45,66 +45,65 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         }}
         transition={{ duration: 0.3 }}
       >
-      <div className="relative overflow-hidden aspect-[16/10]">
-        <div className="absolute inset-0">
-          <Image
-            src={project.imageUrl} 
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            loading="lazy"
-            onError={() => {
-              console.warn(`Failed to load image: ${project.imageUrl}`)
-            }}
-          />
-        </div>
-        <div className="absolute top-3 right-3 z-10">
-          <motion.span 
-            className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-lg"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            {project.price}
-          </motion.span>
-        </div>
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="text-center">
-            <motion.p
-              className="text-white text-sm font-medium mb-2"
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
-              transition={{ duration: 0.2, delay: 0.1 }}
-            >
-              クリックで詳細を見る
-            </motion.p>
-            {project.url && (
-              <motion.button
-                className="bg-white/90 text-gray-900 px-4 py-2 rounded-lg font-medium text-xs hover:bg-white transition-colors"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: isHovered ? 1 : 0.9, opacity: isHovered ? 1 : 0 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.url, '_blank');
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                サイトを見る →
-              </motion.button>
-            )}
+        <div className="relative overflow-hidden aspect-[16/10]">
+          <div className="absolute inset-0">
+            <Image
+              src={project.imageUrl} 
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
+              onError={() => {
+                console.warn(`Failed to load image: ${project.imageUrl}`)
+              }}
+            />
           </div>
-        </motion.div>
-      </div>
-      </motion.div>
-      <CardContent className="p-4 md:p-5">
+          <div className="absolute top-3 right-3 z-10">
+            <motion.span 
+              className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-lg"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {project.price}
+            </motion.span>
+          </div>
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-center">
+              <motion.p
+                className="text-white text-sm font-medium mb-2"
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+              >
+                クリックで詳細を見る
+              </motion.p>
+              {project.url && (
+                <motion.button
+                  className="bg-white/90 text-gray-900 px-4 py-2 rounded-lg font-medium text-xs hover:bg-white transition-colors"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: isHovered ? 1 : 0.9, opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.2, delay: 0.2 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.url, '_blank');
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  サイトを見る →
+                </motion.button>
+              )}
+            </div>
+          </motion.div>
+        </div>
+        <CardContent className="p-4 md:p-5">
         <div className="mb-3">
           <h3 className="text-base font-bold text-gray-900 mb-2">{project.title}</h3>
           <div className="flex flex-wrap items-center gap-2 text-xs text-gray-600 mb-2">
@@ -164,7 +163,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </div>
         )}
-      </CardContent>
+        </CardContent>
+      </motion.div>
     </motion.div>
   )
 })
