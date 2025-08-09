@@ -37,23 +37,20 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
       <div 
-        className="relative overflow-hidden h-full flex flex-col rounded-lg transition-all duration-300"
+        className="relative overflow-hidden flex flex-col rounded-lg transition-all duration-300 h-full"
         style={{
-          background: "rgba(255, 255, 255, 0.85)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(229, 231, 235, 0.5)",
+          background: "rgba(255, 255, 255, 0.7)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          border: "1px solid rgba(229, 231, 235, 0.3)",
           boxShadow: isHovered 
-            ? "0 10px 30px -5px rgba(0, 0, 0, 0.1)" 
-            : "0 4px 15px -3px rgba(0, 0, 0, 0.07)"
+            ? "0 8px 20px -4px rgba(0, 0, 0, 0.08)" 
+            : "0 2px 10px -2px rgba(0, 0, 0, 0.05)",
+          minHeight: "450px"
         }}
       >
-        <div className="relative overflow-hidden aspect-[16/10] group">
-          <motion.div 
-            className="absolute inset-0"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
+        <div className="relative overflow-hidden aspect-[16/10] flex-shrink-0">
+          <div className="absolute inset-0">
             <Image
               src={project.imageUrl} 
               alt={project.title}
@@ -65,18 +62,13 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                 console.warn(`Failed to load image: ${project.imageUrl}`)
               }}
             />
-          </motion.div>
+          </div>
           
           {/* シンプルな価格タグ */}
           <div className="absolute top-3 right-3 z-10">
-            <motion.span
-              className="bg-[var(--accent)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-lg"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-            >
+            <span className="bg-[var(--accent)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-md">
               {project.price}
-            </motion.span>
+            </span>
           </div>
           {/* シンプルなホバーオーバーレイ */}
           <motion.div 
@@ -105,70 +97,68 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </motion.div>
         </div>
-        <CardContent className="p-5 flex flex-col h-full">
-          <div className="flex-grow">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
-              {project.title}
-            </h3>
-            
-            <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
-              <span>{project.category}</span>
-              <span className="text-gray-400">•</span>
-              <span>{project.duration}</span>
-              {project.pages && (
-                <>
-                  <span className="text-gray-400">•</span>
-                  <span>{project.pages}</span>
-                </>
-              )}
-            </div>
-            
-            <p className="text-sm text-gray-600 leading-relaxed mb-4 min-h-[3.75rem] line-clamp-3">
-              {project.description}
-            </p>
+        <div className="p-5 flex flex-col flex-grow">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
+            {project.title}
+          </h3>
+          
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
+            <span>{project.category}</span>
+            <span className="text-gray-400">•</span>
+            <span>{project.duration}</span>
+            {project.pages && (
+              <>
+                <span className="text-gray-400">•</span>
+                <span>{project.pages}</span>
+              </>
+            )}
           </div>
+          
+          <p className="text-sm text-gray-600 leading-relaxed mb-4 h-[3.75rem] overflow-hidden line-clamp-3">
+            {project.description}
+          </p>
         
-        {project.marketPrice && (
-          <div className="mb-4 p-4 bg-gray-50/80 rounded-lg backdrop-blur-sm">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">他社相場</p>
-                <p className="text-base text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">弊社価格</p>
-                <p className="text-xl font-bold text-[var(--accent)] tabular-nums">{project.price}</p>
+          {project.marketPrice && (
+            <div className="mb-4 p-3 bg-gray-50/50 rounded-lg backdrop-blur-sm">
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">他社相場</p>
+                  <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">弊社価格</p>
+                  <p className="text-lg font-bold text-[var(--accent)] tabular-nums">{project.price}</p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         
-        {project.features && (
-          <div className="mb-4">
-            <div className="flex flex-wrap gap-2">
-              {project.features.slice(0, 3).map((feature, index) => (
-                <span 
-                  key={index}
-                  className="bg-[var(--accent)]/10 text-[var(--accent)] text-xs px-3 py-1.5 rounded-md font-medium"
-                >
-                  {feature}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {project.result && (
-          <div className="border-t border-gray-200 pt-4 mt-auto">
-            <div className="flex items-center">
-              <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                <span className="text-xs font-bold">✓</span>
+          {project.features && (
+            <div className="mb-4">
+              <div className="flex flex-wrap gap-1.5">
+                {project.features.slice(0, 3).map((feature, index) => (
+                  <span 
+                    key={index}
+                    className="bg-[var(--accent)]/10 text-[var(--accent)] text-xs px-2.5 py-1 rounded font-medium"
+                  >
+                    {feature}
+                  </span>
+                ))}
               </div>
-              <span className="text-sm text-gray-700 font-medium line-clamp-2">{project.result}</span>
             </div>
-          </div>
-        )}
-        </CardContent>
+          )}
+        
+          {project.result && (
+            <div className="border-t border-gray-200/50 pt-3 mt-auto">
+              <div className="flex items-start">
+                <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                  <span className="text-xs font-bold">✓</span>
+                </div>
+                <span className="text-xs text-gray-700 font-medium line-clamp-2">{project.result}</span>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   )
