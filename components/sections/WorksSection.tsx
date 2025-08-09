@@ -26,21 +26,36 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
 
   return (
     <motion.div 
-      className="cursor-pointer group" 
+      className="cursor-pointer group relative" 
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
     >
       <div 
-        className="card-premium overflow-hidden h-full flex flex-col bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+        className="relative overflow-hidden h-full flex flex-col rounded-xl transition-all duration-500"
+        style={{
+          background: isHovered 
+            ? "rgba(255, 255, 255, 0.98)" 
+            : "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(229, 231, 235, 0.3)",
+          boxShadow: isHovered 
+            ? "0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1)" 
+            : "0 10px 25px -8px rgba(0, 0, 0, 0.08)"
+        }}
       >
-        <div className="relative overflow-hidden aspect-[16/10]">
-          <div className="absolute inset-0">
+        <div className="relative overflow-hidden aspect-[16/10] group">
+          <motion.div 
+            className="absolute inset-0"
+            animate={{ scale: isHovered ? 1.05 : 1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Image
               src={project.imageUrl} 
               alt={project.title}
@@ -52,107 +67,180 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                 console.warn(`Failed to load image: ${project.imageUrl}`)
               }}
             />
-          </div>
+          </motion.div>
+          
+          {/* 令和風グラデーションオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+          
+          {/* 価格タグ - 和モダンスタイル */}
           <div className="absolute top-3 right-3 z-10">
-            <motion.span 
-              className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-lg"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2 }}
+            <motion.div
+              initial={{ scale: 0, rotate: -10 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+              whileHover={{ scale: 1.1 }}
+              className="relative"
             >
-              {project.price}
-            </motion.span>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur-md opacity-50" />
+              <span className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-xs px-4 py-2 rounded-lg font-bold tabular-nums shadow-xl backdrop-blur-sm border border-white/20">
+                {project.price}
+              </span>
+            </motion.div>
           </div>
+          {/* ホバーオーバーレイ - 和モダンエフェクト */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            className="absolute inset-0 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            <div className="text-center">
-              <motion.p
-                className="text-white text-sm font-medium mb-2"
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
-                transition={{ duration: 0.2, delay: 0.1 }}
+            {/* 背景ブラー効果 */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-[2px]" />
+            
+            <div className="relative text-center z-10">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
-                クリックで詳細を見る
-              </motion.p>
-              {project.url && (
-                <motion.button
-                  className="bg-white/90 text-gray-900 px-4 py-2 rounded-lg font-medium text-xs hover:bg-white transition-colors"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: isHovered ? 1 : 0.9, opacity: isHovered ? 1 : 0 }}
-                  transition={{ duration: 0.2, delay: 0.2 }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(project.url, '_blank');
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  サイトを見る →
-                </motion.button>
-              )}
+                <p className="text-white/90 text-sm font-medium mb-3 tracking-wider">
+                  詳細を見る
+                </p>
+                {project.url && (
+                  <motion.button
+                    className="relative group/btn overflow-hidden bg-white/10 backdrop-blur-md text-white px-5 py-2.5 rounded-full font-medium text-sm border border-white/30 hover:border-white/50 transition-all duration-300"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.url, '_blank');
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="relative z-10">サイトを見る →</span>
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-r from-indigo-500/40 to-purple-500/40"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.button>
+                )}
+              </motion.div>
             </div>
           </motion.div>
         </div>
-        <CardContent className="p-5 flex-1 flex flex-col">
-          <div className="flex-1">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
-              <span>{project.category}</span>
-              <span className="text-gray-400">•</span>
-              <span>{project.duration}</span>
+        <CardContent className="p-6 flex-1 flex flex-col relative">
+          {/* 装飾的な背景パターン */}
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full blur-3xl" />
+          </div>
+          
+          <div className="flex-1 relative">
+            <motion.h3 
+              className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {project.title}
+            </motion.h3>
+            
+            <motion.div 
+              className="flex flex-wrap items-center gap-2 text-sm mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="text-indigo-600 font-medium">{project.category}</span>
+              <span className="text-gray-300">•</span>
+              <span className="text-gray-500">{project.duration}</span>
               {project.pages && (
                 <>
-                  <span className="text-gray-400">•</span>
-                  <span>{project.pages}</span>
+                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-500">{project.pages}</span>
                 </>
               )}
-            </div>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
+            </motion.div>
+            
+            <motion.p 
+              className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              {project.description}
+            </motion.p>
           </div>
         
         {project.marketPrice && (
-          <div className="mb-4 p-4 bg-gray-50 rounded-lg">
-            <div className="flex justify-between items-center">
+          <motion.div 
+            className="mb-4 p-4 rounded-xl relative overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.5))",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(229, 231, 235, 0.3)"
+            }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5" />
+            <div className="flex justify-between items-center relative">
               <div>
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">他社相場</p>
                 <p className="text-base text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">弊社価格</p>
-                <p className="text-xl font-bold text-gray-900 tabular-nums">{project.price}</p>
+                <p className="text-xs font-medium text-indigo-600 uppercase tracking-wider mb-1">弊社価格</p>
+                <p className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent tabular-nums">{project.price}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
         
         {project.features && (
-          <div className="mb-4">
+          <motion.div 
+            className="mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
             <div className="flex flex-wrap gap-2">
               {project.features.slice(0, 3).map((feature, index) => (
-                <span 
+                <motion.span 
                   key={index}
-                  className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-medium"
+                  className="relative overflow-hidden bg-gradient-to-r from-indigo-500/10 to-purple-500/10 text-indigo-700 text-xs px-3 py-1.5 rounded-full font-medium border border-indigo-200/30 backdrop-blur-sm"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1 * index }}
+                  whileHover={{ scale: 1.05 }}
                 >
                   {feature}
-                </span>
+                </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
         
         {project.result && (
-          <div className="border-t border-gray-200 pt-4 mt-auto">
-            <div className="flex items-center">
-              <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+          <motion.div 
+            className="pt-4 mt-auto relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            <div className="flex items-center pt-4">
+              <motion.div 
+                className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0 shadow-lg"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
                 <span className="text-xs font-bold">✓</span>
-              </div>
+              </motion.div>
               <span className="text-sm text-gray-700 font-medium">{project.result}</span>
             </div>
-          </div>
+          </motion.div>
         )}
         </CardContent>
       </div>
