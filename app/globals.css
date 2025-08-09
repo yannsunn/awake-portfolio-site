@@ -244,15 +244,15 @@ strong {
   
   /* 統一カードスタイル */
   .card-primary {
-    @apply bg-white border border-gray-100 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
+    @apply bg-white border border-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg;
   }
   
   .card-secondary {
-    @apply bg-gray-50 border border-gray-100 p-8 rounded-xl transition-all duration-300 hover:bg-white hover:shadow-lg;
+    @apply bg-gray-50 border border-gray-100 p-4 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-md;
   }
   
   .card-accent {
-    @apply bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] text-white p-8 rounded-xl shadow-xl;
+    @apply bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] text-white p-6 rounded-lg shadow-lg;
   }
   
   /* 価格表示用 */

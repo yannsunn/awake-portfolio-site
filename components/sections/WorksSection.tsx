@@ -70,40 +70,37 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           </motion.span>
         </div>
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
+          className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <motion.div 
-            className="text-white w-full"
-            initial={{ y: 10 }}
-            animate={{ y: isHovered ? 0 : 10 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="flex items-end justify-between">
-              <div>
-                <h3 className="text-lg font-bold mb-1">{project.title}</h3>
-                <p className="text-xs opacity-90">詳細を見る →</p>
-              </div>
-              {project.url && (
-                <motion.button
-                  className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium text-xs border border-white/30"
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: isHovered ? 1 : 0.9 }}
-                  transition={{ duration: 0.2 }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(project.url, '_blank');
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  サイトを見る
-                </motion.button>
-              )}
-            </div>
-          </motion.div>
+          <div className="text-center">
+            <motion.p
+              className="text-white text-sm font-medium mb-2"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+            >
+              クリックで詳細を見る
+            </motion.p>
+            {project.url && (
+              <motion.button
+                className="bg-white/90 text-gray-900 px-4 py-2 rounded-lg font-medium text-xs hover:bg-white transition-colors"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: isHovered ? 1 : 0.9, opacity: isHovered ? 1 : 0 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.url, '_blank');
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                サイトを見る →
+              </motion.button>
+            )}
+          </div>
         </motion.div>
       </div>
       </motion.div>
