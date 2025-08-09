@@ -36,14 +36,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
-      <motion.div 
-        className="card-premium overflow-hidden h-full"
-        animate={{ 
-          boxShadow: isHovered 
-            ? "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
-            : "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
-        }}
-        transition={{ duration: 0.3 }}
+      <div 
+        className="card-premium overflow-hidden h-full flex flex-col bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
       >
         <div className="relative overflow-hidden aspect-[16/10]">
           <div className="absolute inset-0">
@@ -103,68 +97,65 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </motion.div>
         </div>
-        <CardContent className="p-4 md:p-5">
-        <div className="mb-3">
-          <h3 className="text-base font-bold text-gray-900 mb-2">{project.title}</h3>
-          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-600 mb-2">
-            <span>{project.category}</span>
-            <span className="text-gray-400">•</span>
-            <span>{project.duration}</span>
-            {project.pages && (
-              <>
-                <span className="text-gray-400">•</span>
-                <span>{project.pages}</span>
-              </>
-            )}
+        <CardContent className="p-5 flex-grow flex flex-col">
+          <div className="flex-grow">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+            <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
+              <span>{project.category}</span>
+              <span className="text-gray-400">•</span>
+              <span>{project.duration}</span>
+              {project.pages && (
+                <>
+                  <span className="text-gray-400">•</span>
+                  <span>{project.pages}</span>
+                </>
+              )}
+            </div>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">{project.description}</p>
           </div>
-          <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">{project.description}</p>
-        </div>
         
         {project.marketPrice && (
-          <div className="mb-3 p-3 bg-gray-50 rounded-lg">
+          <div className="mb-4 p-4 bg-gray-50 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-0.5">他社相場</p>
-                <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">他社相場</p>
+                <p className="text-base text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
               </div>
               <div className="text-right">
-                <p className="text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-0.5">弊社価格</p>
-                <p className="text-lg font-bold text-gray-900 tabular-nums">{project.price}</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">弊社価格</p>
+                <p className="text-xl font-bold text-gray-900 tabular-nums">{project.price}</p>
               </div>
             </div>
           </div>
         )}
         
         {project.features && (
-          <div className="mb-3">
-            <div className="flex flex-wrap gap-1.5">
+          <div className="mb-4">
+            <div className="flex flex-wrap gap-2">
               {project.features.slice(0, 3).map((feature, index) => (
-                <motion.span 
+                <span 
                   key={index}
-                  className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-[10px] px-2.5 py-1 rounded-md font-medium"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.05 }}
+                  className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-medium"
                 >
                   {feature}
-                </motion.span>
+                </span>
               ))}
             </div>
           </div>
         )}
         
         {project.result && (
-          <div className="border-t border-gray-200 pt-3 mt-3">
+          <div className="border-t border-gray-200 pt-4 mt-auto">
             <div className="flex items-center">
-              <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0">
-                <span className="text-[10px] font-bold">✓</span>
+              <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="text-xs font-bold">✓</span>
               </div>
-              <span className="text-xs text-gray-700 font-medium">{project.result}</span>
+              <span className="text-sm text-gray-700 font-medium">{project.result}</span>
             </div>
           </div>
         )}
         </CardContent>
-      </motion.div>
+      </div>
     </motion.div>
   )
 })
