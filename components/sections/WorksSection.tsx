@@ -97,8 +97,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             </div>
           </motion.div>
         </div>
-        <CardContent className="p-5 flex-grow flex flex-col">
-          <div className="flex-grow">
+        <CardContent className="p-5 flex-1 flex flex-col">
+          <div className="flex-1">
             <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
             <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
               <span>{project.category}</span>
@@ -111,7 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                 </>
               )}
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">{project.description}</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
           </div>
         
         {project.marketPrice && (
