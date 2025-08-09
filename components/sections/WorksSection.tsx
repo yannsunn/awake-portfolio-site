@@ -59,9 +59,9 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             }}
           />
         </div>
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-3 right-3 z-10">
           <motion.span 
-            className="premium-gradient text-white text-sm px-4 py-2 rounded-[var(--border-radius)] font-semibold tabular-nums shadow-[var(--shadow-md)]"
+            className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-lg"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -70,82 +70,85 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           </motion.span>
         </div>
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-600/50 to-transparent flex items-end justify-between p-6"
+          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.div 
-            className="text-white"
-            initial={{ y: 20 }}
-            animate={{ y: isHovered ? 0 : 20 }}
-            transition={{ duration: 0.3 }}
+            className="text-white w-full"
+            initial={{ y: 10 }}
+            animate={{ y: isHovered ? 0 : 10 }}
+            transition={{ duration: 0.2 }}
           >
-            <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-            <p className="text-sm opacity-90">詳細を見る →</p>
+            <div className="flex items-end justify-between">
+              <div>
+                <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+                <p className="text-xs opacity-90">詳細を見る →</p>
+              </div>
+              {project.url && (
+                <motion.button
+                  className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium text-xs border border-white/30"
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: isHovered ? 1 : 0.9 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.url, '_blank');
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  サイトを見る
+                </motion.button>
+              )}
+            </div>
           </motion.div>
-          {project.url && (
-            <motion.button
-              className="glass-effect text-white px-6 py-3 rounded-xl font-bold text-sm"
-              initial={{ y: 20 }}
-              animate={{ y: isHovered ? 0 : 20 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(project.url, '_blank');
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              サイトを見る
-            </motion.button>
-          )}
         </motion.div>
       </div>
       </motion.div>
-      <CardContent className="p-6">
-        <div className="mb-4">
-          <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-          <div className="flex items-center gap-3 text-sm text-gray-700 mb-3">
+      <CardContent className="p-4 md:p-5">
+        <div className="mb-3">
+          <h3 className="text-base font-bold text-gray-900 mb-2">{project.title}</h3>
+          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-600 mb-2">
             <span>{project.category}</span>
-            <span className="text-gray-500">•</span>
+            <span className="text-gray-400">•</span>
             <span>{project.duration}</span>
             {project.pages && (
               <>
-                <span className="text-gray-500">•</span>
+                <span className="text-gray-400">•</span>
                 <span>{project.pages}</span>
               </>
             )}
           </div>
-          <p className="text-sm text-gray-700 leading-relaxed">{project.description}</p>
+          <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">{project.description}</p>
         </div>
         
         {project.marketPrice && (
-          <div className="mb-4 card-secondary">
+          <div className="mb-3 p-3 bg-gray-50 rounded-lg">
             <div className="flex justify-between items-center">
               <div>
-                <p className="price-label mb-1">他社相場</p>
-                <p className="text-gray-500 line-through tabular-nums">{project.marketPrice}</p>
+                <p className="text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-0.5">他社相場</p>
+                <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
               </div>
               <div className="text-right">
-                <p className="price-label mb-1">弊社参考価格</p>
-                <p className="price-display">{project.price}</p>
+                <p className="text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-0.5">弊社価格</p>
+                <p className="text-lg font-bold text-gray-900 tabular-nums">{project.price}</p>
               </div>
             </div>
           </div>
         )}
         
         {project.features && (
-          <div className="mb-4">
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-1.5">
               {project.features.slice(0, 3).map((feature, index) => (
                 <motion.span 
                   key={index}
-                  className="premium-gradient text-white text-sm px-4 py-2 rounded-[var(--border-radius)] font-semibold shadow-[var(--shadow-md)]"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white text-[10px] px-2.5 py-1 rounded-md font-medium"
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
+                  transition={{ delay: index * 0.05 }}
                 >
                   {feature}
                 </motion.span>
@@ -155,12 +158,12 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         )}
         
         {project.result && (
-          <div className="border-t-2 border-gray-200 pt-4">
+          <div className="border-t border-gray-200 pt-3 mt-3">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">
-                <span className="text-sm font-bold">✓</span>
+              <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                <span className="text-[10px] font-bold">✓</span>
               </div>
-              <span className="text-primary text-base">{project.result}</span>
+              <span className="text-xs text-gray-700 font-medium">{project.result}</span>
             </div>
           </div>
         )}
@@ -195,7 +198,7 @@ export default function WorksSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {WORKS.map(project => (
             <ProjectCard key={project.id} project={project} onClick={() => setActiveProject(project)} />

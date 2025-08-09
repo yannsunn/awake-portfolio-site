@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Inter, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
@@ -8,11 +8,20 @@ import ScrollProgress from '@/components/common/ScrollProgress'
 import { generateMetadata as generateMeta } from '@/lib/utils'
 import { PROFILE } from '@/lib/constants'
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  preload: true,
+})
+
 const notoSansJP = Noto_Sans_JP({ 
   subsets: ['latin'],
   variable: '--font-noto-sans-jp',
   display: 'swap',
-  preload: true,
+  weight: ['400', '500', '600', '700'],
+  preload: false,
 })
 
 export const metadata: Metadata = {
@@ -54,12 +63,12 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="ja" className={notoSansJP.variable}>
+    <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
       <body className="min-h-screen flex flex-col">
         <JsonLd data={jsonLdData} />
         <ScrollProgress />
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           {children}
         </main>
         <Footer />

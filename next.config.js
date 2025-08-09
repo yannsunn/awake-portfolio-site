@@ -1,18 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // パフォーマンス最適化
+  swcMinify: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  
   experimental: {
     serverComponentsExternalPackages: [],
   },
   
   // 画像最適化
   images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 768, 1024, 1280, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1年
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['localhost', 'portfolio.awakeinc.co.jp'],
   },
   
   // 圧縮とトレースファイル最適化
@@ -24,19 +29,45 @@ const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     // プロダクションビルドでのバンドル分析
     if (!dev && !isServer) {
-      config.optimization.splitChunks.cacheGroups = {
-        ...config.optimization.splitChunks.cacheGroups,
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
+      config.optimization = {
+        ...config.optimization,
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
           chunks: 'all',
-          priority: 10,
-        },
-        framerMotion: {
-          test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-          name: 'framer-motion',
-          chunks: 'all',
-          priority: 20,
+          maxInitialRequests: 25,
+          minSize: 20000,
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+              reuseExistingChunk: true,
+            },
+            framerMotion: {
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              name: 'framer-motion',
+              chunks: 'all',
+              priority: 20,
+              enforce: true,
+            },
+            reactHookForm: {
+              test: /[\\/]node_modules[\\/](react-hook-form|@hookform)[\\/]/,
+              name: 'react-hook-form',
+              chunks: 'all',
+              priority: 20,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              priority: 5,
+              chunks: 'all',
+              reuseExistingChunk: true,
+            },
+          },
         },
       }
     }

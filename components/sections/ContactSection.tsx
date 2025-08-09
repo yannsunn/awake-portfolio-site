@@ -85,7 +85,7 @@ export default function ContactSection() {
                     className="border-2 border-gray-200 focus:border-gray-900 rounded-xl resize-none"
                   />
                 </div>
-                <Button className="btn-primary w-full py-4 text-lg font-bold">
+                <Button variant="primary" size="lg" className="w-full">
                   送信する
                 </Button>
               </form>
@@ -188,13 +188,13 @@ export default function ContactSection() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button className="w-full sm:w-auto bg-[#00B900] text-white hover:bg-[#00A000] px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px] border-2 border-[#00B900]">
+                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] min-w-[200px]">
                     
                     LINEで相談する
                   </Button>
                 </a>
                 <a href={`mailto:${PROFILE.email}`} className="w-full sm:w-auto">
-                  <Button className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 sm:px-10 py-4 text-base sm:text-lg font-bold min-w-[200px] min-h-[48px] transition-all duration-300">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 min-w-[200px]">
                     
                     メールで相談
                   </Button>
