@@ -39,10 +39,10 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       <div 
         className="relative overflow-hidden flex flex-col rounded-lg transition-all duration-300 h-full"
         style={{
-          background: "rgba(255, 255, 255, 0.3)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          border: "1px solid rgba(255, 255, 255, 0.2)",
+          background: "rgba(255, 255, 255, 0.75)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          border: "1px solid rgba(229, 231, 235, 0.4)",
           boxShadow: isHovered 
             ? "0 12px 24px -6px rgba(0, 0, 0, 0.12)" 
             : "0 4px 12px -2px rgba(0, 0, 0, 0.06)",
@@ -104,11 +104,11 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           
           <div className="flex flex-wrap items-center gap-2 text-sm text-gray-800 mb-3">
             <span className="font-semibold">{project.category}</span>
-            <span className="text-gray-500">•</span>
+            <span className="text-gray-700 font-bold">•</span>
             <span className="font-medium">{project.duration}</span>
             {project.pages && (
               <>
-                <span className="text-gray-500">•</span>
+                <span className="text-gray-700 font-bold">•</span>
                 <span className="font-medium">{project.pages}</span>
               </>
             )}
@@ -120,9 +120,8 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
         
           {project.marketPrice && (
             <div className="mb-4 p-3 rounded-lg" style={{
-              background: "rgba(249, 250, 251, 0.4)",
-              backdropFilter: "blur(8px)",
-              border: "1px solid rgba(229, 231, 235, 0.4)"
+              background: "rgba(249, 250, 251, 0.8)",
+              border: "1px solid rgba(229, 231, 235, 0.5)"
             }}>
               <div className="flex justify-between items-center">
                 <div>
@@ -145,9 +144,9 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                     key={index}
                     className="text-xs px-2.5 py-1 rounded font-semibold"
                     style={{
-                      background: "rgba(59, 130, 246, 0.08)",
+                      background: "rgba(59, 130, 246, 0.15)",
                       color: "var(--accent-dark)",
-                      border: "1px solid rgba(59, 130, 246, 0.25)"
+                      border: "1px solid rgba(59, 130, 246, 0.3)"
                     }}
                   >
                     {feature}
