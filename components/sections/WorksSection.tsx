@@ -39,13 +39,13 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
       <div 
         className="relative overflow-hidden flex flex-col rounded-lg transition-all duration-300 h-full"
         style={{
-          background: "rgba(255, 255, 255, 0.7)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          border: "1px solid rgba(229, 231, 235, 0.3)",
+          background: "rgba(255, 255, 255, 0.3)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
           boxShadow: isHovered 
-            ? "0 8px 20px -4px rgba(0, 0, 0, 0.08)" 
-            : "0 2px 10px -2px rgba(0, 0, 0, 0.05)",
+            ? "0 12px 24px -6px rgba(0, 0, 0, 0.12)" 
+            : "0 4px 12px -2px rgba(0, 0, 0, 0.06)",
           minHeight: "450px"
         }}
       >
@@ -102,32 +102,36 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             {project.title}
           </h3>
           
-          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700 mb-3">
-            <span className="font-medium">{project.category}</span>
-            <span className="text-gray-300">•</span>
-            <span>{project.duration}</span>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-800 mb-3">
+            <span className="font-semibold">{project.category}</span>
+            <span className="text-gray-500">•</span>
+            <span className="font-medium">{project.duration}</span>
             {project.pages && (
               <>
-                <span className="text-gray-300">•</span>
-                <span>{project.pages}</span>
+                <span className="text-gray-500">•</span>
+                <span className="font-medium">{project.pages}</span>
               </>
             )}
           </div>
           
-          <p className="text-sm text-gray-700 leading-relaxed mb-4 h-[3.75rem] overflow-hidden line-clamp-3">
+          <p className="text-sm text-gray-800 leading-relaxed mb-4 h-[3.75rem] overflow-hidden line-clamp-3">
             {project.description}
           </p>
         
           {project.marketPrice && (
-            <div className="mb-4 p-3 bg-white/40 border border-gray-200/50 rounded-lg backdrop-blur-sm">
+            <div className="mb-4 p-3 rounded-lg" style={{
+              background: "rgba(249, 250, 251, 0.4)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(229, 231, 235, 0.4)"
+            }}>
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs font-medium text-gray-600 uppercase tracking-wider mb-1">他社相場</p>
-                  <p className="text-sm text-gray-500 line-through tabular-nums">{project.marketPrice}</p>
+                  <p className="text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">他社相場</p>
+                  <p className="text-sm text-gray-600 line-through tabular-nums font-medium">{project.marketPrice}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-medium text-[var(--accent)] uppercase tracking-wider mb-1">弊社価格</p>
-                  <p className="text-lg font-bold text-[var(--accent)] tabular-nums">{project.price}</p>
+                  <p className="text-xs font-semibold text-[var(--accent-dark)] uppercase tracking-wider mb-1">弊社価格</p>
+                  <p className="text-lg font-black text-[var(--accent)] tabular-nums">{project.price}</p>
                 </div>
               </div>
             </div>
@@ -139,7 +143,12 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                 {project.features.slice(0, 3).map((feature, index) => (
                   <span 
                     key={index}
-                    className="bg-[var(--accent)]/15 text-[var(--accent-dark)] text-xs px-2.5 py-1 rounded font-medium border border-[var(--accent)]/20"
+                    className="text-xs px-2.5 py-1 rounded font-semibold"
+                    style={{
+                      background: "rgba(59, 130, 246, 0.08)",
+                      color: "var(--accent-dark)",
+                      border: "1px solid rgba(59, 130, 246, 0.25)"
+                    }}
                   >
                     {feature}
                   </span>
@@ -149,12 +158,12 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           )}
         
           {project.result && (
-            <div className="border-t border-gray-300/30 pt-3 mt-auto">
+            <div className="border-t border-gray-400/20 pt-3 mt-auto">
               <div className="flex items-start">
-                <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 bg-green-600 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
                   <span className="text-xs font-bold">✓</span>
                 </div>
-                <span className="text-xs text-gray-800 font-medium line-clamp-2">{project.result}</span>
+                <span className="text-xs text-gray-900 font-semibold line-clamp-2">{project.result}</span>
               </div>
             </div>
           )}
