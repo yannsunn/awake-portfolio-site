@@ -102,31 +102,31 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
             {project.title}
           </h3>
           
-          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3">
-            <span>{project.category}</span>
-            <span className="text-gray-400">•</span>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700 mb-3">
+            <span className="font-medium">{project.category}</span>
+            <span className="text-gray-300">•</span>
             <span>{project.duration}</span>
             {project.pages && (
               <>
-                <span className="text-gray-400">•</span>
+                <span className="text-gray-300">•</span>
                 <span>{project.pages}</span>
               </>
             )}
           </div>
           
-          <p className="text-sm text-gray-600 leading-relaxed mb-4 h-[3.75rem] overflow-hidden line-clamp-3">
+          <p className="text-sm text-gray-700 leading-relaxed mb-4 h-[3.75rem] overflow-hidden line-clamp-3">
             {project.description}
           </p>
         
           {project.marketPrice && (
-            <div className="mb-4 p-3 bg-gray-50/50 rounded-lg backdrop-blur-sm">
+            <div className="mb-4 p-3 bg-white/40 border border-gray-200/50 rounded-lg backdrop-blur-sm">
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">他社相場</p>
-                  <p className="text-sm text-gray-400 line-through tabular-nums">{project.marketPrice}</p>
+                  <p className="text-xs font-medium text-gray-600 uppercase tracking-wider mb-1">他社相場</p>
+                  <p className="text-sm text-gray-500 line-through tabular-nums">{project.marketPrice}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">弊社価格</p>
+                  <p className="text-xs font-medium text-[var(--accent)] uppercase tracking-wider mb-1">弊社価格</p>
                   <p className="text-lg font-bold text-[var(--accent)] tabular-nums">{project.price}</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
                 {project.features.slice(0, 3).map((feature, index) => (
                   <span 
                     key={index}
-                    className="bg-[var(--accent)]/10 text-[var(--accent)] text-xs px-2.5 py-1 rounded font-medium"
+                    className="bg-[var(--accent)]/15 text-[var(--accent-dark)] text-xs px-2.5 py-1 rounded font-medium border border-[var(--accent)]/20"
                   >
                     {feature}
                   </span>
@@ -149,12 +149,12 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           )}
         
           {project.result && (
-            <div className="border-t border-gray-200/50 pt-3 mt-auto">
+            <div className="border-t border-gray-300/30 pt-3 mt-auto">
               <div className="flex items-start">
                 <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
                   <span className="text-xs font-bold">✓</span>
                 </div>
-                <span className="text-xs text-gray-700 font-medium line-clamp-2">{project.result}</span>
+                <span className="text-xs text-gray-800 font-medium line-clamp-2">{project.result}</span>
               </div>
             </div>
           )}
