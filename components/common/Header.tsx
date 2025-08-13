@@ -43,7 +43,7 @@ export default function Header() {
         backdropFilter: isScrolled ? "blur(16px)" : "blur(12px)",
         WebkitBackdropFilter: isScrolled ? "blur(16px)" : "blur(12px)",
         borderBottom: isScrolled ? "1px solid rgba(229, 231, 235, 0.8)" : "1px solid rgba(229, 231, 235, 0.5)",
-        boxShadow: isScrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.07)" : "none"
+        boxShadow: isScrolled ? "0 1px 3px 0 rgba(0, 0, 0, 0.02)" : "none"
       }}
       transition={{ duration: 0.3 }}
     >

@@ -140,7 +140,7 @@ export default function AboutSection() {
                         whileHover={{ scale: 1.05, y: -2 }}
                         className="relative group"
                       >
-                        <div className="glass-minimal px-6 py-3 hover:bg-white/80 transition-all duration-300" style={{boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.01)'}}>
+                        <div className="glass-minimal px-6 py-3 hover:bg-white/80 transition-all duration-300" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
                           <span className="text-sm font-semibold text-gray-800 relative z-10">
                             {skill}
                           </span>

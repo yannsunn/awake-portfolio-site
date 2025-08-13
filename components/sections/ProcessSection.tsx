@@ -171,7 +171,7 @@ export default function ProcessSection() {
                     </p>
                     
                     {/* 詳細 */}
-                    <div className="glass-minimal" style={{boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.01)'}}>
+                    <div className="glass-minimal" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
                       <p className="text-sm text-gray-700 font-medium">
                         {step.details}
                       </p>
