@@ -8,43 +8,40 @@ const SERVICE_FEATURES = [
     icon: '💰',
     title: '費用対効果の最大化',
     description: '必要な機能に絞り込み、13.2万円〜の適正価格を実現',
-    gradient: 'from-green-50 to-emerald-50',
-    borderColor: 'border-green-200',
-    iconBg: 'bg-gradient-to-br from-green-400 to-emerald-500'
+    iconBg: 'bg-gradient-to-br from-green-400/20 to-emerald-500/20',
+    accentColor: 'from-green-400 to-emerald-500'
   },
   {
     icon: '🎯',
     title: '確実な成果',
     description: 'SEO対策・レスポンシブ対応を標準装備し、集客に直結',
-    gradient: 'from-blue-50 to-indigo-50',
-    borderColor: 'border-blue-200',
-    iconBg: 'bg-gradient-to-br from-blue-400 to-indigo-500'
+    iconBg: 'bg-gradient-to-br from-blue-400/20 to-indigo-500/20',
+    accentColor: 'from-blue-400 to-indigo-500'
   },
   {
     icon: '⚡',
     title: 'スピード納品',
     description: 'シンプルな構成により、最短1週間で公開可能',
-    gradient: 'from-purple-50 to-pink-50',
-    borderColor: 'border-purple-200',
-    iconBg: 'bg-gradient-to-br from-purple-400 to-pink-500'
+    iconBg: 'bg-gradient-to-br from-purple-400/20 to-pink-500/20',
+    accentColor: 'from-purple-400 to-pink-500'
   },
   {
     icon: '🤝',
     title: '継続的なサポート',
     description: '公開後の更新・改善も柔軟に対応',
-    gradient: 'from-orange-50 to-red-50',
-    borderColor: 'border-orange-200',
-    iconBg: 'bg-gradient-to-br from-orange-400 to-red-500'
+    iconBg: 'bg-gradient-to-br from-orange-400/20 to-red-500/20',
+    accentColor: 'from-orange-400 to-red-500'
   }
 ]
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
-      {/* 背景装飾 */}
+    <section id="about" className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50/50 via-white/30 to-gray-50/50 overflow-hidden relative">
+      {/* 背景装飾 - グラデーションメッシュ */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-20" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-20" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -85,12 +82,12 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-50px" }}
               className="relative group"
             >
-              <div className={`h-full bg-gradient-to-br ${feature.gradient} border ${feature.borderColor} rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2`}>
+              <div className="h-full glass glass-hover rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
                 {/* アイコン */}
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className={`w-16 h-16 ${feature.iconBg} rounded-xl flex items-center justify-center mb-6 shadow-lg`}
+                  className={`w-16 h-16 ${feature.iconBg} backdrop-blur-xl rounded-xl flex items-center justify-center mb-6 border border-white/20`}
                 >
                   <span className="text-2xl text-white">{feature.icon}</span>
                 </motion.div>
@@ -104,7 +101,7 @@ export default function AboutSection() {
                 </p>
                 
                 {/* ホバーエフェクト */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.accentColor} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
               </div>
             </motion.div>
           ))}
@@ -120,7 +117,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div className="glass rounded-3xl overflow-hidden">
                 {/* カテゴリーヘッダー */}
                 <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-8 py-6">
                   <h3 className="text-2xl font-bold text-white flex items-center gap-3">
@@ -143,7 +140,7 @@ export default function AboutSection() {
                         whileHover={{ scale: 1.05, y: -2 }}
                         className="relative group"
                       >
-                        <div className="bg-gradient-to-r from-gray-100 to-gray-50 px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div className="glass-minimal px-6 py-3 rounded-xl hover:bg-white/80 transition-all duration-300">
                           <span className="text-sm font-semibold text-gray-800 relative z-10">
                             {skill}
                           </span>
@@ -174,7 +171,7 @@ export default function AboutSection() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-3 glass px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white backdrop-blur-md hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
           >
             無料相談を始める
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

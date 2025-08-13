@@ -69,11 +69,12 @@ const PROCESS_STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden relative">
-      {/* 背景装飾 */}
+    <section id="process" className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden relative">
+      {/* 背景装飾 - グラデーションメッシュ */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-20" />
-        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-green-100 to-teal-100 rounded-full blur-3xl opacity-20" />
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
+        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-green-400 to-teal-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400 to-cyan-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -124,7 +125,7 @@ export default function ProcessSection() {
                 className="h-full"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <div className={`h-full bg-gradient-to-br ${step.bgColor} border ${step.borderColor} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden`}>
+                <div className="h-full glass glass-hover rounded-2xl p-8 transition-all duration-300 relative overflow-hidden">
                   {/* 背景パターン */}
                   <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" 
@@ -149,7 +150,7 @@ export default function ProcessSection() {
                         scale: 1.1
                       }}
                       transition={{ duration: 0.5 }}
-                      className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                      className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20`}
                     >
                       <span className="text-3xl text-white">{step.icon}</span>
                     </motion.div>
@@ -170,7 +171,7 @@ export default function ProcessSection() {
                     </p>
                     
                     {/* 詳細 */}
-                    <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200/50">
+                    <div className="glass-minimal p-4 rounded-xl">
                       <p className="text-sm text-gray-700 font-medium">
                         {step.details}
                       </p>
@@ -190,7 +191,7 @@ export default function ProcessSection() {
                   </div>
                   
                   {/* ホバーエフェクト */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/0 via-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
                 </div>
               </motion.div>
             </motion.div>
@@ -245,9 +246,9 @@ export default function ProcessSection() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="relative group"
               >
-                <div className={`bg-gradient-to-br ${item.bgColor} rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300`}>
+                <div className="glass glass-hover rounded-2xl p-8 transition-all duration-300">
                   {/* プランラベル */}
-                  <div className={`inline-block bg-gradient-to-r ${item.color} text-white text-sm font-bold px-4 py-2 rounded-full mb-4`}>
+                  <div className={`inline-block bg-gradient-to-r ${item.color} text-white text-sm font-bold px-4 py-2 rounded-full mb-4 backdrop-blur-md border border-white/20`}>
                     {item.plan}
                   </div>
                   
@@ -276,7 +277,7 @@ export default function ProcessSection() {
                   </div>
                   
                   {/* ホバーエフェクト */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/0 to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
                 </div>
               </motion.div>
             ))}

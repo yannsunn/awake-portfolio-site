@@ -16,14 +16,14 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
 
   return (
     <motion.article
-      className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+      className="group relative glass glass-hover rounded-2xl overflow-hidden transition-all duration-500"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -8, scale: 1.02 }}
     >
       {/* 画像セクション */}
       <div className="relative h-56 overflow-hidden bg-gray-100">
@@ -37,9 +37,9 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
         />
         
         {/* 価格バッジ */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 z-10">
           <motion.div
-            className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg"
+            className="glass px-4 py-2 rounded-full border border-white/30"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3 + index * 0.1 }}
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
       <div className="p-6">
         {/* カテゴリー & 期間 */}
         <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-          <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md font-medium">
+          <span className="px-2 py-1 glass-minimal text-blue-700 rounded-md font-medium backdrop-blur-sm">
             {project.category}
           </span>
           <span>{project.duration}</span>

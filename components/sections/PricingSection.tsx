@@ -59,11 +59,12 @@ const PRICING_PLANS = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* 背景エフェクト */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-purple-200 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl" />
+    <section id="pricing" className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden">
+      {/* 背景エフェクト - グラデーションメッシュ */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
       
       <div className="container mx-auto px-6 relative">
@@ -119,13 +120,13 @@ export default function PricingSection() {
                   </span>
                 </motion.div>
               )}
-              <div className={`card-premium h-full relative overflow-hidden ${
+              <div className={`h-full relative overflow-hidden rounded-2xl ${
                 plan.recommended 
-                  ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-700 transform scale-105' 
-                  : 'bg-white'
+                  ? 'glass-dark transform scale-105 border-2 border-purple-500/30' 
+                  : 'glass glass-hover'
               }`}>
                 {/* ホバー時のグラデーションオーバーレイ */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="text-center h-full flex flex-col relative z-10 p-8">
                   <motion.div 
                     className="mb-8"
@@ -168,10 +169,10 @@ export default function PricingSection() {
                         className="flex items-center group/feature"
                       >
                         <motion.div 
-                          className={`w-10 h-10 rounded-xl mr-4 flex items-center justify-center transition-all duration-300 ${
+                          className={`w-10 h-10 rounded-xl mr-4 flex items-center justify-center transition-all duration-300 backdrop-blur-md border ${
                             plan.recommended 
-                              ? 'bg-white text-gray-900 group-hover/feature:scale-110' 
-                              : 'bg-gray-900 text-white group-hover/feature:bg-purple-600'
+                              ? 'bg-white/20 text-white border-white/30 group-hover/feature:scale-110' 
+                              : 'bg-gray-900/20 text-gray-900 border-gray-200/30 group-hover/feature:bg-purple-600/20'
                           }`}
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
@@ -216,7 +217,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 max-w-6xl mx-auto">
+          <div className="relative overflow-hidden glass-dark rounded-3xl p-12 max-w-6xl mx-auto border border-gray-700/30">
             {/* 動的背景エフェクト */}
             <div className="absolute inset-0">
               <div className="absolute top-10 left-10 w-3 h-3 bg-white rounded-full floating-animation opacity-30" style={{animationDelay: '0s'}} />
@@ -248,7 +249,7 @@ export default function PricingSection() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div 
-                  className="glass-effect p-8 rounded-2xl border border-white/20 group"
+                  className="glass p-8 rounded-2xl border border-white/30 group backdrop-blur-xl"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -267,7 +268,7 @@ export default function PricingSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="glass-effect p-8 rounded-2xl border border-white/20 group"
+                  className="glass p-8 rounded-2xl border border-white/30 group backdrop-blur-xl"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >

@@ -332,21 +332,34 @@ strong {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
   
-  /* プレミアム視覚効果 */
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  /* ガラスモーフィズム効果 */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
   }
   
   .glass-dark {
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-xl;
+  }
+  
+  .glass-colored {
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/30 shadow-xl;
+  }
+  
+  .glass-minimal {
+    @apply bg-white/60 backdrop-blur-sm border border-gray-200/20 shadow-md;
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:border-white/40 hover:bg-white/90;
+  }
+  
+  /* 旧スタイル（互換性維持） */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   }
   
   .premium-gradient {
