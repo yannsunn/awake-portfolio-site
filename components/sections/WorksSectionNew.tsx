@@ -17,6 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
   return (
     <motion.article
       className="group relative glass glass-hover overflow-hidden transition-all duration-500"
+      style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -40,6 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
         <div className="absolute top-4 right-4 z-10">
           <motion.div
             className="glass px-4 py-2 rounded-full border border-white/30"
+            style={{boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.01)'}}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3 + index * 0.1 }}
@@ -81,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
       <div className="p-6">
         {/* カテゴリー & 期間 */}
         <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-          <span className="px-2 py-1 glass-minimal text-blue-700 font-medium backdrop-blur-sm">
+          <span className="px-2 py-1 glass-minimal text-blue-700 font-medium backdrop-blur-sm" style={{boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.01)'}}>
             {project.category}
           </span>
           <span>{project.duration}</span>

@@ -124,7 +124,7 @@ export default function PricingSection() {
                 plan.recommended 
                   ? 'glass-dark transform scale-105 border-2 border-purple-500/30' 
                   : 'glass glass-hover'
-              }`}>
+              }`} style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
                 {/* ホバー時のグラデーションオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="text-center h-full flex flex-col relative z-10 p-8">
