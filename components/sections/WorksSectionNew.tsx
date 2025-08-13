@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
 
   return (
     <motion.article
-      className="group relative glass glass-hover rounded-2xl overflow-hidden transition-all duration-500"
+      className="group relative glass glass-hover overflow-hidden transition-all duration-500"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
       <div className="p-6">
         {/* カテゴリー & 期間 */}
         <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-          <span className="px-2 py-1 glass-minimal text-blue-700 rounded-md font-medium backdrop-blur-sm">
+          <span className="px-2 py-1 glass-minimal text-blue-700 font-medium backdrop-blur-sm">
             {project.category}
           </span>
           <span>{project.duration}</span>
@@ -191,7 +191,7 @@ export default function WorksSection() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
           >
             お問い合わせはこちら
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

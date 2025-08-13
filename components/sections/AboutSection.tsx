@@ -82,7 +82,7 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-50px" }}
               className="relative group"
             >
-              <div className="h-full glass glass-hover rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="h-full glass glass-hover transition-all duration-300 transform hover:-translate-y-2 group p-6">
                 {/* アイコン */}
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
@@ -140,7 +140,7 @@ export default function AboutSection() {
                         whileHover={{ scale: 1.05, y: -2 }}
                         className="relative group"
                       >
-                        <div className="glass-minimal px-6 py-3 rounded-xl hover:bg-white/80 transition-all duration-300">
+                        <div className="glass-minimal px-6 py-3 hover:bg-white/80 transition-all duration-300">
                           <span className="text-sm font-semibold text-gray-800 relative z-10">
                             {skill}
                           </span>

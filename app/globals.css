@@ -248,8 +248,16 @@ strong {
   }
   
   /* 統一されたカードスタイル */
-  .card-shadow {
-    @apply shadow-lg border border-gray-100;
+  .card-standard {
+    @apply bg-white p-8 rounded-2xl shadow-lg border border-gray-100;
+  }
+  
+  .card-standard-hover {
+    @apply bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-100 shadow-lg;
   }
   
   .text-gradient {
@@ -348,19 +356,19 @@ strong {
   
   /* ガラスモーフィズム効果 - 統一された影 */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg;
+    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-8;
   }
   
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-lg;
+    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-lg rounded-2xl p-8;
   }
   
   .glass-colored {
-    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-lg;
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-lg rounded-2xl p-8;
   }
   
   .glass-minimal {
-    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-lg;
+    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-lg rounded-xl p-4;
   }
   
   .glass-hover {
