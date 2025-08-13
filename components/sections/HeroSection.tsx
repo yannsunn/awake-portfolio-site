@@ -86,7 +86,7 @@ export default function HeroSection() {
             className="max-w-4xl mx-auto mb-10 md:mb-14"
           >
             <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-6 md:mb-8 leading-relaxed font-medium">
-              必要十分な機能で、確実な成果を。
+              必要十分な機能で、効果的なサイトを。
             </p>
             <div className="flex items-center justify-center gap-3 md:gap-4 text-3xl md:text-4xl lg:text-5xl font-bold">
               <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥132,000</span>

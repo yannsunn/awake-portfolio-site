@@ -7,21 +7,21 @@ const SERVICE_FEATURES = [
   {
     icon: '💰',
     title: '費用対効果の最大化',
-    description: '必要な機能に絞り込み、13.2万円〜の適正価格を実現',
+    description: '必要な機能に絞り込み、13.2万円〜の明確な価格設定',
     iconBg: 'bg-gradient-to-br from-green-400/20 to-emerald-500/20',
     accentColor: 'from-green-400 to-emerald-500'
   },
   {
     icon: '🎯',
     title: '確実な成果',
-    description: 'SEO対策・レスポンシブ対応を標準装備し、集客に直結',
+    description: 'SEO対策・レスポンシブ対応を標準装備',
     iconBg: 'bg-gradient-to-br from-blue-400/20 to-indigo-500/20',
     accentColor: 'from-blue-400 to-indigo-500'
   },
   {
     icon: '⚡',
     title: 'スピード納品',
-    description: 'シンプルな構成により、最短1週間で公開可能',
+    description: 'シンプルな構成により、1週間程度での公開を目指します',
     iconBg: 'bg-gradient-to-br from-purple-400/20 to-pink-500/20',
     accentColor: 'from-purple-400 to-pink-500'
   },
@@ -65,9 +65,9 @@ export default function AboutSection() {
             私たちの強み
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            適正価格で確実な効果を重視したホームページ制作で、
+            適正価格で効果的なホームページ制作を通じて、
             <br className="hidden md:block" />
-            お客様のビジネス成長を全力でサポートします
+            お客様のビジネスをサポートします
           </p>
         </motion.div>
 

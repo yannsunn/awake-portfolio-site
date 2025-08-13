@@ -3,7 +3,7 @@ import type { Profile, Project, SkillCategory, NavigationItem, ValueProposition 
 export const PROFILE: Profile = {
   name: 'Awake Inc.',
   title: 'ホームページ制作',
-  description: '適正価格での確実なホームページ制作でビジネスを加速させます。',
+  description: '適正価格でのホームページ制作サービスを提供しています。',
   email: 'shop@awakeinc.co.jp',
   phone: '050-7115-4948',
   address: '〒207-0013 東京都東大和市向原5-1129-61 渡辺ビル1F',
@@ -23,7 +23,7 @@ export const WORKS: Project[] = [
     price: "39万8000円",
     duration: "2-3週間",
     features: ["LINE連携フォーム", "オリジナルUI", "SEO最適化"],
-    result: "問い合わせ数が増加",
+    result: "LINE連携による問い合わせ導線を構築",
     breakdown: "静的ページ×6、問い合わせフォーム実装、オリジナルUIデザイン+20%、SEO初期設定+10%"
   },
   {
@@ -39,7 +39,7 @@ export const WORKS: Project[] = [
     price: "98万円",
     duration: "3-4週間",
     features: ["商品DB連携", "決済システム", "在庫管理API"],
-    result: "オンライン売上と業務効率が改善",
+    result: "EC機能と在庫管理システムを導入",
     breakdown: "商品DB&決済連携、静的説明ページ×4、UI/UX設計+25%、在庫管理API連携・管理画面"
   },
   {
@@ -55,7 +55,7 @@ export const WORKS: Project[] = [
     price: "24万9800円",
     duration: "1-2週間",
     features: ["Lightboxギャラリー", "画像最適化", "LP設計"],
-    result: "製品問い合わせが増加",
+    result: "製品ギャラリーによる情報発信を強化",
     breakdown: "LPデザイン/コピー、ギャラリー実装、画像最適化/Lazy-load、フォーム&SMTP設定"
   },
   {
@@ -71,7 +71,7 @@ export const WORKS: Project[] = [
     price: "19万8000円",
     duration: "1-2週間",
     features: ["LINE公式連携", "CTA最適化", "SEO対策"],
-    result: "LINE相談からの成約が増加",
+    result: "LINE公式アカウントとの連携を実装",
     breakdown: "静的ページ×3、LINE公式アカウント呼び出し、SEO最適化・OGP設定"
   },
   {
@@ -87,7 +87,7 @@ export const WORKS: Project[] = [
     price: "13万2000円",
     duration: "1週間",
     features: ["SNS埋め込み", "スクロールアニメ", "レスポンシブ"],
-    result: "プロフィール経由での問い合わせが増加",
+    result: "SNS連携による情報の一元化を実現",
     breakdown: "シングルページデザイン、画像ギャラリー/SNS埋め込み、レスポンシブ最適化&スクロールアニメ"
   },
   {
@@ -103,7 +103,7 @@ export const WORKS: Project[] = [
     price: "15万8000円",
     duration: "1週間",
     features: ["高速表示", "CTA最適化", "A/Bテスト対応"],
-    result: "コンバージョンが改善",
+    result: "CTA配置とデザインを最適化",
     breakdown: "LP設計・コピーライティング、レスポンシブ対応、高速化最適化"
   }
 ]
@@ -123,14 +123,14 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 ]
 
 export const VALUE_PROPOSITION: ValueProposition = {
-  title: "高額でない、確実なホームページ制作",
+  title: "適正価格でのホームページ制作",
   subtitle: "余った予算で事業投資を",
-  description: "数百万円の高額なホームページを作っても使わなくなってしまっては意味がありません。弊社は必要な機能に絞り込んだ13万2000円からのホームページで、会社の顔としての役割を確実に果たします。浮いた予算は他の事業投資に回して、総合的な成長を実現しませんか？",
+  description: "必要な機能に絞り込んだ13万2000円からのホームページ制作を提供します。コストパフォーマンスを重視し、予算を効率的に活用したWeb制作をご提案します。",
   benefits: [
-    "必要最小限の機能で確実な効果",
-    "制作費を大幅に削減",
+    "必要最小限の機能で効果的なサイト構築",
+    "制作費を抑えた価格設定",
     "浮いた予算で他の投資が可能",
-    "メンテナンスが簡単で長期利用可能",
+    "シンプルな構成でメンテナンスしやすい設計",
     "SEO対策・レスポンシブ対応は標準装備"
   ]
 }

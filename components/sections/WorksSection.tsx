@@ -170,7 +170,7 @@ export default function WorksSection() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             これまでに制作したホームページの実績をご紹介します。
             <br />
-            すべて「適正価格で確実な効果」にこだわった案件です。
+            すべて「適正価格での効果的な制作」を心がけた案件です。
           </p>
         </motion.div>
 

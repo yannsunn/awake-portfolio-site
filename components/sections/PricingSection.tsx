@@ -116,7 +116,7 @@ export default function PricingSection() {
                   transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
                 >
                   <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full pulse-glow" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
-                    ✨ 一番人気
+                    ✨ おすすめプラン
                   </span>
                 </motion.div>
               )}
