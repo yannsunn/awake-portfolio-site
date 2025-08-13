@@ -165,11 +165,11 @@ export default function TestimonialsSection() {
 
                   {/* コンテンツ */}
                   <blockquote className="text-gray-700 mb-6 leading-relaxed relative">
-                    <span className="absolute -top-2 -left-2 text-4xl text-gray-300 opacity-50">"</span>
+                    <span className="absolute -top-2 -left-2 text-4xl text-gray-300 opacity-50">&ldquo;</span>
                     <p className="relative z-10 pl-4">
                       {testimonial.content}
                     </p>
-                    <span className="absolute -bottom-6 right-0 text-4xl text-gray-300 opacity-50">"</span>
+                    <span className="absolute -bottom-6 right-0 text-4xl text-gray-300 opacity-50">&rdquo;</span>
                   </blockquote>
 
                   {/* プロジェクトタイプと結果 */}
