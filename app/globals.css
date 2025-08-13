@@ -154,7 +154,7 @@ strong {
 
 @layer components {
   .btn-primary {
-    @apply relative overflow-hidden bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-300 hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply relative overflow-hidden bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5;
     letter-spacing: 0.025em;
     min-height: 48px;
     display: inline-flex;
@@ -206,7 +206,7 @@ strong {
   }
   
   .btn-secondary {
-    @apply bg-white border-2 border-gray-200 text-gray-700 px-8 py-3.5 rounded-lg font-medium transition-all duration-300 hover:border-[var(--accent)] hover:bg-gray-50 hover:shadow-lg hover:text-[var(--accent)];
+    @apply bg-white border-2 border-gray-200 text-gray-700 px-8 py-3.5 rounded-lg font-medium transition-all duration-300 hover:border-[var(--accent)] hover:bg-gray-50 hover:shadow-md hover:text-[var(--accent)];
     letter-spacing: 0.025em;
     min-height: 48px;
     display: inline-flex;
@@ -232,32 +232,37 @@ strong {
   
   /* セクションのpadding - 統一 */
   .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
-  }
-  
-  .section-padding-sm {
     @apply py-12 md:py-16 lg:py-20;
   }
   
+  .section-padding-sm {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+  
   .section-padding-lg {
-    @apply py-20 md:py-24 lg:py-32;
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* コンテナのpadding - 統一 */
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:translate-y-[-6px] hover:shadow-xl;
+    @apply transition-all duration-300 hover:translate-y-[-6px] hover:shadow-lg;
   }
   
   /* 統一されたカードスタイル */
   .card-standard {
-    @apply bg-white p-8 rounded-2xl shadow-lg border border-gray-100;
+    @apply bg-white p-8 rounded-2xl shadow-md border border-gray-100;
   }
   
   .card-standard-hover {
-    @apply bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all;
+    @apply bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all;
   }
   
   .card-gradient {
-    @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-100 shadow-lg;
+    @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-100 shadow-md;
   }
   
   .text-gradient {
@@ -326,7 +331,7 @@ strong {
   
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
   .hover-grow {
@@ -356,23 +361,23 @@ strong {
   
   /* ガラスモーフィズム効果 - 統一された影 */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-8;
+    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-md rounded-2xl p-8;
   }
   
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-lg rounded-2xl p-8;
+    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-md rounded-2xl p-8;
   }
   
   .glass-colored {
-    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-lg rounded-2xl p-8;
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-md rounded-2xl p-8;
   }
   
   .glass-minimal {
-    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-lg rounded-xl p-4;
+    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-sm rounded-xl p-4;
   }
   
   .glass-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:border-gray-100 hover:bg-white/90;
+    @apply transition-all duration-300 hover:shadow-lg hover:border-gray-100 hover:bg-white/90;
   }
   
   /* 旧スタイル（互換性維持） */
