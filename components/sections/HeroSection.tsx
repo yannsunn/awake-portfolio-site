@@ -83,16 +83,16 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] backdrop-blur-md rounded-xl p-8 md:p-10 mb-10 md:mb-14 shadow-2xl"
+              className="bg-white/95 backdrop-blur-md rounded-xl p-8 md:p-10 mb-10 md:mb-14 shadow-2xl border border-gray-200"
             >
-              <p className="text-lg md:text-xl lg:text-2xl text-white mb-6 md:mb-8 leading-relaxed font-medium">
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-6 md:mb-8 leading-relaxed font-medium">
                 必要十分な機能で、確実な成果を。
               </p>
-              <div className="flex items-center justify-center gap-3 md:gap-4 text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                <span className="tabular-nums">¥132,000</span>
-                <span className="text-lg md:text-xl text-gray-200 font-normal">から始める</span>
+              <div className="flex items-center justify-center gap-3 md:gap-4 text-3xl md:text-4xl lg:text-5xl font-bold">
+                <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥132,000</span>
+                <span className="text-lg md:text-xl text-gray-700 font-normal">から始める</span>
               </div>
-              <p className="text-lg text-gray-200 mt-6 font-medium">プロフェッショナルなWeb制作</p>
+              <p className="text-lg text-gray-700 mt-6 font-medium">プロフェッショナルなWeb制作</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

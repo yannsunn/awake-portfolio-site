@@ -161,12 +161,12 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 text-white max-w-5xl mx-auto">
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 max-w-5xl mx-auto border border-gray-200 shadow-xl">
             {/* 背景パターン */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" 
                 style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
+                  backgroundImage: `radial-gradient(circle at 2px 2px, #6b7280 1px, transparent 1px)`,
                   backgroundSize: '40px 40px'
                 }}
               />
@@ -182,12 +182,12 @@ export default function ContactSection() {
                 
               </motion.div>
               
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">まずは無料相談から</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">まずは無料相談から</h3>
               <div className="max-w-3xl mx-auto mb-10">
-                <p className="text-xl mb-4 leading-relaxed text-white">
+                <p className="text-xl mb-4 leading-relaxed text-gray-900 font-medium">
                   「適正価格で効果的なホームページが欲しい」
                 </p>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   そんなご要望にAwake Inc.がお応えします。<br />
                   お気軽にご相談ください。
                 </p>
@@ -201,7 +201,7 @@ export default function ContactSection() {
                   </Button>
                 </a>
                 <a href={`mailto:${PROFILE.email}`} className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 min-w-[200px]">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-gray-700 text-gray-900 hover:bg-gray-900 hover:text-white min-w-[200px]">
                     
                     メールで相談
                   </Button>
