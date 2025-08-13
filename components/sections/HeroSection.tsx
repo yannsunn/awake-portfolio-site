@@ -2,11 +2,15 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import ParticleBackground from '@/components/ui/ParticleBackground'
+import { useParallax } from '@/hooks/useScrollAnimation'
 import Image from 'next/image'
 import Button from '@/components/common/Button'
 import { PROFILE, VALUE_PROPOSITION } from '@/lib/constants'
 
 export default function HeroSection() {
+  const parallaxOffset = useParallax(0.3)
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* 最適化された背景画像 */}
@@ -38,12 +42,20 @@ export default function HeroSection() {
         />
       </picture>
       
+      {/* パーティクル背景 */}
+      <ParticleBackground
+        particleCount={30}
+        color="rgba(59, 130, 246, 0.3)"
+        speed={0.3}
+      />
+      
       {/* オーバーレイ */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/70 to-white/80"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
       
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
@@ -104,7 +116,7 @@ export default function HeroSection() {
               
               <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <motion.button 
-                  className="btn-primary w-full sm:w-auto bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755]"
+                  className="btn-primary glow-effect w-full sm:w-auto bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755]"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >

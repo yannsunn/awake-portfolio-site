@@ -664,3 +664,56 @@ strong {
     transform: translateY(-10px);
   }
 }
+
+/* グローエフェクト（CTAボタン用） */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.8),
+              0 0 60px rgba(59, 130, 246, 0.6),
+              0 0 80px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+}
+
+/* ネオングロー効果 */
+.neon-glow {
+  text-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.8),
+    0 0 20px rgba(59, 130, 246, 0.6),
+    0 0 30px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* プレミアムグロー */
+.premium-glow {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 
+    0 0 20px rgba(102, 126, 234, 0.4),
+    0 0 40px rgba(118, 75, 162, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.premium-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(102, 126, 234, 0.6),
+    0 0 60px rgba(118, 75, 162, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+}

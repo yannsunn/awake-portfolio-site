@@ -195,7 +195,7 @@ export default function PricingSection() {
                   >
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="block">
                       <button 
-                        className="btn-primary w-full bg-[#06c755] hover:bg-[#04a948]"
+                        className="btn-primary glow-effect w-full bg-[#06c755] hover:bg-[#04a948]"
                       >
                         <span className="relative z-10 flex items-center justify-center">
                           LINEで相談する
@@ -291,7 +291,7 @@ export default function PricingSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                  <button className="btn-primary px-12 bg-[#06c755] hover:bg-[#04a948]">
+                  <button className="btn-primary glow-effect px-12 bg-[#06c755] hover:bg-[#04a948]">
                     <span className="relative z-10 flex items-center justify-center">
                       LINEで詳しく相談
                     </span>
