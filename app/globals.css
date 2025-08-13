@@ -230,7 +230,16 @@ strong {
     background-color: transparent;
   }
   
+  /* セクションのpadding - 統一 */
   .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-padding-lg {
     @apply py-20 md:py-24 lg:py-32;
   }
   

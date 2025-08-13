@@ -56,7 +56,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex">
+        <nav className="hidden md:flex items-center">
           <ul className="flex items-center space-x-1 lg:space-x-2">
             {NAVIGATION_ITEMS.map((item) => (
               <li key={item.href}>
@@ -84,6 +84,14 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <a
+            href="https://lin.ee/hHdqEXB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 px-5 py-2.5 bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          >
+            LINE相談
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
