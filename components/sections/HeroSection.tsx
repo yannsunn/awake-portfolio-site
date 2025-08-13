@@ -14,48 +14,44 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* 最適化された背景画像 */}
-      <picture className="absolute inset-0 opacity-50">
-        <source 
-          srcSet="/images/hero-bg-mobile.webp"
-          media="(max-width: 640px)"
-          type="image/webp"
-        />
-        <source 
-          srcSet="/images/hero-bg-tablet.webp"
-          media="(max-width: 1024px)"
-          type="image/webp"
-        />
-        <source 
-          srcSet="/images/hero-bg-desktop.avif"
-          type="image/avif"
-        />
-        <source 
-          srcSet="/images/hero-bg-desktop.webp"
-          type="image/webp"
-        />
-        <img 
-          src="/images/hero-bg-optimized.jpg"
-          alt="Hero Background"
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-      </picture>
+      <div className="absolute inset-0">
+        <picture>
+          <source 
+            srcSet="/images/hero-bg-mobile.webp"
+            media="(max-width: 640px)"
+            type="image/webp"
+          />
+          <source 
+            srcSet="/images/hero-bg-tablet.webp"
+            media="(max-width: 1024px)"
+            type="image/webp"
+          />
+          <source 
+            srcSet="/images/hero-bg-desktop.avif"
+            type="image/avif"
+          />
+          <source 
+            srcSet="/images/hero-bg-desktop.webp"
+            type="image/webp"
+          />
+          <img 
+            src="/images/hero-bg-optimized.jpg"
+            alt="Hero Background"
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
+        
+        {/* グラデーションオーバーレイ */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/40 to-white/60" />
+      </div>
       
       {/* パーティクル背景 */}
       <ParticleBackground
         particleCount={30}
         color="rgba(59, 130, 246, 0.3)"
         speed={0.3}
-      />
-      
-      {/* オーバーレイ */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/70 to-white/80"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
       
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
