@@ -88,7 +88,7 @@ export default function Header() {
             href="https://lin.ee/hHdqEXB"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 px-5 py-2.5 bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="ml-4 px-5 py-2.5 bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md"
           >
             LINE相談
           </a>
@@ -130,7 +130,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-lg"
+            className="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-md"
           >
             <div className="py-6 px-4 space-y-1">
               {NAVIGATION_ITEMS.map((item) => (

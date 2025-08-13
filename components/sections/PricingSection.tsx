@@ -115,7 +115,7 @@ export default function PricingSection() {
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
                 >
-                  <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full shadow-lg pulse-glow">
+                  <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full shadow-sm pulse-glow">
                     ✨ 一番人気
                   </span>
                 </motion.div>

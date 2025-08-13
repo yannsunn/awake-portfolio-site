@@ -83,7 +83,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="bg-white/95 backdrop-blur-md rounded-xl p-8 md:p-10 mb-10 md:mb-14 shadow-lg border border-gray-100"
+              className="bg-white/95 backdrop-blur-md rounded-xl p-8 md:p-10 mb-10 md:mb-14 shadow-sm border border-gray-100"
             >
               <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-6 md:mb-8 leading-relaxed font-medium">
                 必要十分な機能で、確実な成果を。

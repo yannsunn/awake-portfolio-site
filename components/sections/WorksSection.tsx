@@ -236,7 +236,7 @@ export default function WorksSection() {
                 </DialogHeader>
                 <div className="mt-4">
                   <div 
-                    className="relative w-full h-[400px] rounded-xl mb-8 cursor-pointer overflow-hidden group shadow-lg"
+                    className="relative w-full h-[400px] rounded-xl mb-8 cursor-pointer overflow-hidden group shadow-sm"
                     onClick={() => activeProject.url && window.open(activeProject.url, '_blank')}
                   >
                     <Image
