@@ -244,7 +244,12 @@ strong {
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:translate-y-[-6px] hover:shadow-2xl;
+    @apply transition-all duration-300 hover:translate-y-[-6px] hover:shadow-xl;
+  }
+  
+  /* 統一されたカードスタイル */
+  .card-shadow {
+    @apply shadow-lg border border-gray-100;
   }
   
   .text-gradient {
@@ -313,7 +318,7 @@ strong {
   
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   .hover-grow {
@@ -341,25 +346,25 @@ strong {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
   
-  /* ガラスモーフィズム効果 */
+  /* ガラスモーフィズム効果 - 統一された影 */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg;
   }
   
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-xl;
+    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-lg;
   }
   
   .glass-colored {
-    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/30 shadow-xl;
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-lg;
   }
   
   .glass-minimal {
-    @apply bg-white/60 backdrop-blur-sm border border-gray-200/20 shadow-md;
+    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-lg;
   }
   
   .glass-hover {
-    @apply transition-all duration-300 hover:shadow-2xl hover:border-white/40 hover:bg-white/90;
+    @apply transition-all duration-300 hover:shadow-xl hover:border-gray-100 hover:bg-white/90;
   }
   
   /* 旧スタイル（互換性維持） */

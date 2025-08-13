@@ -161,7 +161,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 max-w-5xl mx-auto border border-gray-200 shadow-xl">
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 max-w-5xl mx-auto border border-gray-100 shadow-lg">
             {/* 背景パターン */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" 
