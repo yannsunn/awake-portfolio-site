@@ -217,19 +217,19 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
-          <div className="relative overflow-hidden glass-dark rounded-3xl p-12 max-w-6xl mx-auto border border-gray-700/30">
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 max-w-6xl mx-auto border border-gray-200 shadow-xl">
             {/* 動的背景エフェクト */}
             <div className="absolute inset-0">
-              <div className="absolute top-10 left-10 w-3 h-3 bg-white rounded-full floating-animation opacity-30" style={{animationDelay: '0s'}} />
-              <div className="absolute top-20 right-20 w-2 h-2 bg-purple-300 rounded-full floating-animation opacity-50" style={{animationDelay: '1s'}} />
-              <div className="absolute bottom-16 left-20 w-4 h-4 bg-blue-300 rounded-full floating-animation opacity-40" style={{animationDelay: '2s'}} />
+              <div className="absolute top-10 left-10 w-3 h-3 bg-purple-500 rounded-full floating-animation opacity-20" style={{animationDelay: '0s'}} />
+              <div className="absolute top-20 right-20 w-2 h-2 bg-blue-500 rounded-full floating-animation opacity-30" style={{animationDelay: '1s'}} />
+              <div className="absolute bottom-16 left-20 w-4 h-4 bg-indigo-500 rounded-full floating-animation opacity-25" style={{animationDelay: '2s'}} />
             </div>
             
             {/* パターン背景 */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" 
                 style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
+                  backgroundImage: `radial-gradient(circle at 2px 2px, #6b7280 1px, transparent 1px)`,
                   backgroundSize: '40px 40px'
                 }}
               />
@@ -245,42 +245,42 @@ export default function PricingSection() {
                 
               </motion.div>
               
-              <h3 className="text-3xl md:text-4xl font-bold mb-12 text-white">その他のサービス</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900">その他のサービス</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div 
-                  className="glass p-8 rounded-2xl border border-white/30 group backdrop-blur-xl"
+                  className="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg group hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex justify-between items-center">
                     <div className="text-left">
-                      <h4 className="font-bold text-white text-xl mb-2 group-hover:text-purple-200 transition-colors">
+                      <h4 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-purple-600 transition-colors">
                         AIチャットボット
                       </h4>
-                      <p className="text-gray-400 text-base">自動対応システム</p>
+                      <p className="text-gray-600 text-base">自動対応システム</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-3xl font-black text-white tabular-nums group-hover:scale-110 transition-transform">¥398,000</p>
-                      <p className="text-gray-400 text-sm">〜</p>
+                      <p className="text-3xl font-black text-gray-900 tabular-nums group-hover:scale-110 transition-transform">¥398,000</p>
+                      <p className="text-gray-500 text-sm">〜</p>
                     </div>
                   </div>
                 </motion.div>
                 
                 <motion.div 
-                  className="glass p-8 rounded-2xl border border-white/30 group backdrop-blur-xl"
+                  className="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg group hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex justify-between items-center">
                     <div className="text-left">
-                      <h4 className="font-bold text-white text-xl mb-2 group-hover:text-blue-200 transition-colors">
+                      <h4 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-blue-600 transition-colors">
                         受託開発
                       </h4>
-                      <p className="text-gray-400 text-base">カスタムシステム</p>
+                      <p className="text-gray-600 text-base">カスタムシステム</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-3xl font-black text-white group-hover:scale-110 transition-transform">要相談</p>
+                      <p className="text-3xl font-black text-gray-900 group-hover:scale-110 transition-transform">要相談</p>
                     </div>
                   </div>
                 </motion.div>
