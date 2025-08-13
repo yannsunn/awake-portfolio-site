@@ -60,10 +60,12 @@ export function DialogContent({ children, className }: DialogContentProps) {
           className="fixed inset-0"
           onClick={() => context.onOpenChange(false)}
         />
-        <div className={cn(
-          "relative bg-white rounded-lg shadow-lg max-w-lg w-full max-h-[85vh] overflow-auto p-6",
-          className
-        )}>
+        <div 
+          className={cn(
+            "relative bg-white rounded-lg max-w-lg w-full max-h-[85vh] overflow-auto p-6",
+            className
+          )}
+          style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
           <button
             onClick={() => context.onOpenChange(false)}
             className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"

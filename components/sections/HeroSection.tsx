@@ -12,7 +12,7 @@ export default function HeroSection() {
   const parallaxOffset = useParallax(0.3)
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding">
       {/* 最適化された背景画像 */}
       <div className="absolute inset-0">
         <picture>

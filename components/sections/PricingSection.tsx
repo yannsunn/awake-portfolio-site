@@ -59,7 +59,7 @@ const PRICING_PLANS = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden">
+    <section id="pricing" className="relative section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden">
       {/* 背景エフェクト - グラデーションメッシュ */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
@@ -249,7 +249,7 @@ export default function PricingSection() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div 
-                  className="bg-white p-8 rounded-2xl border border-gray-50 group hover:shadow-sm transition-all"
+                  className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
                   style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
@@ -269,7 +269,7 @@ export default function PricingSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="bg-white p-8 rounded-2xl border border-gray-50 group hover:shadow-sm transition-all"
+                  className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
                   style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}

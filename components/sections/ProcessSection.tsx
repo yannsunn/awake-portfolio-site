@@ -69,7 +69,7 @@ const PROCESS_STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden relative">
+    <section id="process" className="section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden relative">
       {/* 背景装飾 - グラデーションメッシュ */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
