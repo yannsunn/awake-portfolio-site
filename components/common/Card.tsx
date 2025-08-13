@@ -19,7 +19,7 @@ export default function Card({
         'rounded-lg transition-all duration-300',
         {
           'bg-white': variant === 'default',
-          'bg-white shadow-lg hover:shadow-xl': variant === 'elevated',
+          'bg-white': variant === 'elevated',
           'bg-white border border-gray-200 hover:border-gray-300': variant === 'bordered',
           'p-4': padding === 'sm',
           'p-6': padding === 'md',

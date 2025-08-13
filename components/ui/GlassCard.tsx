@@ -39,10 +39,10 @@ export default function GlassCard({
   return (
     <motion.div
       className={cn(
-        'relative overflow-hidden rounded-2xl border shadow-lg',
+        'relative overflow-hidden rounded-2xl border',
         blurClasses[blur],
         variantClasses[variant],
-        hover && 'transition-all duration-300 hover:shadow-2xl hover:border-white/40',
+        hover && 'transition-all duration-300 hover:border-gray-100',
         className
       )}
       whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
@@ -121,7 +121,7 @@ export function GlassButton({
       className={cn(
         'px-6 py-3 rounded-xl backdrop-blur-md border border-white/20',
         'font-semibold transition-all duration-300',
-        'shadow-lg hover:shadow-xl',
+        '',
         variantClasses[variant],
         className
       )}

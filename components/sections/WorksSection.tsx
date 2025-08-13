@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, onClick }) => {
           
           {/* シンプルな価格タグ */}
           <div className="absolute top-3 right-3 z-10">
-            <span className="bg-[var(--accent)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums shadow-md">
+            <span className="bg-[var(--accent)] text-white text-xs px-3 py-1.5 rounded-md font-semibold tabular-nums">
               {project.price}
             </span>
           </div>
