@@ -11,9 +11,7 @@ const PROCESS_STEPS = [
     description: "お客様のご要望やご予算を詳しくお聞かせください。",
     details: "無料相談で事業内容、目標、ご予算を丁寧にヒアリング",
     icon: "💬",
-    color: "from-blue-400 to-cyan-500",
-    bgColor: "from-blue-50 to-cyan-50",
-    borderColor: "border-blue-200"
+    stepColor: "text-[var(--accent)]"
   },
   {
     step: "02", 
@@ -21,9 +19,7 @@ const PROCESS_STEPS = [
     description: "最適なプランをご提案し、明確な見積もりをお出しします。",
     details: "3営業日以内に詳細な提案書と正式見積もりを提出",
     icon: "📋",
-    color: "from-purple-400 to-pink-500",
-    bgColor: "from-purple-50 to-pink-50",
-    borderColor: "border-purple-200"
+    stepColor: "text-[var(--primary)]"
   },
   {
     step: "03",
@@ -31,9 +27,7 @@ const PROCESS_STEPS = [
     description: "お客様のブランドに合わせたデザインを制作します。",
     details: "デザイン案を2-3パターン作成し、お客様と詳細を調整",
     icon: "🎨",
-    color: "from-green-400 to-emerald-500",
-    bgColor: "from-green-50 to-emerald-50",
-    borderColor: "border-green-200"
+    stepColor: "text-[var(--accent)]"
   },
   {
     step: "04",
@@ -41,9 +35,7 @@ const PROCESS_STEPS = [
     description: "レスポンシブ対応とSEO対策を施して実装します。",
     details: "コーディング・機能実装・テスト・最適化を並行実施",
     icon: "⚙️",
-    color: "from-orange-400 to-red-500",
-    bgColor: "from-orange-50 to-red-50",
-    borderColor: "border-orange-200"
+    stepColor: "text-[var(--primary)]"
   },
   {
     step: "05",
@@ -51,9 +43,7 @@ const PROCESS_STEPS = [
     description: "本番環境での動作確認後、正式に公開します。",
     details: "最終チェック・お客様確認・本番公開・操作説明",
     icon: "🚀",
-    color: "from-indigo-400 to-blue-500",
-    bgColor: "from-indigo-50 to-blue-50",
-    borderColor: "border-indigo-200"
+    stepColor: "text-[var(--accent)]"
   },
   {
     step: "06",
@@ -61,9 +51,7 @@ const PROCESS_STEPS = [
     description: "公開後の更新や改善もしっかりサポートします。",
     details: "運用サポート・更新作業・改善提案を継続的に提供",
     icon: "🤝",
-    color: "from-teal-400 to-green-500",
-    bgColor: "from-teal-50 to-green-50",
-    borderColor: "border-teal-200"
+    stepColor: "text-[var(--primary)]"
   }
 ]
 
@@ -72,9 +60,9 @@ export default function ProcessSection() {
     <section id="process" className="section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden relative">
       {/* 背景装飾 - グラデーションメッシュ */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
-        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-green-400 to-teal-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400 to-cyan-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-15 animate-pulse-slow" />
+        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -150,13 +138,13 @@ export default function ProcessSection() {
                         scale: 1.1
                       }}
                       transition={{ duration: 0.5 }}
-                      className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20`}
+                      className="w-20 h-20 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"
                     >
                       <span className="text-3xl text-white">{step.icon}</span>
                     </motion.div>
                     
                     {/* ステップラベル */}
-                    <div className={`inline-block bg-gradient-to-r ${step.color} text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4`}>
+                    <div className="inline-block bg-[var(--primary)] text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4">
                       STEP {step.step}
                     </div>
                     
@@ -184,14 +172,14 @@ export default function ProcessSection() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${((index + 1) / PROCESS_STEPS.length) * 100}%` }}
                           transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                          className={`h-full bg-gradient-to-r ${step.color} rounded-full`}
+                          className="h-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-light)] rounded-full"
                         />
                       </div>
                     </div>
                   </div>
                   
                   {/* ホバーエフェクト */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
                 </div>
               </motion.div>
             </motion.div>
@@ -217,24 +205,18 @@ export default function ProcessSection() {
                 plan: "スターター",
                 duration: "1週間",
                 price: "13万2000円",
-                color: "from-blue-500 to-cyan-500",
-                bgColor: "from-blue-50 to-cyan-50",
                 features: ["1ページ", "基本SEO", "レスポンシブ対応"]
               },
               {
                 plan: "ベーシック",
                 duration: "2週間",
                 price: "29万8000円",
-                color: "from-purple-500 to-pink-500",
-                bgColor: "from-purple-50 to-pink-50",
                 features: ["10ページまで", "CMS導入", "高度なSEO"]
               },
               {
                 plan: "プレミアム",
                 duration: "1ヶ月",
                 price: "69万8000円〜",
-                color: "from-orange-500 to-red-500",
-                bgColor: "from-orange-50 to-red-50",
                 features: ["無制限", "EC機能", "カスタム開発"]
               }
             ].map((item, index) => (
@@ -248,7 +230,7 @@ export default function ProcessSection() {
               >
                 <div className="glass glass-hover transition-all duration-300" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
                   {/* プランラベル */}
-                  <div className={`inline-block bg-gradient-to-r ${item.color} text-white text-sm font-bold px-4 py-2 rounded-full mb-4 backdrop-blur-md border border-white/20`}>
+                  <div className="inline-block bg-[var(--primary)] text-white text-sm font-bold px-4 py-2 rounded-full mb-4 backdrop-blur-md border border-white/20">
                     {item.plan}
                   </div>
                   
@@ -266,7 +248,7 @@ export default function ProcessSection() {
                   <div className="space-y-2">
                     {item.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <div className={`w-5 h-5 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center`}>
+                        <div className="w-5 h-5 bg-[var(--accent)] rounded-full flex items-center justify-center">
                           <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -277,7 +259,7 @@ export default function ProcessSection() {
                   </div>
                   
                   {/* ホバーエフェクト */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
                 </div>
               </motion.div>
             ))}

@@ -62,9 +62,9 @@ export default function PricingSection() {
     <section id="pricing" className="relative section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden">
       {/* 背景エフェクト - グラデーションメッシュ */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-full blur-3xl opacity-25 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-5 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
       
       <div className="container mx-auto px-6 relative">

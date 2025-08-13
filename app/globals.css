@@ -3,14 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0f172a;
-  --secondary: #1e293b;
-  --accent: #3b82f6;
+  /* メインカラー（4色に限定） */
+  --primary: #0f172a;  /* ダークネイビー - ヘッダー、重要テキスト */
+  --secondary: #64748b; /* グレー - 本文、補助要素 */
+  --accent: #3b82f6;   /* ブルー - ボタン、リンク、アクセント */
+  --cta: #06c755;      /* LINE緑 - CTAボタン専用 */
+  
+  /* グラデーション */
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --gradient-cta: linear-gradient(135deg, #06c755 0%, #04a948 100%);
+  
+  /* 旧変数（互換性維持） */
   --accent-light: #60a5fa;
   --accent-dark: #2563eb;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
   --dark: #020617;
   --light: #f8fafc;
   --gray-50: #f8fafc;
@@ -70,36 +76,39 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+/* タイポグラフィシステム - モバイルファースト */
 h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);     /* 32px -> 48px */
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);   /* 24px -> 32px */
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.125rem, 2vw, 1.5rem); /* 18px -> 24px */
   font-weight: 600;
   line-height: 1.3;
 }
 
 h4 {
-  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.5vw, 1.125rem); /* 16px -> 18px */
   font-weight: 500;
   line-height: 1.4;
 }
 
 
 p {
-  color: var(--gray-600);
+  color: var(--secondary);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1vw, 1rem); /* 14px -> 16px */
   margin: 0 0 1rem 0;
 }
 
@@ -231,17 +240,20 @@ strong {
     background-color: transparent;
   }
   
-  /* セクションのpadding - 統一 */
+  /* セクションのpadding - レスポンシブ対応改善 */
   .section-padding {
-    @apply py-12 md:py-16 lg:py-20;
+    padding-top: clamp(3rem, 8vw, 5rem);    /* 48px -> 80px */
+    padding-bottom: clamp(3rem, 8vw, 5rem);
   }
   
   .section-padding-sm {
-    @apply py-8 md:py-12 lg:py-16;
+    padding-top: clamp(2rem, 6vw, 4rem);    /* 32px -> 64px */
+    padding-bottom: clamp(2rem, 6vw, 4rem);
   }
   
   .section-padding-lg {
-    @apply py-16 md:py-20 lg:py-24;
+    padding-top: clamp(4rem, 10vw, 6rem);   /* 64px -> 96px */
+    padding-bottom: clamp(4rem, 10vw, 6rem);
   }
   
   /* コンテナのpadding - 統一 */
@@ -350,13 +362,33 @@ strong {
     transform: scale(0.95);
   }
   
-  /* レスポンシブテキスト */
+  /* レスポンシブテキスト - 改善版 */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 0.9vw, 0.875rem); /* 12px -> 14px */
+  }
+  
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 1vw, 1rem); /* 14px -> 16px */
+  }
+  
+  .text-responsive-base {
+    font-size: clamp(1rem, 1.2vw, 1.125rem); /* 16px -> 18px */
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem); /* 18px -> 20px */
+  }
+  
   .text-responsive-xl {
-    @apply text-lg sm:text-xl md:text-2xl;
+    font-size: clamp(1.25rem, 2vw, 1.5rem); /* 20px -> 24px */
   }
   
   .text-responsive-2xl {
-    @apply text-xl sm:text-2xl md:text-3xl;
+    font-size: clamp(1.5rem, 2.5vw, 2rem); /* 24px -> 32px */
+  }
+  
+  .text-responsive-3xl {
+    font-size: clamp(2rem, 3vw, 2.5rem); /* 32px -> 40px */
   }
   
   /* ガラスモーフィズム効果 - 影はインラインで適用 */

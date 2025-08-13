@@ -7,30 +7,22 @@ const SERVICE_FEATURES = [
   {
     icon: '💰',
     title: '費用対効果の最大化',
-    description: '必要な機能に絞り込み、13.2万円〜の明確な価格設定',
-    iconBg: 'bg-gradient-to-br from-green-400/20 to-emerald-500/20',
-    accentColor: 'from-green-400 to-emerald-500'
+    description: '必要な機能に絞り込み、13.2万円〜の明確な価格設定'
   },
   {
     icon: '🎯',
     title: '確実な成果',
-    description: 'SEO対策・レスポンシブ対応を標準装備',
-    iconBg: 'bg-gradient-to-br from-blue-400/20 to-indigo-500/20',
-    accentColor: 'from-blue-400 to-indigo-500'
+    description: 'SEO対策・レスポンシブ対応を標準装備'
   },
   {
     icon: '⚡',
     title: 'スピード納品',
-    description: 'シンプルな構成により、1週間程度での公開を目指します',
-    iconBg: 'bg-gradient-to-br from-purple-400/20 to-pink-500/20',
-    accentColor: 'from-purple-400 to-pink-500'
+    description: 'シンプルな構成により、1週間程度での公開を目指します'
   },
   {
     icon: '🤝',
     title: '継続的なサポート',
-    description: '公開後の更新・改善も柔軟に対応',
-    iconBg: 'bg-gradient-to-br from-orange-400/20 to-red-500/20',
-    accentColor: 'from-orange-400 to-red-500'
+    description: '公開後の更新・改善も柔軟に対応'
   }
 ]
 
@@ -39,9 +31,9 @@ export default function AboutSection() {
     <section id="about" className="section-padding bg-gradient-to-b from-gray-50/50 via-white/30 to-gray-50/50 overflow-hidden relative">
       {/* 背景装飾 - グラデーションメッシュ */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '4s' }} />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-5 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -87,7 +79,7 @@ export default function AboutSection() {
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className={`w-16 h-16 ${feature.iconBg} backdrop-blur-xl rounded-xl flex items-center justify-center mb-6 border border-white/20`}
+                  className="w-16 h-16 bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent-light)]/20 backdrop-blur-xl rounded-xl flex items-center justify-center mb-6 border border-white/20"
                 >
                   <span className="text-2xl text-white">{feature.icon}</span>
                 </motion.div>
@@ -101,7 +93,7 @@ export default function AboutSection() {
                 </p>
                 
                 {/* ホバーエフェクト */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.accentColor} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
               </div>
             </motion.div>
           ))}
@@ -145,7 +137,7 @@ export default function AboutSection() {
                             {skill}
                           </span>
                           {/* ホバー時のグラデーション */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-light)] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                         </div>
                       </motion.div>
                     ))}

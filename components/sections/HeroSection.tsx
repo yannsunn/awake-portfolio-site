@@ -62,7 +62,8 @@ export default function HeroSection() {
         >
           
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 md:mb-6 tracking-tighter leading-[0.9]"
+            className="font-black mb-4 md:mb-6 tracking-tighter leading-[0.9]"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, type: "spring", bounce: 0.4 }}
@@ -71,7 +72,7 @@ export default function HeroSection() {
           </motion.h1>
           
           <motion.p 
-            className="text-lg sm:text-xl md:text-2xl font-medium text-gray-600 mb-8 md:mb-12 tracking-normal"
+            className="text-responsive-lg font-medium text-[var(--secondary)] mb-8 md:mb-12 tracking-normal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -85,14 +86,14 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="max-w-4xl mx-auto mb-10 md:mb-14"
           >
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-6 md:mb-8 leading-relaxed font-medium">
+            <p className="text-responsive-xl text-[var(--primary)] mb-6 md:mb-8 leading-relaxed font-medium">
               必要十分な機能で、効果的なサイトを。
             </p>
-            <div className="flex items-center justify-center gap-3 md:gap-4 text-3xl md:text-4xl lg:text-5xl font-bold">
+            <div className="flex items-center justify-center gap-3 md:gap-4 font-bold" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
               <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥132,000</span>
-              <span className="text-lg md:text-xl text-gray-700 font-normal">から始める</span>
+              <span className="text-responsive-base text-[var(--secondary)] font-normal">から始める</span>
             </div>
-            <p className="text-lg text-gray-700 mt-6 font-medium">プロフェッショナルなWeb制作</p>
+            <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">プロフェッショナルなWeb制作</p>
           </motion.div>
           
           <div className="max-w-4xl mx-auto">
