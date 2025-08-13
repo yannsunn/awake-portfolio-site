@@ -252,17 +252,24 @@ strong {
     @apply transition-all duration-300 hover:translate-y-[-6px] hover:shadow-lg;
   }
   
-  /* 統一されたカードスタイル */
+  /* 統一されたカードスタイル - 極薄の影 */
   .card-standard {
-    @apply bg-white p-8 rounded-2xl shadow-md border border-gray-100;
+    @apply bg-white p-8 rounded-2xl border border-gray-50;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
   }
   
   .card-standard-hover {
-    @apply bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all;
+    @apply bg-white p-8 rounded-2xl border border-gray-50 transition-all;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  }
+  
+  .card-standard-hover:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   }
   
   .card-gradient {
-    @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-100 shadow-md;
+    @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
   }
   
   .text-gradient {
@@ -359,25 +366,33 @@ strong {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
   
-  /* ガラスモーフィズム効果 - 統一された影 */
+  /* ガラスモーフィズム効果 - 極薄の影 */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-gray-100 shadow-md rounded-2xl p-8;
+    @apply bg-white/80 backdrop-blur-md border border-gray-50 rounded-2xl p-8;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
   }
   
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 shadow-md rounded-2xl p-8;
+    @apply bg-gray-900/80 backdrop-blur-md border border-gray-700/30 rounded-2xl p-8;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
   }
   
   .glass-colored {
-    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-100 shadow-md rounded-2xl p-8;
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-gray-50 rounded-2xl p-8;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
   }
   
   .glass-minimal {
-    @apply bg-white/60 backdrop-blur-sm border border-gray-100 shadow-sm rounded-xl p-4;
+    @apply bg-white/60 backdrop-blur-sm border border-gray-50 rounded-xl p-4;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.01);
   }
   
   .glass-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:border-gray-100 hover:bg-white/90;
+    @apply transition-all duration-300 hover:border-gray-100 hover:bg-white/90;
+  }
+  
+  .glass-hover:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   }
   
   /* 旧スタイル（互換性維持） */

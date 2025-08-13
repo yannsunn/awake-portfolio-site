@@ -38,7 +38,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
               <h3 className="text-2xl font-bold mb-6 text-gray-900">お問い合わせフォーム</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -101,7 +101,7 @@ export default function ContactSection() {
             className="space-y-8"
           >
             {/* 連絡先情報 */}
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
               <h3 className="text-2xl font-bold mb-6 text-gray-900">連絡先情報</h3>
               <div className="space-y-6">
                 <motion.div 
@@ -161,7 +161,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-100 shadow-sm max-w-5xl mx-auto">
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-5xl mx-auto" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
             {/* 背景パターン */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" 

@@ -115,7 +115,7 @@ export default function PricingSection() {
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
                 >
-                  <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full shadow-sm pulse-glow">
+                  <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full pulse-glow" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
                     ✨ 一番人気
                   </span>
                 </motion.div>
@@ -217,7 +217,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
-          <div className="relative overflow-hidden card-gradient max-w-6xl mx-auto">
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-6xl mx-auto" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
             {/* 動的背景エフェクト */}
             <div className="absolute inset-0">
               <div className="absolute top-10 left-10 w-3 h-3 bg-purple-500 rounded-full floating-animation opacity-20" style={{animationDelay: '0s'}} />
@@ -249,7 +249,8 @@ export default function PricingSection() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div 
-                  className="card-standard-hover group"
+                  className="bg-white p-8 rounded-2xl border border-gray-50 group hover:shadow-sm transition-all"
+                  style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -268,7 +269,8 @@ export default function PricingSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="card-standard-hover group"
+                  className="bg-white p-8 rounded-2xl border border-gray-50 group hover:shadow-sm transition-all"
+                  style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
