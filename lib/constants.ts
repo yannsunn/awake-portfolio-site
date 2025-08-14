@@ -138,6 +138,7 @@ export const SKILLS: SkillCategory[] = [
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '/', label: 'ホーム' },
   { href: '#portfolio', label: 'ポートフォリオ' },
+  { href: '#illustrations', label: 'デザイン制作' },
   { href: '#pricing', label: '料金' },
   { href: '#contact', label: 'お問い合わせ' },
 ]
