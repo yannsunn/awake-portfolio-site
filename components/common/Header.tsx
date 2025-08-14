@@ -88,9 +88,9 @@ export default function Header() {
             href="https://lin.ee/hHdqEXB"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 px-5 py-2.5 bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105"
+            className="btn-line ml-4 !px-5 !py-2.5 !text-sm !rounded-full hover:scale-105"
           >
-            LINE相談
+            LINEで相談する
           </a>
         </nav>
 

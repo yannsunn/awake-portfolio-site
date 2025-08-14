@@ -6,7 +6,7 @@ import ParticleBackground from '@/components/ui/ParticleBackground'
 import { useParallax } from '@/hooks/useScrollAnimation'
 import Image from 'next/image'
 import Button from '@/components/common/Button'
-import { PROFILE, VALUE_PROPOSITION } from '@/lib/constants'
+import { PROFILE, VALUE_PROPOSITION, PRICING } from '@/lib/constants'
 
 export default function HeroSection() {
   const parallaxOffset = useParallax(0.3)
@@ -90,7 +90,7 @@ export default function HeroSection() {
               必要十分な機能で、効果的なサイトを。
             </p>
             <div className="flex items-center justify-center gap-3 md:gap-4 font-bold" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
-              <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥132,000</span>
+              <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥{PRICING.starter.priceJPY}</span>
               <span className="text-responsive-base text-[var(--secondary)] font-normal">から始める</span>
             </div>
             <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">プロフェッショナルなWeb制作</p>
@@ -115,11 +115,11 @@ export default function HeroSection() {
               
               <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <motion.button 
-                  className="btn-primary glow-effect w-full sm:w-auto bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755]"
+                  className="btn-line glow-effect w-full sm:w-auto"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  LINEで無料相談
+                  LINEで相談する
                 </motion.button>
               </a>
             </motion.div>

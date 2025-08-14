@@ -1,13 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { VALUE_PROPOSITION, SKILLS } from '@/lib/constants'
+import { VALUE_PROPOSITION, SKILLS, PRICING } from '@/lib/constants'
+import { commonStyles } from '@/lib/styles'
 
 const SERVICE_FEATURES = [
   {
     icon: '💰',
     title: '費用対効果の最大化',
-    description: '必要な機能に絞り込み、13.2万円〜の明確な価格設定'
+    description: `必要な機能に絞り込み、${PRICING.starter.description}の明確な価格設定`
   },
   {
     icon: '🎯',
@@ -74,7 +75,7 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-50px" }}
               className="relative group"
             >
-              <div className="h-full glass glass-hover transition-all duration-300 transform hover:-translate-y-2 group p-6" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+              <div className="h-full glass glass-hover transition-all duration-300 transform hover:-translate-y-2 group p-6" style={{boxShadow: commonStyles.shadow.subtle}}>
                 {/* アイコン */}
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
@@ -109,7 +110,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="glass rounded-3xl overflow-hidden" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+              <div className="glass rounded-3xl overflow-hidden" style={{boxShadow: commonStyles.shadow.subtle}}>
                 {/* カテゴリーヘッダー */}
                 <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-8 py-6">
                   <h3 className="text-2xl font-bold text-white flex items-center gap-3">
@@ -132,7 +133,7 @@ export default function AboutSection() {
                         whileHover={{ scale: 1.05, y: -2 }}
                         className="relative group"
                       >
-                        <div className="glass-minimal px-6 py-3 hover:bg-white/80 transition-all duration-300" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+                        <div className="glass-minimal px-6 py-3 hover:bg-white/80 transition-all duration-300" style={{boxShadow: commonStyles.shadow.subtle}}>
                           <span className="text-sm font-semibold text-gray-800 relative z-10">
                             {skill}
                           </span>

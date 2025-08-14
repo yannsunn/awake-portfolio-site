@@ -191,29 +191,6 @@ strong {
     left: 100%;
   }
   
-  /* ボタンリップルエフェクト */
-  .btn-ripple {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .btn-ripple::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-  }
-  
-  .btn-ripple:active::after {
-    width: 300px;
-    height: 300px;
-  }
   
   .btn-secondary {
     @apply bg-white border-2 border-gray-200 text-gray-700 px-8 py-3.5 rounded-lg font-medium transition-all duration-300 hover:border-[var(--accent)] hover:bg-gray-50 hover:shadow-md hover:text-[var(--accent)];
@@ -238,6 +215,26 @@ strong {
     font-weight: 500;
     cursor: pointer;
     background-color: transparent;
+  }
+  
+  /* LINEボタン専用クラス */
+  .btn-line {
+    @apply text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-0.5;
+    background: var(--gradient-cta);
+    letter-spacing: 0.025em;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .btn-line:hover {
+    background: linear-gradient(135deg, #04a948 0%, #06c755 100%);
+    box-shadow: 0 4px 12px 0 rgba(6, 199, 85, 0.3);
   }
   
   /* セクションのpadding - レスポンシブ対応改善 */
@@ -420,17 +417,9 @@ strong {
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
-  .premium-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  .accent-gradient {
+    background: var(--gradient-accent);
   }
-  
-  .gradient-border {
-    position: relative;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, var(--accent), var(--accent-light)) border-box;
-    border: 2px solid transparent;
-  }
-  
   
   
   .card-premium {
@@ -685,15 +674,6 @@ strong {
 }
 
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
 @keyframes scaleIn {
   0% {
     opacity: 0;
@@ -741,26 +721,7 @@ strong {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
-  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
-/* ネオングロー効果 */
-.neon-glow {
-  text-shadow: 
-    0 0 10px rgba(59, 130, 246, 0.8),
-    0 0 20px rgba(59, 130, 246, 0.6),
-    0 0 30px rgba(59, 130, 246, 0.4),
-    0 0 40px rgba(59, 130, 246, 0.2);
-}
-
-/* プレミアムグロー */
-.premium-glow {
-  position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.premium-glow:hover {
-  transform: translateY(-2px);
-}

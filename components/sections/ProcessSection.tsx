@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Section, { SectionHeader } from '@/components/ui/Section'
 import Card from '@/components/common/Card'
+import { commonStyles } from '@/lib/styles'
 
 const PROCESS_STEPS = [
   {
@@ -113,7 +114,7 @@ export default function ProcessSection() {
                 className="h-full"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <div className="h-full glass glass-hover transition-all duration-300 relative overflow-hidden" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+                <div className="h-full glass glass-hover transition-all duration-300 relative overflow-hidden" style={{boxShadow: commonStyles.shadow.subtle}}>
                   {/* 背景パターン */}
                   <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" 
@@ -159,7 +160,7 @@ export default function ProcessSection() {
                     </p>
                     
                     {/* 詳細 */}
-                    <div className="glass-minimal" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+                    <div className="glass-minimal" style={{boxShadow: commonStyles.shadow.subtle}}>
                       <p className="text-sm text-gray-700 font-medium">
                         {step.details}
                       </p>
@@ -228,7 +229,7 @@ export default function ProcessSection() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="relative group"
               >
-                <div className="glass glass-hover transition-all duration-300" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+                <div className="glass glass-hover transition-all duration-300" style={{boxShadow: commonStyles.shadow.subtle}}>
                   {/* プランラベル */}
                   <div className="inline-block bg-[var(--primary)] text-white text-sm font-bold px-4 py-2 rounded-full mb-4 backdrop-blur-md border border-white/20">
                     {item.plan}

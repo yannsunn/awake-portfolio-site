@@ -5,12 +5,14 @@ import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import Section, { SectionHeader } from '@/components/ui/Section'
 import Link from 'next/link'
+import { commonStyles } from '@/lib/styles'
+import { PRICING } from '@/lib/constants'
 
 const PRICING_PLANS = [
   {
     name: "スターター",
-    price: "132,000",
-    originalPrice: "13万2000円",
+    price: PRICING.starter.priceJPY,
+    originalPrice: PRICING.starter.priceDisplay,
     description: "個人事業主・フリーランス向け",
     features: [
       "1ページ",
@@ -25,8 +27,8 @@ const PRICING_PLANS = [
   },
   {
     name: "ベーシック",
-    price: "298,000",
-    originalPrice: "29万8000円",
+    price: PRICING.basic.priceJPY,
+    originalPrice: PRICING.basic.priceDisplay,
     description: "中小企業・店舗向け",
     features: [
       "10ページまで",
@@ -41,8 +43,8 @@ const PRICING_PLANS = [
   },
   {
     name: "プレミアム",
-    price: "698,000",
-    originalPrice: "69万8000円〜",
+    price: PRICING.premium.priceJPY,
+    originalPrice: PRICING.premium.priceDisplay,
     description: "ECサイト（簡易版）",
     features: [
       "ページ数無制限",
@@ -115,7 +117,7 @@ export default function PricingSection() {
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
                 >
-                  <span className="premium-gradient text-white px-8 py-3 text-sm font-bold rounded-full pulse-glow" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+                  <span className="accent-gradient text-white px-8 py-3 text-sm font-bold rounded-full" style={{boxShadow: commonStyles.shadow.subtle}}>
                     ✨ おすすめプラン
                   </span>
                 </motion.div>
@@ -124,7 +126,7 @@ export default function PricingSection() {
                 plan.recommended 
                   ? 'glass-dark transform scale-105 border-2 border-purple-500/30' 
                   : 'glass glass-hover'
-              }`} style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+              }`} style={{boxShadow: commonStyles.shadow.subtle}}>
                 {/* ホバー時のグラデーションオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="text-center h-full flex flex-col relative z-10 p-8">
@@ -195,7 +197,7 @@ export default function PricingSection() {
                   >
                     <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="block">
                       <button 
-                        className="btn-primary glow-effect w-full bg-[#06c755] hover:bg-[#04a948]"
+                        className="btn-line glow-effect w-full"
                       >
                         <span className="relative z-10 flex items-center justify-center">
                           LINEで相談する
@@ -217,12 +219,12 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-6xl mx-auto" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-6xl mx-auto" style={{boxShadow: commonStyles.shadow.subtle}}>
             {/* 動的背景エフェクト */}
             <div className="absolute inset-0">
-              <div className="absolute top-10 left-10 w-3 h-3 bg-purple-500 rounded-full floating-animation opacity-20" style={{animationDelay: '0s'}} />
-              <div className="absolute top-20 right-20 w-2 h-2 bg-blue-500 rounded-full floating-animation opacity-30" style={{animationDelay: '1s'}} />
-              <div className="absolute bottom-16 left-20 w-4 h-4 bg-indigo-500 rounded-full floating-animation opacity-25" style={{animationDelay: '2s'}} />
+              <div className="absolute top-10 left-10 w-3 h-3 bg-[var(--accent)] rounded-full animate-float opacity-20" style={{animationDelay: '0s'}} />
+              <div className="absolute top-20 right-20 w-2 h-2 bg-[var(--accent)] rounded-full animate-float opacity-30" style={{animationDelay: '1s'}} />
+              <div className="absolute bottom-16 left-20 w-4 h-4 bg-[var(--accent)] rounded-full animate-float opacity-25" style={{animationDelay: '2s'}} />
             </div>
             
             {/* パターン背景 */}
@@ -250,7 +252,7 @@ export default function PricingSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div 
                   className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
-                  style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
+                  style={{boxShadow: commonStyles.shadow.subtle}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -270,7 +272,7 @@ export default function PricingSection() {
                 
                 <motion.div 
                   className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
-                  style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
+                  style={{boxShadow: commonStyles.shadow.subtle}}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -293,9 +295,9 @@ export default function PricingSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                  <button className="btn-primary glow-effect px-12 bg-[#06c755] hover:bg-[#04a948]">
+                  <button className="btn-line glow-effect px-12">
                     <span className="relative z-10 flex items-center justify-center">
-                      LINEで詳しく相談
+                      LINEで相談する
                     </span>
                   </button>
                 </a>

@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { commonStyles } from "@/lib/styles"
 
 interface DialogProps {
   open?: boolean
@@ -65,7 +66,7 @@ export function DialogContent({ children, className }: DialogContentProps) {
             "relative bg-white rounded-lg max-w-lg w-full max-h-[85vh] overflow-auto p-6",
             className
           )}
-          style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+          style={{boxShadow: commonStyles.shadow.subtle}}>
           <button
             onClick={() => context.onOpenChange(false)}
             className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"

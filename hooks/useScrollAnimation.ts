@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { animations } from '@/lib/animations'
 
 // スクロール位置を取得するフック
 export function useScrollProgress() {
@@ -58,49 +58,11 @@ export function useScrollReveal(options?: {
   return { ref, isInView }
 }
 
-// フェードインアニメーション用の設定
-export const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' }
-}
-
-export const fadeInDown = {
-  initial: { opacity: 0, y: -60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' }
-}
-
-export const fadeInLeft = {
-  initial: { opacity: 0, x: -60 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' }
-}
-
-export const fadeInRight = {
-  initial: { opacity: 0, x: 60 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' }
-}
-
-export const scaleIn = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.5, ease: 'easeOut' }
-}
-
-// スタガーアニメーション用の設定
-export const staggerContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3
-    }
-  }
-}
-
-export const staggerItem = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 }
-}
+// アニメーション定義を再エクスポート（互換性維持）
+export const fadeInUp = animations.fadeInUp
+export const fadeInDown = animations.fadeInDown
+export const fadeInLeft = animations.fadeInLeft
+export const fadeInRight = animations.fadeInRight
+export const scaleIn = animations.scaleIn
+export const staggerContainer = animations.staggerContainer
+export const staggerItem = animations.staggerItem

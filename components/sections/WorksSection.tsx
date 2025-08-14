@@ -4,6 +4,7 @@ import { useState, memo } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { WORKS } from '@/lib/constants'
+import { commonStyles } from '@/lib/styles'
 import type { Project } from '@/lib/types'
 
 interface ProjectCardProps {
@@ -17,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
   return (
     <motion.article
       className="group relative glass glass-hover overflow-hidden transition-all duration-500"
-      style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
+      style={{boxShadow: commonStyles.shadow.subtle}}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -41,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
         <div className="absolute top-4 right-4 z-10">
           <motion.div
             className="glass px-4 py-2 rounded-full border border-white/30"
-            style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
+            style={{boxShadow: commonStyles.shadow.subtle}}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3 + index * 0.1 }}
@@ -83,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
       <div className="p-6">
         {/* カテゴリー & 期間 */}
         <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-          <span className="px-2 py-1 glass-minimal text-blue-700 font-medium backdrop-blur-sm" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+          <span className="px-2 py-1 glass-minimal text-blue-700 font-medium backdrop-blur-sm" style={{boxShadow: commonStyles.shadow.subtle}}>
             {project.category}
           </span>
           <span>{project.duration}</span>
@@ -194,7 +195,7 @@ export default function WorksSection() {
           <a
             href="#contact"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-all"
-            style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}
+            style={{boxShadow: commonStyles.shadow.subtle}}
           >
             お問い合わせはこちら
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

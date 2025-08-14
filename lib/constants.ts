@@ -1,5 +1,25 @@
 import type { Profile, Project, SkillCategory, NavigationItem, ValueProposition } from './types'
 
+// 価格情報の一元管理
+export const PRICING = {
+  starter: {
+    price: 132000,
+    priceJPY: '132,000',
+    priceDisplay: '13万2000円',
+    description: '13.2万円〜',
+  },
+  basic: {
+    price: 298000,
+    priceJPY: '298,000',
+    priceDisplay: '29万8000円',
+  },
+  premium: {
+    price: 698000,
+    priceJPY: '698,000',
+    priceDisplay: '69万8000円〜',
+  },
+} as const
+
 export const PROFILE: Profile = {
   name: 'Awake Inc.',
   title: 'ホームページ制作',

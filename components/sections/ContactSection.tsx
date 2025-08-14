@@ -1,15 +1,13 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import Image from 'next/image'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Section, { SectionHeader } from '@/components/ui/Section'
 import { PROFILE } from '@/lib/constants'
+import { commonStyles } from '@/lib/styles'
 
 export default function ContactSection() {
   return (
@@ -38,7 +36,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: commonStyles.shadow.subtle}}>
               <h3 className="text-2xl font-bold mb-6 text-gray-900">お問い合わせフォーム</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -101,7 +99,7 @@ export default function ContactSection() {
             className="space-y-8"
           >
             {/* 連絡先情報 */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+            <div className="bg-white p-8 rounded-2xl border border-gray-50" style={{boxShadow: commonStyles.shadow.subtle}}>
               <h3 className="text-2xl font-bold mb-6 text-gray-900">連絡先情報</h3>
               <div className="space-y-6">
                 <motion.div 
@@ -161,7 +159,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-5xl mx-auto" style={{boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.02)'}}>
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-5xl mx-auto" style={{boxShadow: commonStyles.shadow.subtle}}>
             {/* 背景パターン */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" 
@@ -195,7 +193,7 @@ export default function ContactSection() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#06c755] to-[#04a948] hover:from-[#04a948] hover:to-[#06c755] min-w-[200px]">
+                  <Button variant="primary" size="lg" className="btn-line w-full sm:w-auto min-w-[200px]">
                     
                     LINEで相談する
                   </Button>
