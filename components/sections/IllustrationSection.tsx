@@ -14,6 +14,7 @@ const ILLUSTRATIONS = [
     imageUrl: '/images/illustrations/clemira-shop.png',
     features: ['商品撮影', 'メディア掲載実績', 'YouTubeチャンネル連携'],
     style: 'モダン・プロフェッショナル',
+    url: undefined,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const ILLUSTRATIONS = [
     imageUrl: '/images/illustrations/insurance-lp.png',
     features: ['エモーショナルコピー', 'やわらかな配色', '信頼感の演出'],
     style: 'ウォーム・トラスト',
+    url: undefined,
   },
 ]
 
