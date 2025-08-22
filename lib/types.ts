@@ -2,7 +2,7 @@
 export interface Project {
   id: number
   title: string
-  category: 'ホームページ制作' | 'AI開発' | 'その他'
+  category: 'ホームページ制作' | 'ランディングページ' | 'AI開発' | 'その他'
   description: string
   longDescription: string
   imageUrl: string
