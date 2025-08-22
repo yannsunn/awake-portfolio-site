@@ -14,6 +14,7 @@ const ILLUSTRATIONS = [
     imageUrl: '/images/illustrations/vintage-iron-works.png',
     features: ['オリジナルイラスト', 'ブランディング', 'UIデザイン'],
     style: 'ヴィンテージ・クラフトマンシップ',
+    url: 'https://vintageironworks.awakeinc.co.jp/',
   },
   {
     id: 2,
@@ -144,7 +145,7 @@ export default function IllustrationSection() {
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {illustration.features.map((feature, idx) => (
                       <span
                         key={idx}
@@ -154,6 +155,22 @@ export default function IllustrationSection() {
                       </span>
                     ))}
                   </div>
+                  
+                  {illustration.url && (
+                    <motion.a
+                      href={illustration.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      サイトを見る
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </motion.a>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

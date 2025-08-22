@@ -64,22 +64,6 @@ export const WORKS: Project[] = [
   },
   {
     id: 3,
-    title: "製造業LP",
-    category: "ホームページ制作",
-    description: "金属加工業向け。製品ギャラリー・実績訴求に特化したデザイン。",
-    longDescription: "Vintage Iron Works様向けの製造業特化LP。ヒーロー・実績・CTA構成のランディングページ、Lightbox+モーダル付き製品ギャラリー、会社概要、簡易お問い合わせフォームを4ページ構成で実装。画像最適化とLazy-loadで高速表示を実現。",
-    imageUrl: "/images/screenshots/manufacturing-lp-screenshot.webp",
-    url: "https://vintage-iron-works-example.awakeinc.co.jp/",
-    pages: "約4ページ（LP+ギャラリー）",
-    marketPrice: undefined,
-    price: "24万9800円",
-    duration: "1-2週間",
-    features: ["Lightboxギャラリー", "画像最適化", "LP設計"],
-    result: "製品ギャラリーによる情報発信を強化",
-    breakdown: "LPデザイン/コピー、ギャラリー実装、画像最適化/Lazy-load、フォーム&SMTP設定"
-  },
-  {
-    id: 4,
     title: "FP個人サイト",
     category: "ホームページ制作",
     description: "LINE相談への導線に特化。",
@@ -95,7 +79,7 @@ export const WORKS: Project[] = [
     breakdown: "静的ページ×3、LINE公式アカウント呼び出し、SEO最適化・OGP設定"
   },
   {
-    id: 5,
+    id: 4,
     title: "プロフィールサイト",
     category: "ホームページ制作",
     description: "1ページ完結型。Instagram・Google Map埋め込み対応。",
@@ -111,7 +95,7 @@ export const WORKS: Project[] = [
     breakdown: "シングルページデザイン、画像ギャラリー/SNS埋め込み、レスポンシブ最適化&スクロールアニメ"
   },
   {
-    id: 6,
+    id: 5,
     title: "ランディングページ",
     category: "ホームページ制作",
     description: "シンプルで効果的なランディングページ。コンバージョン重視の設計。",
