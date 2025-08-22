@@ -8,16 +8,6 @@ import { animations } from '@/lib/animations'
 const ILLUSTRATIONS = [
   {
     id: 1,
-    title: 'Vintage Iron Works',
-    category: 'ランディングページ',
-    description: '職人が作るアイアン製品の世界観を表現した、温かみのあるデザイン',
-    imageUrl: '/images/illustrations/vintage-iron-works.png',
-    features: ['オリジナルイラスト', 'ブランディング', 'UIデザイン'],
-    style: 'ヴィンテージ・クラフトマンシップ',
-    url: 'https://vintageironworks.awakeinc.co.jp/',
-  },
-  {
-    id: 2,
     title: 'CLEMIRA製品紹介',
     category: 'ECサイト',
     description: '身体機能向上をサポートする革新的製品CLEMIRAの直販サイト',
@@ -26,7 +16,7 @@ const ILLUSTRATIONS = [
     style: 'モダン・プロフェッショナル',
   },
   {
-    id: 3,
+    id: 2,
     title: '保険相談LP',
     category: 'ランディングページ',
     description: '「もっと早く相談していれば...」温かみのあるコピーと柔らかな色調',

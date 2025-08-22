@@ -32,6 +32,22 @@ export const PROFILE: Profile = {
 export const WORKS: Project[] = [
   {
     id: 1,
+    title: "Vintage Iron Works",
+    category: "ランディングページ",
+    description: "職人が作るアイアン製品の世界観を表現した、温かみのあるデザイン",
+    longDescription: "Vintage Iron Works様向けの製造業特化LP。ヒーロー・実績・CTA構成のランディングページ、Lightbox+モーダル付き製品ギャラリー、会社概要、簡易お問い合わせフォームを実装。オリジナルイラストとブランディングで独自の世界観を構築。",
+    imageUrl: "/images/illustrations/vintage-iron-works.png",
+    url: "https://vintageironworks.awakeinc.co.jp/",
+    pages: "約4ページ（LP+ギャラリー）",
+    marketPrice: undefined,
+    price: "24万9800円",
+    duration: "1-2週間",
+    features: ["オリジナルイラスト", "ブランディング", "UIデザイン"],
+    result: "職人の世界観を表現するデザインを実現",
+    breakdown: "LPデザイン/コピー、オリジナルイラスト制作、ブランディング、レスポンシブ対応"
+  },
+  {
+    id: 2,
     title: "コーポレートサイト",
     category: "ホームページ制作",
     description: "会社概要・サービス詳細・FAQ・お問い合わせを統合。",
@@ -47,7 +63,7 @@ export const WORKS: Project[] = [
     breakdown: "静的ページ×6、問い合わせフォーム実装、オリジナルUIデザイン+20%、SEO初期設定+10%"
   },
   {
-    id: 2,
+    id: 3,
     title: "アパレルECサイト",
     category: "ホームページ制作",
     description: "OEM・ODM対応。商品管理・決済・在庫管理を統合したフルスペックサイト。",
@@ -63,7 +79,7 @@ export const WORKS: Project[] = [
     breakdown: "商品DB&決済連携、静的説明ページ×4、UI/UX設計+25%、在庫管理API連携・管理画面"
   },
   {
-    id: 3,
+    id: 4,
     title: "FP個人サイト",
     category: "ホームページ制作",
     description: "LINE相談への導線に特化。",
@@ -79,7 +95,7 @@ export const WORKS: Project[] = [
     breakdown: "静的ページ×3、LINE公式アカウント呼び出し、SEO最適化・OGP設定"
   },
   {
-    id: 4,
+    id: 5,
     title: "プロフィールサイト",
     category: "ホームページ制作",
     description: "1ページ完結型。Instagram・Google Map埋め込み対応。",
@@ -95,7 +111,7 @@ export const WORKS: Project[] = [
     breakdown: "シングルページデザイン、画像ギャラリー/SNS埋め込み、レスポンシブ最適化&スクロールアニメ"
   },
   {
-    id: 5,
+    id: 6,
     title: "ランディングページ",
     category: "ホームページ制作",
     description: "シンプルで効果的なランディングページ。コンバージョン重視の設計。",
