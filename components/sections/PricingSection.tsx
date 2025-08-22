@@ -111,22 +111,17 @@ export default function PricingSection() {
               whileHover={{ y: -8, scale: 1.01 }}
             >
               {plan.recommended && (
-                <motion.div 
-                  className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10"
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
-                >
-                  <span className="accent-gradient text-white px-8 py-3 text-sm font-bold rounded-full" style={{boxShadow: commonStyles.shadow.subtle}}>
-                    ✨ おすすめプラン
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 text-base font-bold rounded-full shadow-lg">
+                    おすすめ
                   </span>
-                </motion.div>
+                </div>
               )}
               <div className={`h-full relative overflow-hidden rounded-2xl ${
                 plan.recommended 
-                  ? 'glass-dark transform scale-105 border-2 border-purple-500/30' 
-                  : 'glass glass-hover'
-              }`} style={{boxShadow: commonStyles.shadow.subtle}}>
+                  ? 'bg-white border-4 border-orange-500 shadow-2xl' 
+                  : 'bg-white border border-gray-200 shadow-lg'
+              }`}>
                 {/* ホバー時のグラデーションオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="text-center h-full flex flex-col relative z-10 p-8">
@@ -136,10 +131,10 @@ export default function PricingSection() {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <h3 className={`text-2xl font-bold mb-4 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">
                       {plan.name}
                     </h3>
-                    <p className={`text-lg ${plan.recommended ? 'text-gray-200' : 'text-gray-600'}`}>
+                    <p className="text-lg text-gray-600">
                       {plan.description}
                     </p>
                   </motion.div>
@@ -151,13 +146,11 @@ export default function PricingSection() {
                     transition={{ delay: index * 0.15, type: "spring", bounce: 0.3 }}
                   >
                     <div className={`text-4xl sm:text-5xl font-black mb-3 tabular-nums ${
-                      plan.recommended ? 'text-white' : 'text-gray-900'
+                      plan.recommended ? 'text-orange-500' : 'text-gray-900'
                     }`}>
                       ¥{plan.price.toLocaleString()}
                     </div>
-                    <p className={`text-sm uppercase tracking-wide font-bold ${
-                      plan.recommended ? 'text-gray-300' : 'text-gray-700'
-                    }`}>
+                    <p className="text-sm uppercase tracking-wide font-bold text-gray-700">
                       {plan.originalPrice}
                     </p>
                   </motion.div>
@@ -171,21 +164,17 @@ export default function PricingSection() {
                         className="flex items-center group/feature"
                       >
                         <motion.div 
-                          className={`w-10 h-10 rounded-xl mr-4 flex items-center justify-center transition-all duration-300 backdrop-blur-md border ${
+                          className={`w-10 h-10 rounded-xl mr-4 flex items-center justify-center transition-all duration-300 border ${
                             plan.recommended 
-                              ? 'bg-white/20 text-white border-white/30 group-hover/feature:scale-110' 
-                              : 'bg-gray-900/20 text-gray-900 border-gray-200/30 group-hover/feature:bg-purple-600/20'
+                              ? 'bg-orange-100 text-orange-600 border-orange-300' 
+                              : 'bg-gray-100 text-gray-700 border-gray-300'
                           }`}
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
                           <span className="text-sm font-bold">✓</span>
                         </motion.div>
-                        <span className={`text-base font-semibold transition-colors duration-300 ${
-                          plan.recommended 
-                            ? 'text-white group-hover/feature:text-gray-100' 
-                            : 'text-gray-900 group-hover/feature:text-gray-700'
-                        }`}>
+                        <span className="text-base font-semibold text-gray-900 transition-colors duration-300">
                           {feature}
                         </span>
                       </motion.li>
