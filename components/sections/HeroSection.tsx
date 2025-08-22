@@ -86,7 +86,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mb-8 md:mb-12"
           >
-            <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               ✨ 豊富な制作実績をご覧ください ✨
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ export default function HeroSection() {
             >
               <Link href="#portfolio" className="w-full sm:w-auto group">
                 <motion.button 
-                  className="relative btn-primary w-full sm:w-auto text-lg font-bold px-10 py-4 shadow-xl"
+                  className="relative btn-primary w-full sm:w-auto text-base sm:text-lg font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 shadow-xl"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
