@@ -12,7 +12,7 @@ import { commonStyles } from '@/lib/styles'
 export default function ContactSection() {
   return (
     <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

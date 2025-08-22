@@ -69,7 +69,7 @@ export default function PricingSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-5 animate-pulse-slow" style={{ animationDelay: '4s' }} />
       </div>
       
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative">
         <div className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

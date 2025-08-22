@@ -47,7 +47,7 @@ export default function Header() {
       }}
       transition={{ duration: 0.3 }}
     >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-5 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-5 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">

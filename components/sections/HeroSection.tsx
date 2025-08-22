@@ -54,7 +54,7 @@ export default function HeroSection() {
         speed={0.3}
       />
       
-      <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,13 +72,24 @@ export default function HeroSection() {
           </motion.h1>
           
           <motion.p 
-            className="text-responsive-lg font-medium text-[var(--secondary)] mb-8 md:mb-12 tracking-normal"
+            className="text-responsive-lg font-medium text-[var(--secondary)] mb-4 tracking-normal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Webとテクノロジーで、ビジネスを加速する
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-8 md:mb-12"
+          >
+            <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              ✨ 豊富な制作実績をご覧ください ✨
+            </p>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -105,11 +116,16 @@ export default function HeroSection() {
             >
               <Link href="#portfolio" className="w-full sm:w-auto group">
                 <motion.button 
-                  className="btn-secondary w-full sm:w-auto"
+                  className="relative btn-primary w-full sm:w-auto text-lg font-bold px-10 py-4 shadow-xl"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  実績を見る
+                  <span className="relative z-10 flex items-center gap-2">
+                    ⭐ 制作実績を見る
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </motion.button>
               </Link>
               

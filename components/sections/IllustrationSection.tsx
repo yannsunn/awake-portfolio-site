@@ -61,7 +61,7 @@ const DESIGN_FEATURES = [
 export default function IllustrationSection() {
   return (
     <section id="illustrations" className="section-padding bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* ヘッダー */}
         <motion.div
           {...animations.fadeInUp}
