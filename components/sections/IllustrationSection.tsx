@@ -5,7 +5,18 @@ import Image from 'next/image'
 import { commonStyles } from '@/lib/styles'
 import { animations } from '@/lib/animations'
 
-const ILLUSTRATIONS = [
+interface Illustration {
+  id: number
+  title: string
+  category: string
+  description: string
+  imageUrl: string
+  features: string[]
+  style: string
+  url?: string
+}
+
+const ILLUSTRATIONS: Illustration[] = [
   {
     id: 1,
     title: 'CLEMIRA製品紹介',
@@ -14,7 +25,6 @@ const ILLUSTRATIONS = [
     imageUrl: '/images/illustrations/clemira-shop.png',
     features: ['商品撮影', 'メディア掲載実績', 'YouTubeチャンネル連携'],
     style: 'モダン・プロフェッショナル',
-    url: undefined,
   },
   {
     id: 2,
@@ -24,7 +34,6 @@ const ILLUSTRATIONS = [
     imageUrl: '/images/illustrations/insurance-lp.png',
     features: ['エモーショナルコピー', 'やわらかな配色', '信頼感の演出'],
     style: 'ウォーム・トラスト',
-    url: undefined,
   },
 ]
 
