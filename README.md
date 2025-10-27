@@ -120,6 +120,47 @@ portfolio-awake/
 - **Core Web Vitals**: 達成
 - **静的生成**: 全ページ
 
+## 🔍 SEO管理
+
+### Google Search Console
+
+#### 初回セットアップ
+詳細は [docs/GSC_SETUP_GUIDE.md](docs/GSC_SETUP_GUIDE.md) を参照してください。
+
+#### サイトマップ提出
+```bash
+# 認証ファイルをコピー（初回のみ）
+cp ../awake-website/gsc-credentials.json ./
+cp ../awake-website/gsc-token.json ./
+
+# サイトマップを提出
+node scripts/gsc-submit-sitemap.js
+```
+
+#### インデックス登録リクエスト
+```bash
+# 主要ページのインデックス登録をリクエスト
+node scripts/gsc-request-indexing.js
+```
+
+### 画像最適化
+
+#### WebP形式への変換
+```bash
+# public/ 内の全画像をWebP形式に変換
+node scripts/convert-images-to-webp.js
+```
+
+変換後の画像は元のファイルと同じ場所に `.webp` 拡張子で保存されます。
+
+### SEO改善履歴
+
+**2025-10-28: Phase 1 完了**
+- ✅ メタデータをポートフォリオサイト向けに最適化
+- ✅ 全画像にSEO最適化されたalt属性を追加
+- ✅ Google Search Console用スクリプト作成
+- ✅ 画像WebP変換スクリプト作成
+
 ## 🔧 カスタマイズ
 
 ### 会社情報の変更

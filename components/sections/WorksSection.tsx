@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ project, index }) => {
       <div className="relative h-64 md:h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 rounded-t-2xl">
         <Image
           src={project.imageUrl}
-          alt={project.title}
+          alt={`${project.title} - ${project.description} | 株式会社Awake制作実績`}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-115"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

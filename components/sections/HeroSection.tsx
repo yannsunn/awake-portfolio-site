@@ -34,9 +34,9 @@ export default function HeroSection() {
             srcSet="/images/hero-bg-desktop.webp"
             type="image/webp"
           />
-          <img 
+          <img
             src="/images/hero-bg-optimized.jpg"
-            alt="Hero Background"
+            alt="株式会社Awake ホームページ制作・AIチャットボット開発サービス - 東大和市のweb制作会社"
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"

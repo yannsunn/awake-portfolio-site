@@ -26,10 +26,10 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   ...generateMeta(
-    'Awake Inc. - 適正価格でのホームページ制作',
-    '13万2000円からのホームページ制作サービス。必要な機能に絞り込んだ適正価格でご提供します。1週間〜1ヶ月程度での制作を目指します。'
+    '制作実績 | Awake Inc. - ホームページ制作・AIチャットボット開発事例',
+    '株式会社Awakeの制作実績。ホームページ制作、AIチャットボット開発、EC運営代行の事例をご紹介。東大和市の実績豊富なweb制作会社です。'
   ),
-  keywords: ['ホームページ制作', 'ウェブサイト制作', '適正価格', '格安', '東京', 'Awake Inc.', 'HP制作', 'Web制作'],
+  keywords: ['ホームページ制作実績', 'web制作事例', 'AIチャットボット導入事例', '東大和市', '株式会社Awake', 'ポートフォリオ', 'ECサイト制作', 'ランディングページ制作'],
 }
 
 export default function RootLayout({

@@ -109,7 +109,7 @@ export default function IllustrationSection() {
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={illustration.imageUrl}
-                      alt={illustration.title}
+                      alt={`${illustration.title} - ${illustration.description} | ${illustration.category}デザイン制作実績`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"
