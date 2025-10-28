@@ -1,9 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Section, { SectionHeader } from '@/components/ui/Section'
-import Card from '@/components/common/Card'
 import { commonStyles } from '@/lib/styles'
+import { PRICING } from '@/lib/constants'
 
 const PROCESS_STEPS = [
   {
@@ -205,19 +204,19 @@ export default function ProcessSection() {
               {
                 plan: "スターター",
                 duration: "1週間",
-                price: "13万2000円",
+                price: PRICING.starter.priceDisplay,
                 features: ["1ページ", "基本SEO", "レスポンシブ対応"]
               },
               {
                 plan: "ベーシック",
                 duration: "2週間",
-                price: "29万8000円",
+                price: PRICING.basic.priceDisplay,
                 features: ["10ページまで", "CMS導入", "高度なSEO"]
               },
               {
                 plan: "プレミアム",
                 duration: "1ヶ月",
-                price: "69万8000円〜",
+                price: PRICING.premium.priceDisplay,
                 features: ["無制限", "EC機能", "カスタム開発"]
               }
             ].map((item, index) => (

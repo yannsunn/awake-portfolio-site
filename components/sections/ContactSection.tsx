@@ -2,10 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Button from '@/components/common/Button'
-import Card from '@/components/common/Card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import Section, { SectionHeader } from '@/components/ui/Section'
 import { PROFILE } from '@/lib/constants'
 import { commonStyles } from '@/lib/styles'
 

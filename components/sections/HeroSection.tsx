@@ -2,13 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useParallax } from '@/hooks/useScrollAnimation'
-import Image from 'next/image'
-import Button from '@/components/common/Button'
-import { PROFILE, VALUE_PROPOSITION, PRICING } from '@/lib/constants'
+import { PROFILE, PRICING } from '@/lib/constants'
 
 export default function HeroSection() {
-  const parallaxOffset = useParallax(0.3)
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding">
