@@ -7,7 +7,7 @@ import JsonLd from '@/components/common/JsonLd'
 import ScrollProgress from '@/components/common/ScrollProgress'
 import GoogleAnalytics from '@/components/common/GoogleAnalytics'
 import { generateMetadata as generateMeta } from '@/lib/utils'
-import { PROFILE } from '@/lib/constants'
+import { generateAllSchemas } from '@/lib/enhanced-schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,30 +38,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLdData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": PROFILE.name,
-    "description": PROFILE.description,
-    "url": "https://portfolio.awakeinc.co.jp",
-    "logo": "https://portfolio.awakeinc.co.jp/images/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": PROFILE.phone,
-      "contactType": "Customer Service",
-      "areaServed": "JP",
-      "availableLanguage": "Japanese"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "JP",
-      "addressLocality": "東京都",
-      "streetAddress": PROFILE.address
-    },
-    "sameAs": [
-      "https://lin.ee/hHdqEXB"
-    ]
-  }
+  // AI検索エンジン（ChatGPT, Perplexity, Claude等）向けの
+  // 強化された構造化データを使用
+  const enhancedSchema = generateAllSchemas('/')
 
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
@@ -69,7 +48,7 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className="min-h-screen flex flex-col">
-        <JsonLd data={jsonLdData} />
+        <JsonLd data={enhancedSchema} />
         <ScrollProgress />
         <Header />
         <main className="flex-grow pt-20">
