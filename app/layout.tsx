@@ -5,6 +5,7 @@ import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import JsonLd from '@/components/common/JsonLd'
 import ScrollProgress from '@/components/common/ScrollProgress'
+import GoogleAnalytics from '@/components/common/GoogleAnalytics'
 import { generateMetadata as generateMeta } from '@/lib/utils'
 import { PROFILE } from '@/lib/constants'
 
@@ -64,6 +65,9 @@ export default function RootLayout({
 
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="min-h-screen flex flex-col">
         <JsonLd data={jsonLdData} />
         <ScrollProgress />
