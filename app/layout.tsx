@@ -27,10 +27,10 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   ...generateMeta(
-    '制作実績 | Awake Inc. - ホームページ制作・AIチャットボット開発事例',
-    '株式会社Awakeの制作実績。ホームページ制作、AIチャットボット開発、EC運営代行の事例をご紹介。東大和市の実績豊富なweb制作会社です。'
+    'AIチャットボット搭載ホームページ制作 | Awake Inc. - 19.8万円から',
+    'AIチャットボット搭載のホームページ制作。24時間365日自動対応で顧客満足度向上。19万8000円から制作可能。東大和市の実績豊富なweb制作会社です。'
   ),
-  keywords: ['ホームページ制作実績', 'web制作事例', 'AIチャットボット導入事例', '東大和市', '株式会社Awake', 'ポートフォリオ', 'ECサイト制作', 'ランディングページ制作'],
+  keywords: ['AIチャットボット搭載', 'ホームページ制作', 'チャットボット開発', '自動応答', '東大和市', '株式会社Awake', 'AI自動化', 'web制作', '19万8000円'],
 }
 
 export default function RootLayout({

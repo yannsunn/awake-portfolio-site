@@ -59,15 +59,15 @@ export default function HeroSection() {
             <span className="bg-gradient-to-r from-[var(--primary)] via-[var(--accent)] to-[var(--primary)] bg-clip-text text-transparent font-bold">{PROFILE.name}</span>
           </motion.h1>
           
-          <motion.p 
+          <motion.p
             className="text-responsive-lg font-medium text-[var(--secondary)] mb-4 tracking-normal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Webとテクノロジーで、ビジネスを加速する
+            AIチャットボット搭載で、お客様対応を自動化
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -75,10 +75,10 @@ export default function HeroSection() {
             className="mb-8 md:mb-12"
           >
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              ✨ 豊富な制作実績をご覧ください ✨
+              🤖 AIチャットボット搭載のホームページ制作 🤖
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -86,13 +86,13 @@ export default function HeroSection() {
             className="max-w-4xl mx-auto mb-10 md:mb-14"
           >
             <p className="text-responsive-xl text-[var(--primary)] mb-6 md:mb-8 leading-relaxed font-medium">
-              必要十分な機能で、効果的なサイトを。
+              24時間365日、自動で問い合わせ対応。
             </p>
             <div className="flex items-center justify-center gap-3 md:gap-4 font-bold" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
               <span className="tabular-nums bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">¥{PRICING.starter.priceJPY}</span>
               <span className="text-responsive-base text-[var(--secondary)] font-normal">から始める</span>
             </div>
-            <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">プロフェッショナルなWeb制作</p>
+            <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">AIチャットボット搭載 + プロフェッショナルなWeb制作</p>
           </motion.div>
           
           <div className="max-w-4xl mx-auto">

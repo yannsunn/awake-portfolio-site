@@ -15,7 +15,7 @@ export function generateOrganizationSchema() {
     "name": "株式会社Awake",
     "alternateName": "Awake Inc.",
     "legalName": "株式会社Awake",
-    "description": "東大和市に拠点を置くWeb制作会社。ホームページ制作、AIチャットボット開発、EC運営代行サービスを提供。13万2000円からの適正価格で高品質なWebサイトを制作します。",
+    "description": "東大和市に拠点を置くWeb制作会社。AIチャットボット搭載のホームページ制作を提供。24時間365日自動対応で顧客満足度向上。19万8000円から制作可能。",
     "url": "https://portfolio.awakeinc.co.jp",
     "logo": {
       "@type": "ImageObject",
@@ -48,12 +48,12 @@ export function generateOrganizationSchema() {
       },
       "geoRadius": "50000" // 50km圏内対応
     },
-    "priceRange": "¥132,000 - ¥980,000",
+    "priceRange": "¥198,000 - ¥1,000,000",
     "currenciesAccepted": "JPY",
     "paymentAccepted": "現金, 銀行振込, クレジットカード",
     "openingHours": "Mo-Fr 09:00-18:00",
     "availableLanguage": ["Japanese"],
-    "slogan": "適正価格でのホームページ制作 - 余った予算で事業投資を",
+    "slogan": "AIチャットボット搭載のホームページ制作 - 24時間365日自動対応",
     "foundingDate": "2019",
     "knowsAbout": [
       "ホームページ制作",
@@ -86,8 +86,8 @@ export function generateOrganizationSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "スターター プラン",
-            "description": "シンプルな1ページ完結型サイト。個人事業主様に最適。",
+            "name": "スターター プラン（AIチャットボット搭載）",
+            "description": "AIチャットボット搭載の1ページ完結型サイト。24時間自動対応で問い合わせ対応を効率化。",
             "provider": {
               "@type": "Organization",
               "name": "株式会社Awake"
@@ -105,8 +105,8 @@ export function generateOrganizationSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "ベーシック プラン",
-            "description": "3-5ページ構成のコーポレートサイト。お問い合わせフォーム付き。",
+            "name": "ベーシック プラン（AIチャットボット搭載）",
+            "description": "AIチャットボット搭載の3-5ページ構成コーポレートサイト。高度な自動応答機能付き。",
             "provider": {
               "@type": "Organization",
               "name": "株式会社Awake"
@@ -119,8 +119,8 @@ export function generateOrganizationSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "プレミアム プラン",
-            "description": "本格的なECサイトやカスタム機能を実装。",
+            "name": "プレミアム プラン（AIチャットボット搭載）",
+            "description": "AIチャットボット搭載の本格的なECサイト。在庫確認や注文状況も自動応答。",
             "provider": {
               "@type": "Organization",
               "name": "株式会社Awake"
@@ -275,10 +275,18 @@ export function generateFAQSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "ホームページ制作の最低価格はいくらですか？",
+        "name": "AIチャットボット搭載ホームページの価格はいくらですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `株式会社Awakeでは${PRICING.starter.priceDisplay}からホームページ制作を承っております。必要最小限の機能に絞った適正価格で、コストパフォーマンスの高いサイト制作を実現します。`
+          "text": `株式会社Awakeでは${PRICING.starter.priceDisplay}からAIチャットボット搭載のホームページ制作を承っております。24時間365日自動対応で、お客様の問い合わせ対応を効率化します。`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AIチャットボットはどのような質問に対応できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "営業時間、サービス内容、価格、アクセス方法など、よくある質問に自動で回答します。商品の在庫確認や予約受付など、カスタマイズも可能です。複雑な質問は自動的に人間のスタッフに転送されます。"
         }
       },
       {

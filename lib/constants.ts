@@ -3,20 +3,20 @@ import type { Profile, Project, SkillCategory, NavigationItem, ValueProposition 
 // 価格情報の一元管理
 export const PRICING = {
   starter: {
-    price: 132000,
-    priceJPY: '132,000',
-    priceDisplay: '13万2000円',
-    description: '13.2万円〜',
+    price: 198000,
+    priceJPY: '198,000',
+    priceDisplay: '19万8000円',
+    description: '19.8万円〜',
   },
   basic: {
-    price: 298000,
-    priceJPY: '298,000',
-    priceDisplay: '29万8000円',
+    price: 398000,
+    priceJPY: '398,000',
+    priceDisplay: '39万8000円',
   },
   premium: {
-    price: 698000,
-    priceJPY: '698,000',
-    priceDisplay: '69万8000円〜',
+    price: 798000,
+    priceJPY: '798,000',
+    priceDisplay: '79万8000円〜',
   },
 } as const
 
