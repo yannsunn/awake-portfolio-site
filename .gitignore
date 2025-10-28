@@ -40,3 +40,7 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# Google API credentials
+gsc-credentials.json
+gsc-token.json

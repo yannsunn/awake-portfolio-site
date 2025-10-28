@@ -36,7 +36,7 @@ export const WORKS: Project[] = [
     category: "ランディングページ",
     description: "職人が作るアイアン製品の世界観を表現した、温かみのあるデザイン",
     longDescription: "Vintage Iron Works様向けの製造業特化LP。ヒーロー・実績・CTA構成のランディングページ、Lightbox+モーダル付き製品ギャラリー、会社概要、簡易お問い合わせフォームを実装。オリジナルイラストとブランディングで独自の世界観を構築。",
-    imageUrl: "/images/illustrations/vintage-iron-works.png",
+    imageUrl: "/images/illustrations/vintage-iron-works.webp",
     url: "https://vintageironworks.awakeinc.co.jp/",
     pages: "約4ページ（LP+ギャラリー）",
     marketPrice: undefined,
