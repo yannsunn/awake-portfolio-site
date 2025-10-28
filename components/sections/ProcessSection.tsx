@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { commonStyles } from '@/lib/styles'
 import { PRICING } from '@/lib/constants'
+import BackgroundDecorations from '@/components/common/BackgroundDecorations'
+import SectionHeader from '@/components/common/SectionHeader'
+import AnimatedCard from '@/components/common/AnimatedCard'
 
 const PROCESS_STEPS = [
   {
@@ -58,12 +61,7 @@ const PROCESS_STEPS = [
 export default function ProcessSection() {
   return (
     <section id="process" className="section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden relative">
-      {/* 背景装飾 - グラデーションメッシュ */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-15 animate-pulse-slow" />
-        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '4s' }} />
-      </div>
+      <BackgroundDecorations variant="process" opacity={10} />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* セクションヘッダー */}

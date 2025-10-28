@@ -6,6 +6,33 @@ import type { Project } from './types'
  * 強化された構造化データを生成
  */
 
+// ヘルパー関数: Offer Schema生成（重複削減）
+function generateOfferSchema(
+  name: string,
+  description: string,
+  price: number
+) {
+  return {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": name,
+      "description": description,
+      "provider": {
+        "@type": "Organization",
+        "name": "株式会社Awake"
+      }
+    },
+    "price": price,
+    "priceCurrency": "JPY",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": price,
+      "priceCurrency": "JPY"
+    }
+  }
+}
+
 // Organization Schema - AI検索用に拡張
 export function generateOrganizationSchema() {
   return {
@@ -82,53 +109,21 @@ export function generateOrganizationSchema() {
       "@type": "OfferCatalog",
       "name": "Web制作サービス",
       "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "スターター プラン（AIチャットボット搭載）",
-            "description": "AIチャットボット搭載の1ページ完結型サイト。24時間自動対応で問い合わせ対応を効率化。",
-            "provider": {
-              "@type": "Organization",
-              "name": "株式会社Awake"
-            }
-          },
-          "price": PRICING.starter.price,
-          "priceCurrency": "JPY",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": PRICING.starter.price,
-            "priceCurrency": "JPY"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "ベーシック プラン（AIチャットボット搭載）",
-            "description": "AIチャットボット搭載の3-5ページ構成コーポレートサイト。高度な自動応答機能付き。",
-            "provider": {
-              "@type": "Organization",
-              "name": "株式会社Awake"
-            }
-          },
-          "price": PRICING.basic.price,
-          "priceCurrency": "JPY"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "プレミアム プラン（AIチャットボット搭載）",
-            "description": "AIチャットボット搭載の本格的なECサイト。在庫確認や注文状況も自動応答。",
-            "provider": {
-              "@type": "Organization",
-              "name": "株式会社Awake"
-            }
-          },
-          "price": PRICING.premium.price,
-          "priceCurrency": "JPY"
-        }
+        generateOfferSchema(
+          "スターター プラン（AIチャットボット搭載）",
+          "AIチャットボット搭載の1ページ完結型サイト。24時間自動対応で問い合わせ対応を効率化。",
+          PRICING.starter.price
+        ),
+        generateOfferSchema(
+          "ベーシック プラン（AIチャットボット搭載）",
+          "AIチャットボット搭載の3-5ページ構成コーポレートサイト。高度な自動応答機能付き。",
+          PRICING.basic.price
+        ),
+        generateOfferSchema(
+          "プレミアム プラン（AIチャットボット搭載）",
+          "AIチャットボット搭載の本格的なECサイト。在庫確認や注文状況も自動応答。",
+          PRICING.premium.price
+        )
       ]
     },
     "aggregateRating": {

@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { VALUE_PROPOSITION, SKILLS, PRICING } from '@/lib/constants'
 import { commonStyles } from '@/lib/styles'
+import SectionHeader from '@/components/common/SectionHeader'
+import BackgroundDecorations from '@/components/common/BackgroundDecorations'
+import AnimatedCard from '@/components/common/AnimatedCard'
 
 const SERVICE_FEATURES = [
   {
@@ -30,51 +33,25 @@ const SERVICE_FEATURES = [
 export default function AboutSection() {
   return (
     <section id="about" className="section-padding bg-gradient-to-b from-gray-50/50 via-white/30 to-gray-50/50 overflow-hidden relative">
-      {/* 背景装飾 - グラデーションメッシュ */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-5 animate-pulse-slow" style={{ animationDelay: '4s' }} />
-      </div>
-      
+      <BackgroundDecorations variant="default" opacity={10} />
+
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        {/* セクションヘッダー */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full mb-4"
-          >
-            SERVICE
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            私たちの強み
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            適正価格で効果的なホームページ制作を通じて、
-            <br className="hidden md:block" />
-            お客様のビジネスをサポートします
-          </p>
-        </motion.div>
+        <SectionHeader
+          badge="SERVICE"
+          title="私たちの強み"
+          description={
+            <>
+              適正価格で効果的なホームページ制作を通じて、
+              <br className="hidden md:block" />
+              お客様のビジネスをサポートします
+            </>
+          }
+        />
 
         {/* サービス特徴カード */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {SERVICE_FEATURES.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="relative group"
-            >
+            <AnimatedCard key={index} index={index} className="relative group">
               <div className="h-full glass glass-hover transition-all duration-300 transform hover:-translate-y-2 group p-6" style={{boxShadow: commonStyles.shadow.subtle}}>
                 {/* アイコン */}
                 <motion.div
@@ -96,7 +73,7 @@ export default function AboutSection() {
                 {/* ホバーエフェクト */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
               </div>
-            </motion.div>
+            </AnimatedCard>
           ))}
         </div>
 

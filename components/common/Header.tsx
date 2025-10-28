@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAVIGATION_ITEMS, PROFILE } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import LineConsultationButton from '@/components/common/LineConsultationButton'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -84,14 +85,9 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a
-            href="https://lin.ee/hHdqEXB"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-line ml-4 !px-5 !py-2.5 !text-sm !rounded-full hover:scale-105"
-          >
-            LINEで相談する
-          </a>
+          <div className="ml-4">
+            <LineConsultationButton variant="header" showIcon={false} />
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}

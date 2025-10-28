@@ -3,6 +3,10 @@
 import { motion } from 'framer-motion'
 import { commonStyles } from '@/lib/styles'
 import { PRICING } from '@/lib/constants'
+import BackgroundDecorations from '@/components/common/BackgroundDecorations'
+import SectionHeader from '@/components/common/SectionHeader'
+import AnimatedCard from '@/components/common/AnimatedCard'
+import LineConsultationButton from '@/components/common/LineConsultationButton'
 
 const PRICING_PLANS = [
   {
@@ -58,12 +62,7 @@ const PRICING_PLANS = [
 export default function PricingSection() {
   return (
     <section id="pricing" className="relative section-padding bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50 overflow-hidden">
-      {/* 背景エフェクト - グラデーションメッシュ */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-10 animate-pulse-slow" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full blur-3xl opacity-10 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-light)] rounded-full blur-3xl opacity-5 animate-pulse-slow" style={{ animationDelay: '4s' }} />
-      </div>
+      <BackgroundDecorations variant="pricing" opacity={10} />
       
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative">
         <div className="text-center mb-12 md:mb-16">

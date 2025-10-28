@@ -16,37 +16,6 @@ export const formatPrice = (price: string): string => {
   return price.includes('万') ? `${formatted}万円` : `${formatted}円`
 }
 
-// アニメーション用の共通バリアント
-export const animationVariants = {
-  fadeInUp: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  },
-  fadeInDown: {
-    initial: { opacity: 0, y: -30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  },
-  fadeInLeft: {
-    initial: { opacity: 0, x: -30 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 }
-  },
-  fadeInRight: {
-    initial: { opacity: 0, x: 30 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 }
-  },
-  staggerContainer: {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-} as const
-
 // 型安全なローカルストレージ操作
 export const storage = {
   get: <T>(key: string, fallback?: T): T | null => {

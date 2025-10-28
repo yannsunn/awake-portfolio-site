@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { PROFILE, PRICING } from '@/lib/constants'
+import LineConsultationButton from '@/components/common/LineConsultationButton'
 
 export default function HeroSection() {
   
@@ -117,15 +118,13 @@ export default function HeroSection() {
                 </motion.button>
               </Link>
               
-              <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <motion.button 
-                  className="btn-line glow-effect w-full sm:w-auto"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  LINEで相談する
-                </motion.button>
-              </a>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto"
+              >
+                <LineConsultationButton variant="large" className="w-full sm:w-auto" />
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>
