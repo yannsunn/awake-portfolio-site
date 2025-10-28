@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import ParticleBackground from '@/components/ui/ParticleBackground'
 import { useParallax } from '@/hooks/useScrollAnimation'
 import Image from 'next/image'
 import Button from '@/components/common/Button'
@@ -46,14 +45,7 @@ export default function HeroSection() {
         {/* グラデーションオーバーレイ */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/40 to-white/60" />
       </div>
-      
-      {/* パーティクル背景 */}
-      <ParticleBackground
-        particleCount={30}
-        color="rgba(59, 130, 246, 0.3)"
-        speed={0.3}
-      />
-      
+
       <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

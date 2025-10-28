@@ -62,11 +62,13 @@ export const storage = {
   
   set: <T>(key: string, value: T): void => {
     if (typeof window === 'undefined') return
-    
+
     try {
       localStorage.setItem(key, JSON.stringify(value))
     } catch (error) {
-      console.warn('Failed to save to localStorage:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Failed to save to localStorage:', error)
+      }
     }
   },
   
@@ -179,14 +181,18 @@ export const performance = {
     const start = Date.now()
     fn()
     const end = Date.now()
-    console.log(`${name}: ${end - start}ms`)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`${name}: ${end - start}ms`)
+    }
   },
-  
+
   measureAsync: async (name: string, fn: () => Promise<void>) => {
     const start = Date.now()
     await fn()
     const end = Date.now()
-    console.log(`${name}: ${end - start}ms`)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`${name}: ${end - start}ms`)
+    }
   }
 }
 
