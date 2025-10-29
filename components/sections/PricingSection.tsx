@@ -290,9 +290,9 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-20 md:mt-24 lg:mt-32 max-w-6xl mx-auto"
         >
-          <div className="bg-white rounded-2xl md:rounded-3xl overflow-visible border border-gray-200 shadow-xl">
-            <div className="bg-gray-50 py-8 md:py-10 px-6 md:px-8 rounded-t-2xl md:rounded-t-3xl border-b-2 border-gray-200">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 text-center mb-3">
+          <div className="bg-white rounded-2xl md:rounded-3xl overflow-visible border-2 border-gray-200 shadow-lg">
+            <div className="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-10 md:py-12 px-6 md:px-8 rounded-t-2xl md:rounded-t-3xl border-b-2 border-gray-200">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 text-center mb-4">
                 プラン比較表
               </h3>
               <p className="text-sm md:text-base text-gray-600 text-center">
@@ -309,13 +309,13 @@ export default function PricingSection() {
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">スターター</div>
                     </th>
-                    <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-white text-gray-900 relative w-1/4">
-                      <div className="inline-block mb-2">
-                        <span className="bg-white0 text-white text-xs px-3 py-1 rounded-full font-bold">
+                    <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-blue-50 text-gray-900 relative w-1/4 border-x-2 border-blue-200">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span className="bg-blue-600 text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-md">
                           おすすめ
                         </span>
                       </div>
-                      <div className="text-base xl:text-lg">ベーシック</div>
+                      <div className="text-base xl:text-lg mt-1">ベーシック</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">プレミアム</div>
@@ -331,7 +331,7 @@ export default function PricingSection() {
                         ¥{PRICING.starter.priceJPY.toLocaleString()}
                       </span>
                     </td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white">
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200">
                       <span className="text-lg xl:text-2xl font-black text-orange-600">
                         ¥{PRICING.basic.priceJPY.toLocaleString()}
                       </span>
@@ -355,7 +355,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">レスポンシブ</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
@@ -371,7 +371,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">CMS</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
@@ -379,7 +379,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">解析</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
@@ -387,7 +387,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">EC機能</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
@@ -395,7 +395,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">予約</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
@@ -403,7 +403,7 @@ export default function PricingSection() {
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">カスタム</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
-                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
+                    <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                   </tr>
 
