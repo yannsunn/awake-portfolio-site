@@ -309,13 +309,13 @@ export default function PricingSection() {
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">スターター</div>
                     </th>
-                    <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-blue-50 text-gray-900 relative w-1/4 border-x-2 border-blue-200">
-                      <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-20">
-                        <span className="bg-blue-600 text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-md whitespace-nowrap">
+                    <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-blue-50 text-gray-900 w-1/4 border-x-2 border-blue-200">
+                      <div className="flex flex-col items-center gap-2">
+                        <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-md whitespace-nowrap">
                           おすすめ
                         </span>
+                        <div className="text-base xl:text-lg">ベーシック</div>
                       </div>
-                      <div className="text-base xl:text-lg">ベーシック</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">プレミアム</div>
