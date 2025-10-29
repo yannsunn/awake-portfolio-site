@@ -96,24 +96,6 @@ export default function HeroSection() {
             <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">AIチャットボット搭載 + プロフェッショナルなWeb制作</p>
           </motion.div>
 
-          {/* 緊急性の演出 */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex justify-center mb-8"
-          >
-            <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-full shadow-lg">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
-              </span>
-              <span className="text-sm md:text-base font-bold text-orange-800">
-                今月のご相談枠 残り3件
-              </span>
-            </div>
-          </motion.div>
-
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

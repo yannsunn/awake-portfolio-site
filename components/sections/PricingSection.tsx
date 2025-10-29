@@ -289,6 +289,233 @@ export default function PricingSection() {
             </div>
           </div>
         </motion.div>
+
+        {/* プラン比較テーブル */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-20 max-w-6xl mx-auto"
+        >
+          <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 md:p-8">
+              <h3 className="text-2xl md:text-3xl font-black text-white text-center">
+                プラン比較表
+              </h3>
+              <p className="text-blue-100 text-center mt-2">
+                各プランの詳細な機能比較
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b-2 border-gray-200 bg-gray-50">
+                    <th className="text-left py-4 px-6 font-bold text-gray-900">機能</th>
+                    <th className="text-center py-4 px-6 font-bold text-gray-700">
+                      スターター
+                    </th>
+                    <th className="text-center py-4 px-6 font-bold bg-orange-50 text-orange-700 relative">
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold">
+                          おすすめ
+                        </span>
+                      </div>
+                      ベーシック
+                    </th>
+                    <th className="text-center py-4 px-6 font-bold text-gray-700">
+                      プレミアム
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {/* 価格 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">価格</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-2xl font-black text-gray-900">
+                        ¥{PRICING.starter.priceJPY.toLocaleString()}
+                      </span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-2xl font-black text-orange-600">
+                        ¥{PRICING.basic.priceJPY.toLocaleString()}
+                      </span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-2xl font-black text-gray-900">
+                        ¥{PRICING.premium.priceJPY.toLocaleString()}
+                      </span>
+                    </td>
+                  </tr>
+
+                  {/* ページ数 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">ページ数</td>
+                    <td className="py-4 px-6 text-center text-gray-700">1ページ</td>
+                    <td className="py-4 px-6 text-center bg-orange-50 font-bold text-gray-900">
+                      10ページまで
+                    </td>
+                    <td className="py-4 px-6 text-center text-gray-700">無制限</td>
+                  </tr>
+
+                  {/* レスポンシブ対応 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">レスポンシブ対応</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* SEO対策 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">SEO対策</td>
+                    <td className="py-4 px-6 text-center text-gray-600 text-sm">基本</td>
+                    <td className="py-4 px-6 text-center bg-orange-50 font-bold text-gray-900">
+                      高度
+                    </td>
+                    <td className="py-4 px-6 text-center font-bold text-gray-900">
+                      最高レベル
+                    </td>
+                  </tr>
+
+                  {/* CMS */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">
+                      CMS（更新システム）
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* お問い合わせフォーム */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">
+                      お問い合わせフォーム
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* アクセス解析 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">アクセス解析</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* EC機能 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">
+                      EC機能（決済・在庫管理）
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* 予約システム */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">予約システム</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* カスタム機能 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">カスタム機能</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center bg-orange-50">
+                      <span className="text-gray-400 text-xl">−</span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </td>
+                  </tr>
+
+                  {/* 納期 */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-6 font-medium text-gray-900">納期</td>
+                    <td className="py-4 px-6 text-center text-gray-700">1-2週間</td>
+                    <td className="py-4 px-6 text-center bg-orange-50 font-bold text-gray-900">
+                      2-3週間
+                    </td>
+                    <td className="py-4 px-6 text-center text-gray-700">1-2ヶ月</td>
+                  </tr>
+
+                  {/* CTAボタン */}
+                  <tr>
+                    <td className="py-6 px-6 font-medium text-gray-900">お申し込み</td>
+                    <td className="py-6 px-6 text-center">
+                      <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gray-700 text-white px-6 py-2 rounded-lg font-bold hover:bg-gray-800 transition-colors text-sm">
+                          相談する
+                        </button>
+                      </a>
+                    </td>
+                    <td className="py-6 px-6 text-center bg-orange-50">
+                      <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
+                        <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg">
+                          相談する
+                        </button>
+                      </a>
+                    </td>
+                    <td className="py-6 px-6 text-center">
+                      <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gray-700 text-white px-6 py-2 rounded-lg font-bold hover:bg-gray-800 transition-colors text-sm">
+                          相談する
+                        </button>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
