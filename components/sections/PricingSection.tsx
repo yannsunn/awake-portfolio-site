@@ -152,8 +152,8 @@ export default function PricingSection() {
                       >
                         <motion.div 
                           className={`w-10 h-10 rounded-xl mr-4 flex items-center justify-center transition-all duration-300 border ${
-                            plan.recommended 
-                              ? 'bg-orange-100 text-orange-600 border-orange-300' 
+                            plan.recommended
+                              ? 'bg-blue-100 text-blue-600 border-blue-300'
                               : 'bg-gray-100 text-gray-700 border-gray-300'
                           }`}
                           whileHover={{ rotate: 360 }}
@@ -427,7 +427,7 @@ export default function PricingSection() {
                     </td>
                     <td className="py-4 xl:py-6 px-3 xl:px-6 text-center bg-white">
                       <a href="https://lin.ee/hHdqEXB" target="_blank" rel="noopener noreferrer">
-                        <button className="bg-white0 text-white px-5 xl:px-8 py-2 xl:py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg text-xs xl:text-sm whitespace-nowrap">
+                        <button className="bg-blue-600 text-white px-5 xl:px-8 py-2 xl:py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-lg text-xs xl:text-sm whitespace-nowrap">
                           相談する
                         </button>
                       </a>
