@@ -290,8 +290,8 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-20 md:mt-24 lg:mt-32 max-w-6xl mx-auto"
         >
-          <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-10 md:py-14 lg:py-16 px-6 md:px-8">
+          <div className="bg-white rounded-2xl md:rounded-3xl overflow-visible border border-gray-200 shadow-xl">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-10 md:py-14 lg:py-16 px-6 md:px-8 pb-8 md:pb-10 rounded-t-2xl md:rounded-t-3xl">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white text-center mb-4 md:mb-5">
                 プラン比較表
               </h3>
@@ -310,12 +310,12 @@ export default function PricingSection() {
                       <div className="text-base xl:text-lg">スターター</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-orange-50 text-orange-700 relative w-1/4">
-                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                        <span className="bg-orange-500 text-white text-xs md:text-sm px-3 py-1.5 rounded-full font-bold whitespace-nowrap">
+                      <div className="absolute -top-5 md:-top-6 left-1/2 transform -translate-x-1/2 z-10">
+                        <span className="bg-orange-500 text-white text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full font-bold whitespace-nowrap shadow-lg">
                           おすすめ
                         </span>
                       </div>
-                      <div className="text-base xl:text-lg">ベーシック</div>
+                      <div className="text-base xl:text-lg mt-1">ベーシック</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">プレミアム</div>
