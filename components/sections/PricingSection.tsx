@@ -85,7 +85,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
         >
           {PRICING_PLANS.map((plan, index) => (
             <motion.div
@@ -225,7 +225,7 @@ export default function PricingSection() {
               
               <h3 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900">その他のサービス</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-12">
                 <motion.div 
                   className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
                   style={{boxShadow: commonStyles.shadow.subtle}}
