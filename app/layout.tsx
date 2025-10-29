@@ -14,16 +14,16 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   preload: true,
 })
 
-const notoSansJP = Noto_Sans_JP({ 
+const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   variable: '--font-noto-sans-jp',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
-  preload: false,
+  weight: ['400', '500', '600', '700', '800', '900'],
+  preload: true,
 })
 
 export const metadata: Metadata = {
