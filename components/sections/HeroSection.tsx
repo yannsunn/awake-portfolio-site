@@ -50,14 +50,29 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           
-          <motion.h1 
+          <motion.h1
             className="font-black mb-4 md:mb-6 tracking-tighter leading-[0.9]"
             style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, type: "spring", bounce: 0.4 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100,
+              damping: 10
+            }}
           >
-            <span className="bg-gradient-to-r from-[var(--primary)] via-[var(--accent)] to-[var(--primary)] bg-clip-text text-transparent font-bold">{PROFILE.name}</span>
+            <span className="relative inline-block bg-gradient-to-r from-[var(--primary)] via-blue-600 to-[var(--primary)] bg-clip-text text-transparent font-bold">
+              {PROFILE.name}
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-[var(--primary)] via-blue-600 to-[var(--primary)] bg-clip-text text-transparent opacity-50 blur-xl"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                {PROFILE.name}
+              </motion.span>
+            </span>
           </motion.h1>
           
           <motion.p
@@ -115,15 +130,28 @@ export default function HeroSection() {
               {/* セカンダリCTA: 制作実績 */}
               <Link href="#portfolio" className="w-full sm:w-auto group order-2">
                 <motion.button
-                  className="relative w-full sm:w-auto text-base sm:text-lg font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg border-2 border-gray-300 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all shadow-md"
+                  className="relative w-full sm:w-auto text-base sm:text-lg font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg border-2 border-gray-300 bg-white/80 backdrop-blur-sm text-gray-700 overflow-hidden transition-all shadow-md"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     制作実績を見る
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <motion.svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    </motion.svg>
                   </span>
                 </motion.button>
               </Link>

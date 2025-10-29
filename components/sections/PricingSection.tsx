@@ -104,13 +104,28 @@ export default function PricingSection() {
                   </span>
                 </div>
               )}
-              <div className={`h-full relative overflow-hidden rounded-2xl ${
+              <div className={`h-full relative overflow-hidden rounded-2xl transition-all duration-300 ${
                 plan.recommended
                   ? 'bg-white border-[3px] border-orange-500 shadow-2xl'
-                  : 'bg-white border-2 border-gray-200 shadow-lg'
+                  : 'bg-white border-2 border-gray-200 shadow-lg hover:shadow-2xl'
               }`}>
                 {/* ホバー時のグラデーションオーバーレイ */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                {/* 光るボーダーエフェクト */}
+                <motion.div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent)',
+                  }}
+                  animate={{
+                    x: ['-100%', '100%'],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
                 <div className="text-center h-full flex flex-col relative z-10 p-8">
                   <motion.div 
                     className="mb-8"
@@ -324,7 +339,7 @@ export default function PricingSection() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {/* 価格 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">価格</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center">
                       <span className="text-lg xl:text-2xl font-black text-gray-900">
@@ -344,7 +359,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* ページ数 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">ページ数</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center text-gray-700 text-sm xl:text-base">1</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white font-bold text-gray-900 text-sm xl:text-base">10</td>
@@ -352,7 +367,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* レスポンシブ対応 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">レスポンシブ</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
@@ -360,7 +375,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* SEO対策 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">SEO対策</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center text-gray-600 text-xs xl:text-sm">基本</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white font-bold text-gray-900 text-xs xl:text-sm">高度</td>
@@ -368,7 +383,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* CMS */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">CMS</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
@@ -376,7 +391,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* アクセス解析 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">解析</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-green-600 text-xl xl:text-2xl">✓</span></td>
@@ -384,7 +399,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* EC機能 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">EC機能</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
@@ -392,7 +407,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* 予約システム */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">予約</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
@@ -400,7 +415,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* カスタム機能 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">カスタム</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-blue-50 border-x-2 border-blue-200"><span className="text-gray-400 text-lg xl:text-xl">−</span></td>
@@ -408,7 +423,7 @@ export default function PricingSection() {
                   </tr>
 
                   {/* 納期 */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01]">
                     <td className="py-5 xl:py-6 px-4 xl:px-6 font-medium text-gray-900 text-sm xl:text-base">納期</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center text-gray-700 text-xs xl:text-sm">1-2週</td>
                     <td className="py-5 xl:py-6 px-3 xl:px-6 text-center bg-white font-bold text-gray-900 text-xs xl:text-sm">2-3週</td>
