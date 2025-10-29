@@ -291,7 +291,7 @@ export default function PricingSection() {
           className="mt-20 md:mt-24 lg:mt-32 max-w-6xl mx-auto"
         >
           <div className="bg-white rounded-2xl md:rounded-3xl overflow-visible border-2 border-gray-200 shadow-lg">
-            <div className="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-10 md:py-12 px-6 md:px-8 rounded-t-2xl md:rounded-t-3xl border-b-2 border-gray-200">
+            <div className="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 pt-10 md:pt-12 pb-6 px-6 md:px-8 rounded-t-2xl md:rounded-t-3xl border-b-2 border-gray-200">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 text-center mb-4">
                 プラン比較表
               </h3>
@@ -310,12 +310,12 @@ export default function PricingSection() {
                       <div className="text-base xl:text-lg">スターター</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold bg-blue-50 text-gray-900 relative w-1/4 border-x-2 border-blue-200">
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-blue-600 text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-md">
+                      <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-20">
+                        <span className="bg-blue-600 text-white text-xs px-4 py-1.5 rounded-full font-bold shadow-md whitespace-nowrap">
                           おすすめ
                         </span>
                       </div>
-                      <div className="text-base xl:text-lg mt-1">ベーシック</div>
+                      <div className="text-base xl:text-lg">ベーシック</div>
                     </th>
                     <th className="text-center py-6 xl:py-8 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-base xl:text-lg">プレミアム</div>
@@ -451,14 +451,14 @@ export default function PricingSection() {
                   key={index}
                   className={`rounded-xl overflow-hidden ${
                     plan.recommended
-                      ? 'border-[3px] border-orange-500 shadow-lg'
+                      ? 'border-[3px] border-blue-500 shadow-lg'
                       : 'border-2 border-gray-200 shadow-md'
                   }`}
                 >
                   {/* プランヘッダー */}
                   <div className={`p-4 ${plan.recommended ? 'bg-white' : 'bg-gray-50'}`}>
                     {plan.recommended && (
-                      <div className="inline-block bg-white0 text-white text-xs px-3 py-1 rounded-full font-bold mb-2">
+                      <div className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold mb-2">
                         おすすめ
                       </div>
                     )}
@@ -485,7 +485,7 @@ export default function PricingSection() {
                       <button
                         className={`w-full py-3 rounded-lg font-bold transition-colors ${
                           plan.recommended
-                            ? 'bg-white0 text-white hover:bg-orange-600 shadow-lg'
+                            ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg'
                             : 'bg-gray-700 text-white hover:bg-gray-800'
                         }`}
                       >
