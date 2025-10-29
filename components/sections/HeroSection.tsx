@@ -76,7 +76,7 @@ export default function HeroSection() {
             className="mb-8 md:mb-12"
           >
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              🤖 AIチャットボット搭載のホームページ制作 🤖
+              AIチャットボット搭載のホームページ制作
             </p>
           </motion.div>
 
@@ -95,7 +95,25 @@ export default function HeroSection() {
             </div>
             <p className="text-responsive-base text-[var(--secondary)] mt-6 font-medium">AIチャットボット搭載 + プロフェッショナルなWeb制作</p>
           </motion.div>
-          
+
+          {/* 緊急性の演出 */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-full shadow-lg">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+              </span>
+              <span className="text-sm md:text-base font-bold text-orange-800">
+                今月のご相談枠 残り3件
+              </span>
+            </div>
+          </motion.div>
+
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,28 +121,30 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
             >
-              <Link href="#portfolio" className="w-full sm:w-auto group">
-                <motion.button 
-                  className="relative btn-primary w-full sm:w-auto text-base sm:text-lg font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 shadow-xl"
+              {/* プライマリCTA: LINEボタン */}
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto order-1"
+              >
+                <LineConsultationButton variant="large" className="w-full sm:w-auto" />
+              </motion.div>
+
+              {/* セカンダリCTA: 制作実績 */}
+              <Link href="#portfolio" className="w-full sm:w-auto group order-2">
+                <motion.button
+                  className="relative w-full sm:w-auto text-base sm:text-lg font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg border-2 border-gray-300 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all shadow-md"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    ⭐ 制作実績を見る
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    制作実績を見る
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
                 </motion.button>
               </Link>
-              
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto"
-              >
-                <LineConsultationButton variant="large" className="w-full sm:w-auto" />
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>

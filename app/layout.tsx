@@ -6,6 +6,7 @@ import Footer from '@/components/common/Footer'
 import JsonLd from '@/components/common/JsonLd'
 import ScrollProgress from '@/components/common/ScrollProgress'
 import GoogleAnalytics from '@/components/common/GoogleAnalytics'
+import StickyMobileCTA from '@/components/common/StickyMobileCTA'
 import { generateMetadata as generateMeta } from '@/lib/utils'
 import { generateAllSchemas } from '@/lib/enhanced-schema'
 
@@ -55,6 +56,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <StickyMobileCTA />
       </body>
     </html>
   )
