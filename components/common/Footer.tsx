@@ -6,8 +6,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-20 lg:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10 md:mb-12">
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-800 pt-10 md:pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {currentYear} {PROFILE.name}. All rights reserved.

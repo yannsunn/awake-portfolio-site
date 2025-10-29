@@ -225,7 +225,7 @@ export default function PricingSection() {
               
               <h3 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900">その他のサービス</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 mb-12">
                 <motion.div 
                   className="bg-white p-8 rounded-2xl border border-gray-50 group transition-all"
                   style={{boxShadow: commonStyles.shadow.subtle}}
@@ -291,11 +291,11 @@ export default function PricingSection() {
           className="mt-20 md:mt-24 lg:mt-32 max-w-6xl mx-auto"
         >
           <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 md:p-6 lg:p-8">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 md:p-8 lg:p-12">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white text-center">
                 プラン比較表
               </h3>
-              <p className="text-sm md:text-base text-blue-100 text-center mt-2">
+              <p className="text-sm md:text-base text-blue-100 text-center mt-3 md:mt-4">
                 各プランの詳細な機能比較
               </p>
             </div>
@@ -305,20 +305,20 @@ export default function PricingSection() {
               <table className="w-full min-w-[800px]">
                 <thead>
                   <tr className="border-b-[3px] border-gray-300 bg-gray-50">
-                    <th className="text-left py-4 px-4 xl:px-6 font-bold text-gray-900 w-1/4">機能</th>
-                    <th className="text-center py-4 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
-                      <div className="text-sm xl:text-base">スターター</div>
+                    <th className="text-left py-5 xl:py-6 px-4 xl:px-6 font-bold text-gray-900 w-1/4">機能</th>
+                    <th className="text-center py-5 xl:py-6 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
+                      <div className="text-base xl:text-lg">スターター</div>
                     </th>
-                    <th className="text-center py-4 px-3 xl:px-6 font-bold bg-orange-50 text-orange-700 relative w-1/4">
+                    <th className="text-center py-5 xl:py-6 px-3 xl:px-6 font-bold bg-orange-50 text-orange-700 relative w-1/4">
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                         <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold whitespace-nowrap">
                           おすすめ
                         </span>
                       </div>
-                      <div className="text-sm xl:text-base">ベーシック</div>
+                      <div className="text-base xl:text-lg">ベーシック</div>
                     </th>
-                    <th className="text-center py-4 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
-                      <div className="text-sm xl:text-base">プレミアム</div>
+                    <th className="text-center py-5 xl:py-6 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
+                      <div className="text-base xl:text-lg">プレミアム</div>
                     </th>
                   </tr>
                 </thead>
