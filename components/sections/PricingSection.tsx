@@ -65,22 +65,14 @@ export default function PricingSection() {
       <BackgroundDecorations variant="pricing" opacity={10} />
       
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block mb-6"
-            >
-              
-            </motion.div>
-            <h2 className="text-3xl md:text-4xl font-black mb-4">料金プラン</h2>
+            <h2 className="text-3xl md:text-4xl font-black mb-6 md:mb-8">料金プラン</h2>
             <p className="text-base md:text-lg text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
               お客様のニーズに合わせた明確な料金体系。<br />
               追加費用なしの安心価格です。
@@ -113,9 +105,9 @@ export default function PricingSection() {
                 </div>
               )}
               <div className={`h-full relative overflow-hidden rounded-2xl ${
-                plan.recommended 
-                  ? 'bg-white border-4 border-orange-500 shadow-2xl' 
-                  : 'bg-white border border-gray-200 shadow-lg'
+                plan.recommended
+                  ? 'bg-white border-[3px] border-orange-500 shadow-2xl'
+                  : 'bg-white border-2 border-gray-200 shadow-lg'
               }`}>
                 {/* ホバー時のグラデーションオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -201,7 +193,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 md:mt-16 lg:mt-20 text-center"
+          className="mt-20 md:mt-24 lg:mt-32 text-center"
         >
           <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 border border-gray-50 max-w-6xl mx-auto" style={{boxShadow: commonStyles.shadow.subtle}}>
             {/* 動的背景エフェクト */}
@@ -296,7 +288,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
-          className="mt-16 md:mt-20 max-w-6xl mx-auto"
+          className="mt-20 md:mt-24 lg:mt-32 max-w-6xl mx-auto"
         >
           <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 md:p-6 lg:p-8">
@@ -312,7 +304,7 @@ export default function PricingSection() {
             <div className="hidden lg:block overflow-x-auto">
               <table className="w-full min-w-[800px]">
                 <thead>
-                  <tr className="border-b-2 border-gray-200 bg-gray-50">
+                  <tr className="border-b-[3px] border-gray-300 bg-gray-50">
                     <th className="text-left py-4 px-4 xl:px-6 font-bold text-gray-900 w-1/4">機能</th>
                     <th className="text-center py-4 px-3 xl:px-6 font-bold text-gray-700 w-1/4">
                       <div className="text-sm xl:text-base">スターター</div>
@@ -453,14 +445,14 @@ export default function PricingSection() {
             </div>
 
             {/* モバイル・タブレット表示: カード型 */}
-            <div className="lg:hidden p-4 md:p-6 space-y-6">
+            <div className="lg:hidden p-4 md:p-6 space-y-8">
               {PRICING_PLANS.map((plan, index) => (
                 <div
                   key={index}
                   className={`rounded-xl overflow-hidden ${
                     plan.recommended
-                      ? 'border-2 border-orange-500 shadow-lg'
-                      : 'border border-gray-200 shadow-md'
+                      ? 'border-[3px] border-orange-500 shadow-lg'
+                      : 'border-2 border-gray-200 shadow-md'
                   }`}
                 >
                   {/* プランヘッダー */}

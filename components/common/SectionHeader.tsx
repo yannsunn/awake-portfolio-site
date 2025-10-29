@@ -21,17 +21,17 @@ export default function SectionHeader({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="text-center mb-16"
+      className="text-center mb-16 md:mb-20"
     >
       <motion.span
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className={`inline-block px-4 py-2 bg-gradient-to-r ${badgeGradient} text-white text-sm font-semibold rounded-full mb-4`}
+        className={`inline-block px-4 py-2 bg-gradient-to-r ${badgeGradient} text-white text-sm font-semibold rounded-full mb-6 md:mb-8`}
       >
         {badge}
       </motion.span>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 md:mb-8">
         {title}
       </h2>
       <div className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
